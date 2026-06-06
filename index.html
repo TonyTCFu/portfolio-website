@@ -31,7 +31,17 @@
     <header class="header">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-accent">&lt;</span>Tony Fu<span class="logo-accent"> /&gt;</span>
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--primary-color)" />
+                        <stop offset="100%" stop-color="var(--secondary-color)" />
+                    </linearGradient>
+                    <path d="M50 12 L82 28 V60 C82 76 50 88 50 88 C50 88 18 76 18 60 V28 L50 12 Z" stroke="url(#logoGrad)" stroke-width="5" stroke-linejoin="round" />
+                    <path d="M34 36 H66" stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round" />
+                    <path d="M50 36 V64" stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round" />
+                    <path d="M50 48 H60" stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round" />
+                </svg>
+                <span class="logo-text">Tony Fu</span>
             </a>
             
             <nav class="nav-menu" id="navMenu">

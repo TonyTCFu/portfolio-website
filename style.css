@@ -307,16 +307,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
 }
 
-.logo-accent {
-    color: var(--primary-color);
-    font-weight: 600;
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.45rem;
+    color: var(--text-primary);
 }
 
 .nav-menu {
