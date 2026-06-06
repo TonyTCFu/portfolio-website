@@ -327,8 +327,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.45rem;
     color: var(--text-primary);
     line-height: 1.2;
-    display: inline-flex;
-    align-items: center;
 }
 
 .nav-menu {
@@ -787,8 +785,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-tag-small span {
-    display: inline-flex;
-    align-items: center;
     line-height: 1;
 }
 
