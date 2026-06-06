@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Simple UI loading state feedback
             submitButton.disabled = true;
-            submitButton.textContent = '发送中...';
+            submitButton.textContent = '发送中... / Sending...';
 
             // Simulate form submission (e.g. AJAX or Formspree/Netlify integration)
             setTimeout(() => {
                 // Reset button and form
                 submitButton.disabled = false;
-                submitButton.textContent = '发送成功！';
+                submitButton.textContent = '发送成功！ / Sent!';
                 submitButton.style.backgroundColor = '#22c55e'; // Green feedback
                 submitButton.style.color = '#ffffff';
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Custom notification toast
                 const toast = document.createElement('div');
                 toast.className = 'toast-notification';
-                toast.textContent = `谢谢您的来信，${name}！我会尽快回复您。`;
+                toast.textContent = `谢谢您的来信，${name}！我会尽快回复您。 / Thank you for your message, ${name}! I will reply as soon as possible.`;
                 document.body.appendChild(toast);
 
                 // Add styling to toast dynamically
