@@ -791,6 +791,14 @@ h1, h2, h3, h4, h5, h6 {
     flex-shrink: 0;
 }
 
+.tag-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
 /* ==========================================================================
    7. Contact Section
    ========================================================================== */
