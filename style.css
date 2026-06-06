@@ -314,8 +314,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
