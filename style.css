@@ -779,6 +779,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.tag-icon {
+    width: 12px;
+    height: 12px;
+    stroke-width: 2.5px;
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
