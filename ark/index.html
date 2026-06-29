@@ -17,6 +17,31 @@
 </head>
 <body>
     <div class="app-container">
+        <!-- Mobile Header Bar -->
+        <header class="mobile-header">
+            <div class="mobile-top-row">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-chart-line-up"></i></span>
+                    <span class="logo-text">ARK Tracker</span>
+                </div>
+                <div class="mobile-select-wrapper">
+                    <select id="mobile-fund-select" class="mobile-fund-dropdown">
+                        <!-- Options populated dynamically -->
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mobile-tabs-scroll">
+                <ul class="mobile-nav-tabs">
+                    <li class="mobile-nav-tab active" data-tab="overview">總覽持股</li>
+                    <li class="mobile-nav-tab" data-tab="daily-monitor">交易監控</li>
+                    <li class="mobile-nav-tab" data-tab="streaks">連續交易</li>
+                    <li class="mobile-nav-tab" data-tab="weekly-summary">每週決策</li>
+                    <li class="mobile-nav-tab" data-tab="consensus-comparison">全球共識</li>
+                </ul>
+            </div>
+        </header>
+
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">

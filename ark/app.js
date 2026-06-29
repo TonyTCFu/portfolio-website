@@ -86,34 +86,42 @@ function getShortName(ticker) {
     return names[ticker] || ticker;
 }
 
-// Initialize ETF selectors in Sidebar (Split into ARK ETFs and Other Institutional portfolios)
+// Initialize ETF selectors in Sidebar & Mobile Dropdown
 function initSelectors() {
     const arkList = document.getElementById('etf-selector-list');
     const otherList = document.getElementById('other-selector-list');
+    const mobileSelect = document.getElementById('mobile-fund-select');
     
     arkList.innerHTML = '';
     otherList.innerHTML = '';
+    if (mobileSelect) mobileSelect.innerHTML = '';
     
     const arkFunds = ["ARKK", "ARKG", "ARKW", "ARKF", "ARKQ", "ARKX"];
     const otherFunds = ["NVIDIA", "IDNA", "VHT"];
+    
+    const displayNames = {
+        "ARKK": "ARKK (Flagship 旗艦創新)",
+        "ARKG": "ARKG (Genomics 基因醫學)",
+        "ARKW": "ARKW (Web 下一代網路)",
+        "ARKF": "ARKF (Fintech 金融科技)",
+        "ARKQ": "ARKQ (Autonomous 自主與機器人)",
+        "ARKX": "ARKX (space eXploration 太空探索)",
+        "NVIDIA": "NVIDIA",
+        "IDNA": "IDNA (BlackRock)",
+        "VHT": "VHT (Vanguard)"
+    };
+    
+    // Groups for mobile selector dropdown
+    const arkGroup = document.createElement('optgroup');
+    arkGroup.label = 'ARK 主動型 ETF';
+    const otherGroup = document.createElement('optgroup');
+    otherGroup.label = '其他頂級機構';
     
     appData.available_funds.forEach(fundId => {
         const fund = appData.funds_data[fundId];
         const item = document.createElement('li');
         item.className = `etf-item ${fundId === activeEtf ? 'active' : ''}`;
         item.dataset.etf = fundId;
-        
-        const displayNames = {
-            "ARKK": "ARKK (Flagship 旗艦創新)",
-            "ARKG": "ARKG (Genomics 基因醫學)",
-            "ARKW": "ARKW (Web 下一代網路)",
-            "ARKF": "ARKF (Fintech 金融科技)",
-            "ARKQ": "ARKQ (Autonomous 自主與機器人)",
-            "ARKX": "ARKX (space eXploration 太空探索)",
-            "NVIDIA": "NVIDIA",
-            "IDNA": "IDNA (BlackRock)",
-            "VHT": "VHT (Vanguard)"
-        };
         
         const dispName = displayNames[fundId] || fundId;
         
@@ -124,16 +132,7 @@ function initSelectors() {
         item.addEventListener('click', () => {
             // If in consensus tab, switch back to overview when clicking a specific fund
             if (activeTab === 'consensus-comparison') {
-                // Update active tab UI
-                document.querySelectorAll('.nav-tab').forEach(t => {
-                    if (t.dataset.tab === 'overview') t.classList.add('active');
-                    else t.classList.remove('active');
-                });
-                document.querySelectorAll('.tab-pane').forEach(p => {
-                    if (p.id === 'overview-pane') p.classList.add('active');
-                    else p.classList.remove('active');
-                });
-                activeTab = 'overview';
+                changeTab('overview');
             }
             switchEtf(fundId);
         });
@@ -143,12 +142,37 @@ function initSelectors() {
         } else if (otherFunds.includes(fundId)) {
             otherList.appendChild(item);
         }
+        
+        // Populate mobile dropdown options
+        if (mobileSelect) {
+            const option = document.createElement('option');
+            option.value = fundId;
+            option.textContent = dispName;
+            
+            if (arkFunds.includes(fundId)) {
+                arkGroup.appendChild(option);
+            } else if (otherFunds.includes(fundId)) {
+                otherGroup.appendChild(option);
+            }
+        }
     });
+    
+    if (mobileSelect) {
+        mobileSelect.appendChild(arkGroup);
+        mobileSelect.appendChild(otherGroup);
+        mobileSelect.value = activeEtf;
+    }
 }
 
 // Switch Active ETF
 function switchEtf(fundId) {
     activeEtf = fundId;
+    
+    // Sync mobile select
+    const mobileSelect = document.getElementById('mobile-fund-select');
+    if (mobileSelect) {
+        mobileSelect.value = fundId;
+    }
     
     // Update sidebar UI state
     document.querySelectorAll('.etf-item').forEach(item => {
@@ -693,6 +717,34 @@ function closeDetailPanel() {
     document.getElementById('detail-panel').classList.remove('open');
 }
 
+// Global Tab Switching Synchronizer (Desktop & Mobile)
+function changeTab(targetTab) {
+    activeTab = targetTab;
+    
+    // Update desktop tabs active state
+    document.querySelectorAll('.nav-tab').forEach(t => {
+        if (t.dataset.tab === targetTab) t.classList.add('active');
+        else t.classList.remove('active');
+    });
+    
+    // Update mobile tabs active state
+    document.querySelectorAll('.mobile-nav-tab').forEach(t => {
+        if (t.dataset.tab === targetTab) t.classList.add('active');
+        else t.classList.remove('active');
+    });
+    
+    // Toggle active panes
+    document.querySelectorAll('.tab-pane').forEach(p => {
+        if (p.id === `${targetTab}-pane`) {
+            p.classList.add('active');
+        } else {
+            p.classList.remove('active');
+        }
+    });
+    
+    updateView();
+}
+
 // ----------------------------------------------------
 // EVENT LISTENERS & SETUP
 // ----------------------------------------------------
@@ -700,23 +752,30 @@ function closeDetailPanel() {
 document.addEventListener('DOMContentLoaded', () => {
     loadData();
     
-    // Tab switching
+    // Tab switching (Desktop list triggers)
     document.querySelectorAll('.nav-tab').forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            const targetTab = tab.dataset.tab;
-            
-            // Update active state in UI
-            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            // Switch tabs
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            document.getElementById(`${targetTab}-pane`).classList.add('active');
-            
-            activeTab = targetTab;
-            updateView();
+        tab.addEventListener('click', () => {
+            changeTab(tab.dataset.tab);
         });
     });
+    
+    // Tab switching (Mobile horizontal swiper triggers)
+    document.querySelectorAll('.mobile-nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            changeTab(tab.dataset.tab);
+        });
+    });
+    
+    // Mobile ETF Dropdown Switcher
+    const mobSelectEl = document.getElementById('mobile-fund-select');
+    if (mobSelectEl) {
+        mobSelectEl.addEventListener('change', (e) => {
+            if (activeTab === 'consensus-comparison') {
+                changeTab('overview');
+            }
+            switchEtf(e.target.value);
+        });
+    }
     
     // Search functionality
     document.getElementById('search-input').addEventListener('input', (e) => {
