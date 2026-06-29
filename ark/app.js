@@ -865,7 +865,7 @@ function renderConsensusTab() {
         }
         
         row.innerHTML = `
-            <td class="ticker-cell" style="white-space: nowrap;">${c.ticker} <span class="ticker-name-sub">(${getShortName(c.ticker)})</span></td>
+            <td class="ticker-cell" style="white-space: nowrap;">${c.ticker}</td>
             <td style="min-width: 220px;">
                 <div style="font-weight:700; color:#fff; font-size:14px;">${c.company}</div>
                 <div style="font-size:11px; color:var(--text-dark); margin-top:2px; line-height:1.4;">${c.description}</div>
