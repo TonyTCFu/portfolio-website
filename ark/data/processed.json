@@ -1,12 +1,15 @@
 {
-  "last_updated": "2026-06-29 14:33:35",
+  "last_updated": "2026-06-29 15:04:03",
   "available_funds": [
     "ARKK",
     "ARKG",
     "ARKW",
     "ARKF",
     "ARKQ",
-    "ARKX"
+    "ARKX",
+    "NVIDIA",
+    "IDNA",
+    "VHT"
   ],
   "funds_data": {
     "ARKK": {
@@ -25838,6 +25841,3232 @@
           "aum": 515528324.52000016
         }
       ]
+    },
+    "NVIDIA": {
+      "name": "NVIDIA Venture Portfolio",
+      "date": "2026-06-29",
+      "aum": 788294599.82,
+      "holdings_count": 5,
+      "trades_count": {
+        "buys": 0,
+        "sells": 0,
+        "unchanged": 5
+      },
+      "holdings": [
+        {
+          "ticker": "TEM",
+          "company": "Tempus AI Inc",
+          "shares": 7765995,
+          "shares_prev": 7765995,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 435982959.3,
+          "value_diff": 6703737.470000029,
+          "weight": 55.31,
+          "rank": 1,
+          "rank_prev": 1,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 7765995,
+              "weight": 55.25,
+              "value": 439396390.62
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 7765995,
+              "weight": 55.06,
+              "value": 436999368.06
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 7765995,
+              "weight": 54.7,
+              "value": 427715435.95
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 7765995,
+              "weight": 54.71,
+              "value": 433614227.05
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 7765995,
+              "weight": 55.28,
+              "value": 438210562.15
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 7765995,
+              "weight": 55.64,
+              "value": 445058167.55
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 7765995,
+              "weight": 55.44,
+              "value": 440503167.51
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 7765995,
+              "weight": 55.51,
+              "value": 438534709.83
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 7765995,
+              "weight": 54.87,
+              "value": 429279221.83
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 7765995,
+              "weight": 55.31,
+              "value": 435982959.3
+            }
+          ]
+        },
+        {
+          "ticker": "ARM",
+          "company": "Arm Holdings plc",
+          "shares": 1960777,
+          "shares_prev": 1960777,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 315805023.46,
+          "value_diff": -1001333.6600000262,
+          "weight": 40.06,
+          "rank": 2,
+          "rank_prev": 2,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1960777,
+              "weight": 40.0,
+              "value": 318103137.62
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1960777,
+              "weight": 40.27,
+              "value": 319663153.36
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1960777,
+              "weight": 40.62,
+              "value": 317635105.79
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1960777,
+              "weight": 40.64,
+              "value": 322124299.45
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1960777,
+              "weight": 40.13,
+              "value": 318151188.41
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1960777,
+              "weight": 39.74,
+              "value": 317880908.77
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1960777,
+              "weight": 39.89,
+              "value": 316964404.05
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1960777,
+              "weight": 39.88,
+              "value": 315103409.15
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1960777,
+              "weight": 40.5,
+              "value": 316806357.12
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1960777,
+              "weight": 40.06,
+              "value": 315805023.46
+            }
+          ]
+        },
+        {
+          "ticker": "RXRX",
+          "company": "Recursion Pharmaceuticals",
+          "shares": 7706310,
+          "shares_prev": 7706310,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 27126211.2,
+          "value_diff": 199849.55999999866,
+          "weight": 3.44,
+          "rank": 3,
+          "rank_prev": 3,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 7706310,
+              "weight": 3.57,
+              "value": 28382311.66
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 7706310,
+              "weight": 3.48,
+              "value": 27583945.79
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 7706310,
+              "weight": 3.48,
+              "value": 27183042.41
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 7706310,
+              "weight": 3.48,
+              "value": 27559891.67
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 7706310,
+              "weight": 3.43,
+              "value": 27161290.55
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 7706310,
+              "weight": 3.46,
+              "value": 27702747.06
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 7706310,
+              "weight": 3.51,
+              "value": 27889080.98
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 7706310,
+              "weight": 3.45,
+              "value": 27220074.99
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 7706310,
+              "weight": 3.44,
+              "value": 26926361.64
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 7706310,
+              "weight": 3.44,
+              "value": 27126211.2
+            }
+          ]
+        },
+        {
+          "ticker": "SOUN",
+          "company": "SoundHound AI Inc",
+          "shares": 1730883,
+          "shares_prev": 1730883,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 8845221.42,
+          "value_diff": 100333.5700000003,
+          "weight": 1.12,
+          "rank": 4,
+          "rank_prev": 4,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1730883,
+              "weight": 1.12,
+              "value": 8918169.9
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1730883,
+              "weight": 1.12,
+              "value": 8909378.01
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1730883,
+              "weight": 1.13,
+              "value": 8834992.61
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1730883,
+              "weight": 1.11,
+              "value": 8758758.14
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1730883,
+              "weight": 1.09,
+              "value": 8678165.29
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1730883,
+              "weight": 1.08,
+              "value": 8643413.14
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1730883,
+              "weight": 1.09,
+              "value": 8679048.27
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1730883,
+              "weight": 1.1,
+              "value": 8660862.37
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1730883,
+              "weight": 1.12,
+              "value": 8744887.85
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1730883,
+              "weight": 1.12,
+              "value": 8845221.42
+            }
+          ]
+        },
+        {
+          "ticker": "NNOX",
+          "company": "Nano-X Imaging Ltd",
+          "shares": 59612,
+          "shares_prev": 59612,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 535184.44,
+          "value_diff": 2632.789999999921,
+          "weight": 0.07,
+          "rank": 5,
+          "rank_prev": 5,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 543789.88
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 550706.5
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 545990.08
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 549141.9
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 542063.83
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 546452.79
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 543600.77
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 538843.19
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 532551.65
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 59612,
+              "weight": 0.07,
+              "value": 535184.44
+            }
+          ]
+        }
+      ],
+      "recent_trades": [],
+      "streaks": {
+        "buying": [],
+        "selling": []
+      },
+      "weekly_digest": {
+        "base_date": "2026-06-22",
+        "today_date": "2026-06-29",
+        "accumulations": [],
+        "distributions": [],
+        "new_additions": [],
+        "exits": [],
+        "narrative": "本週持股相對穩定，未發生大規模調倉。"
+      },
+      "historical_aum": [
+        {
+          "date": "2026-06-15",
+          "aum": 787166582.1300001
+        },
+        {
+          "date": "2026-06-16",
+          "aum": 795343799.6800001
+        },
+        {
+          "date": "2026-06-17",
+          "aum": 793706551.72
+        },
+        {
+          "date": "2026-06-18",
+          "aum": 781914566.84
+        },
+        {
+          "date": "2026-06-19",
+          "aum": 792606318.21
+        },
+        {
+          "date": "2026-06-22",
+          "aum": 792743270.23
+        },
+        {
+          "date": "2026-06-23",
+          "aum": 799831689.31
+        },
+        {
+          "date": "2026-06-24",
+          "aum": 794579301.5799999
+        },
+        {
+          "date": "2026-06-25",
+          "aum": 790057899.53
+        },
+        {
+          "date": "2026-06-26",
+          "aum": 782289380.0899999
+        },
+        {
+          "date": "2026-06-29",
+          "aum": 788294599.8199999
+        }
+      ]
+    },
+    "IDNA": {
+      "name": "iShares Genomics Immunology & Healthcare ETF",
+      "date": "2026-06-29",
+      "aum": 426785894.43,
+      "holdings_count": 9,
+      "trades_count": {
+        "buys": 3,
+        "sells": 5,
+        "unchanged": 1
+      },
+      "holdings": [
+        {
+          "ticker": "VRTX",
+          "company": "Vertex Pharmaceuticals Inc",
+          "shares": 200796,
+          "shares_prev": 200796,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 95134750.19,
+          "value_diff": -649029.2800000012,
+          "weight": 22.29,
+          "rank": 1,
+          "rank_prev": 1,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 199999,
+              "weight": 21.45,
+              "value": 91719188.91
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 200398,
+              "weight": 21.45,
+              "value": 92110811.04
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 200798,
+              "weight": 21.82,
+              "value": 93493351.76
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 200396,
+              "weight": 21.73,
+              "value": 92887347.77
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 200396,
+              "weight": 22.05,
+              "value": 94167322.84
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 200396,
+              "weight": 22.1,
+              "value": 94620478.87
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 200396,
+              "weight": 22.16,
+              "value": 95088638.49
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 200396,
+              "weight": 22.12,
+              "value": 94518696.89
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 200796,
+              "weight": 22.38,
+              "value": 95783779.47
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 200796,
+              "weight": 22.29,
+              "value": 95134750.19
+            }
+          ]
+        },
+        {
+          "ticker": "REGN",
+          "company": "Regeneron Pharmaceuticals",
+          "shares": 79680,
+          "shares_prev": 79840,
+          "shares_diff": -160,
+          "shares_diff_pct": -0.2,
+          "value": 77279049.55,
+          "value_diff": -184469.01000000536,
+          "weight": 18.11,
+          "rank": 2,
+          "rank_prev": 2,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 80000,
+              "weight": 18.06,
+              "value": 77225935.2
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 79840,
+              "weight": 18.13,
+              "value": 77854319.13
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 79840,
+              "weight": 18.43,
+              "value": 78963983.5
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 79840,
+              "weight": 18.31,
+              "value": 78235576.79
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 79840,
+              "weight": 18.1,
+              "value": 77286481.34
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 79840,
+              "weight": 17.96,
+              "value": 76902417.52
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 79840,
+              "weight": 17.84,
+              "value": 76539049.54
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 79840,
+              "weight": 18.04,
+              "value": 77078132.49
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 79840,
+              "weight": 18.1,
+              "value": 77463518.56
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 79680,
+              "weight": 18.11,
+              "value": 77279049.55
+            }
+          ]
+        },
+        {
+          "ticker": "TEM",
+          "company": "Tempus AI Inc",
+          "shares": 1162989,
+          "shares_prev": 1159249,
+          "shares_diff": 3740,
+          "shares_diff_pct": 0.32,
+          "value": 65290202.46,
+          "value_diff": 1210646.8299999982,
+          "weight": 15.3,
+          "rank": 3,
+          "rank_prev": 4,
+          "rank_shift": 1,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1109660,
+              "weight": 14.68,
+              "value": 62784047.48
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1115668,
+              "weight": 14.62,
+              "value": 62779619.48
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1121981,
+              "weight": 14.42,
+              "value": 61793574.75
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1125234,
+              "weight": 14.7,
+              "value": 62827425.35
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1133812,
+              "weight": 14.98,
+              "value": 63977429.02
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1140386,
+              "weight": 15.27,
+              "value": 65353905.52
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1147311,
+              "weight": 15.17,
+              "value": 65077833.51
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1155527,
+              "weight": 15.27,
+              "value": 65250968.83
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1159249,
+              "weight": 14.97,
+              "value": 64079555.63
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1162989,
+              "weight": 15.3,
+              "value": 65290202.46
+            }
+          ]
+        },
+        {
+          "ticker": "CRSP",
+          "company": "CRISPR Therapeutics AG",
+          "shares": 1162162,
+          "shares_prev": 1168681,
+          "shares_diff": -6519,
+          "shares_diff_pct": -0.56,
+          "value": 63825937.04,
+          "value_diff": -389759.4699999988,
+          "weight": 14.96,
+          "rank": 4,
+          "rank_prev": 3,
+          "rank_shift": -1,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1236779,
+              "weight": 15.68,
+              "value": 67046359.53
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1233280,
+              "weight": 16.02,
+              "value": 68764448.08
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1227615,
+              "weight": 15.64,
+              "value": 66993051.3
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1216136,
+              "weight": 15.19,
+              "value": 64925804.6
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1204856,
+              "weight": 15.13,
+              "value": 64594122.48
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1192924,
+              "weight": 14.71,
+              "value": 62952884.91
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1183744,
+              "weight": 14.79,
+              "value": 63482294.5
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1172131,
+              "weight": 14.65,
+              "value": 62611831.73
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1168681,
+              "weight": 15.01,
+              "value": 64215696.51
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1162162,
+              "weight": 14.96,
+              "value": 63825937.04
+            }
+          ]
+        },
+        {
+          "ticker": "BEAM",
+          "company": "Beam Therapeutics Inc",
+          "shares": 1488029,
+          "shares_prev": 1491012,
+          "shares_diff": -2983,
+          "shares_diff_pct": -0.2,
+          "value": 51798289.49,
+          "value_diff": -952983.3999999985,
+          "weight": 12.14,
+          "rank": 5,
+          "rank_prev": 5,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1497000,
+              "weight": 12.9,
+              "value": 55182238.62
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1497000,
+              "weight": 12.74,
+              "value": 54707379.22
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1497000,
+              "weight": 12.61,
+              "value": 54028247.51
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1494006,
+              "weight": 12.89,
+              "value": 55104244.62
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1496994,
+              "weight": 12.76,
+              "value": 54492406.75
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1494000,
+              "weight": 12.84,
+              "value": 54948646.73
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1491012,
+              "weight": 12.91,
+              "value": 55410565.58
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1491012,
+              "weight": 12.72,
+              "value": 54325663.93
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1491012,
+              "weight": 12.33,
+              "value": 52751272.89
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1488029,
+              "weight": 12.14,
+              "value": 51798289.49
+            }
+          ]
+        },
+        {
+          "ticker": "NTLA",
+          "company": "Intellia Therapeutics Inc",
+          "shares": 1818061,
+          "shares_prev": 1814433,
+          "shares_diff": 3628,
+          "shares_diff_pct": 0.2,
+          "value": 30325257.48,
+          "value_diff": -602756.0300000012,
+          "weight": 7.11,
+          "rank": 6,
+          "rank_prev": 6,
+          "rank_shift": 0,
+          "streak": 1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1803600,
+              "weight": 6.94,
+              "value": 29692356.28
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1803600,
+              "weight": 6.87,
+              "value": 29506455.28
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1807207,
+              "weight": 7.01,
+              "value": 30027925.34
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1810821,
+              "weight": 7.0,
+              "value": 29915260.76
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1810821,
+              "weight": 6.82,
+              "value": 29122671.22
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1814442,
+              "weight": 6.97,
+              "value": 29840128.58
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1818070,
+              "weight": 7.05,
+              "value": 30254930.45
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1818070,
+              "weight": 7.16,
+              "value": 30605796.12
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1814433,
+              "weight": 7.23,
+              "value": 30928013.51
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1818061,
+              "weight": 7.11,
+              "value": 30325257.48
+            }
+          ]
+        },
+        {
+          "ticker": "SDGR",
+          "company": "Schrodinger Inc",
+          "shares": 940532,
+          "shares_prev": 942417,
+          "shares_diff": -1885,
+          "shares_diff_pct": -0.2,
+          "value": 15857369.52,
+          "value_diff": 403282.30999999866,
+          "weight": 3.72,
+          "rank": 7,
+          "rank_prev": 7,
+          "rank_shift": 0,
+          "streak": -2,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 949996,
+              "weight": 3.77,
+              "value": 16101930.91
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 948096,
+              "weight": 3.74,
+              "value": 16047823.52
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 948096,
+              "weight": 3.66,
+              "value": 15666265.92
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 946199,
+              "weight": 3.69,
+              "value": 15781524.53
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 944306,
+              "weight": 3.71,
+              "value": 15834690.5
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 944306,
+              "weight": 3.7,
+              "value": 15822123.35
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 944306,
+              "weight": 3.61,
+              "value": 15511557.39
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 944306,
+              "weight": 3.62,
+              "value": 15482896.34
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 942417,
+              "weight": 3.61,
+              "value": 15454087.21
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 940532,
+              "weight": 3.72,
+              "value": 15857369.52
+            }
+          ]
+        },
+        {
+          "ticker": "RXRX",
+          "company": "Recursion Pharmaceuticals",
+          "shares": 4003669,
+          "shares_prev": 3994872,
+          "shares_diff": 8797,
+          "shares_diff_pct": 0.22,
+          "value": 14092914.88,
+          "value_diff": 134565.40000000037,
+          "weight": 3.3,
+          "rank": 8,
+          "rank_prev": 8,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 3832692,
+              "weight": 3.3,
+              "value": 14115790.67
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 3844182,
+              "weight": 3.2,
+              "value": 13759854.96
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 3865834,
+              "weight": 3.18,
+              "value": 13636244.79
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 3880801,
+              "weight": 3.25,
+              "value": 13878815.56
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 3894384,
+              "weight": 3.21,
+              "value": 13725959.03
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 3922191,
+              "weight": 3.29,
+              "value": 14099545.07
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 3951077,
+              "weight": 3.33,
+              "value": 14298919.51
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 3963777,
+              "weight": 3.28,
+              "value": 14000774.33
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 3994872,
+              "weight": 3.26,
+              "value": 13958349.48
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 4003669,
+              "weight": 3.3,
+              "value": 14092914.88
+            }
+          ]
+        },
+        {
+          "ticker": "EXAI",
+          "company": "Exscientia plc",
+          "shares": 2313420,
+          "shares_prev": 2328283,
+          "shares_diff": -14863,
+          "shares_diff_pct": -0.64,
+          "value": 13182123.82,
+          "value_diff": -119881.16000000015,
+          "weight": 3.09,
+          "rank": 9,
+          "rank_prev": 9,
+          "rank_shift": 0,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 2460049,
+              "weight": 3.22,
+              "value": 13748083.22
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 2436746,
+              "weight": 3.22,
+              "value": 13803198.57
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 2416294,
+              "weight": 3.24,
+              "value": 13861617.18
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 2405453,
+              "weight": 3.23,
+              "value": 13819518.73
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 2396798,
+              "weight": 3.23,
+              "value": 13779870.43
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 2378069,
+              "weight": 3.17,
+              "value": 13564943.21
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 2358400,
+              "weight": 3.14,
+              "value": 13459347.6
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 2345308,
+              "weight": 3.13,
+              "value": 13367923.78
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 2328283,
+              "weight": 3.11,
+              "value": 13302004.98
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 2313420,
+              "weight": 3.09,
+              "value": 13182123.82
+            }
+          ]
+        }
+      ],
+      "recent_trades": [
+        {
+          "ticker": "EXAI",
+          "company": "Exscientia plc",
+          "shares": 2313420,
+          "shares_prev": 2328283,
+          "shares_diff": -14863,
+          "shares_diff_pct": -0.64,
+          "value": 13182123.82,
+          "value_diff": -119881.16000000015,
+          "weight": 3.09,
+          "rank": 9,
+          "rank_prev": 9,
+          "rank_shift": 0,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 2460049,
+              "weight": 3.22,
+              "value": 13748083.22
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 2436746,
+              "weight": 3.22,
+              "value": 13803198.57
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 2416294,
+              "weight": 3.24,
+              "value": 13861617.18
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 2405453,
+              "weight": 3.23,
+              "value": 13819518.73
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 2396798,
+              "weight": 3.23,
+              "value": 13779870.43
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 2378069,
+              "weight": 3.17,
+              "value": 13564943.21
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 2358400,
+              "weight": 3.14,
+              "value": 13459347.6
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 2345308,
+              "weight": 3.13,
+              "value": 13367923.78
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 2328283,
+              "weight": 3.11,
+              "value": 13302004.98
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 2313420,
+              "weight": 3.09,
+              "value": 13182123.82
+            }
+          ]
+        },
+        {
+          "ticker": "CRSP",
+          "company": "CRISPR Therapeutics AG",
+          "shares": 1162162,
+          "shares_prev": 1168681,
+          "shares_diff": -6519,
+          "shares_diff_pct": -0.56,
+          "value": 63825937.04,
+          "value_diff": -389759.4699999988,
+          "weight": 14.96,
+          "rank": 4,
+          "rank_prev": 3,
+          "rank_shift": -1,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1236779,
+              "weight": 15.68,
+              "value": 67046359.53
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1233280,
+              "weight": 16.02,
+              "value": 68764448.08
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1227615,
+              "weight": 15.64,
+              "value": 66993051.3
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1216136,
+              "weight": 15.19,
+              "value": 64925804.6
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1204856,
+              "weight": 15.13,
+              "value": 64594122.48
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1192924,
+              "weight": 14.71,
+              "value": 62952884.91
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1183744,
+              "weight": 14.79,
+              "value": 63482294.5
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1172131,
+              "weight": 14.65,
+              "value": 62611831.73
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1168681,
+              "weight": 15.01,
+              "value": 64215696.51
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1162162,
+              "weight": 14.96,
+              "value": 63825937.04
+            }
+          ]
+        },
+        {
+          "ticker": "TEM",
+          "company": "Tempus AI Inc",
+          "shares": 1162989,
+          "shares_prev": 1159249,
+          "shares_diff": 3740,
+          "shares_diff_pct": 0.32,
+          "value": 65290202.46,
+          "value_diff": 1210646.8299999982,
+          "weight": 15.3,
+          "rank": 3,
+          "rank_prev": 4,
+          "rank_shift": 1,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1109660,
+              "weight": 14.68,
+              "value": 62784047.48
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1115668,
+              "weight": 14.62,
+              "value": 62779619.48
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1121981,
+              "weight": 14.42,
+              "value": 61793574.75
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1125234,
+              "weight": 14.7,
+              "value": 62827425.35
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1133812,
+              "weight": 14.98,
+              "value": 63977429.02
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1140386,
+              "weight": 15.27,
+              "value": 65353905.52
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1147311,
+              "weight": 15.17,
+              "value": 65077833.51
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1155527,
+              "weight": 15.27,
+              "value": 65250968.83
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1159249,
+              "weight": 14.97,
+              "value": 64079555.63
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1162989,
+              "weight": 15.3,
+              "value": 65290202.46
+            }
+          ]
+        },
+        {
+          "ticker": "RXRX",
+          "company": "Recursion Pharmaceuticals",
+          "shares": 4003669,
+          "shares_prev": 3994872,
+          "shares_diff": 8797,
+          "shares_diff_pct": 0.22,
+          "value": 14092914.88,
+          "value_diff": 134565.40000000037,
+          "weight": 3.3,
+          "rank": 8,
+          "rank_prev": 8,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 3832692,
+              "weight": 3.3,
+              "value": 14115790.67
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 3844182,
+              "weight": 3.2,
+              "value": 13759854.96
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 3865834,
+              "weight": 3.18,
+              "value": 13636244.79
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 3880801,
+              "weight": 3.25,
+              "value": 13878815.56
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 3894384,
+              "weight": 3.21,
+              "value": 13725959.03
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 3922191,
+              "weight": 3.29,
+              "value": 14099545.07
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 3951077,
+              "weight": 3.33,
+              "value": 14298919.51
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 3963777,
+              "weight": 3.28,
+              "value": 14000774.33
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 3994872,
+              "weight": 3.26,
+              "value": 13958349.48
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 4003669,
+              "weight": 3.3,
+              "value": 14092914.88
+            }
+          ]
+        },
+        {
+          "ticker": "REGN",
+          "company": "Regeneron Pharmaceuticals",
+          "shares": 79680,
+          "shares_prev": 79840,
+          "shares_diff": -160,
+          "shares_diff_pct": -0.2,
+          "value": 77279049.55,
+          "value_diff": -184469.01000000536,
+          "weight": 18.11,
+          "rank": 2,
+          "rank_prev": 2,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 80000,
+              "weight": 18.06,
+              "value": 77225935.2
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 79840,
+              "weight": 18.13,
+              "value": 77854319.13
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 79840,
+              "weight": 18.43,
+              "value": 78963983.5
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 79840,
+              "weight": 18.31,
+              "value": 78235576.79
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 79840,
+              "weight": 18.1,
+              "value": 77286481.34
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 79840,
+              "weight": 17.96,
+              "value": 76902417.52
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 79840,
+              "weight": 17.84,
+              "value": 76539049.54
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 79840,
+              "weight": 18.04,
+              "value": 77078132.49
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 79840,
+              "weight": 18.1,
+              "value": 77463518.56
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 79680,
+              "weight": 18.11,
+              "value": 77279049.55
+            }
+          ]
+        },
+        {
+          "ticker": "BEAM",
+          "company": "Beam Therapeutics Inc",
+          "shares": 1488029,
+          "shares_prev": 1491012,
+          "shares_diff": -2983,
+          "shares_diff_pct": -0.2,
+          "value": 51798289.49,
+          "value_diff": -952983.3999999985,
+          "weight": 12.14,
+          "rank": 5,
+          "rank_prev": 5,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1497000,
+              "weight": 12.9,
+              "value": 55182238.62
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1497000,
+              "weight": 12.74,
+              "value": 54707379.22
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1497000,
+              "weight": 12.61,
+              "value": 54028247.51
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1494006,
+              "weight": 12.89,
+              "value": 55104244.62
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1496994,
+              "weight": 12.76,
+              "value": 54492406.75
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1494000,
+              "weight": 12.84,
+              "value": 54948646.73
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1491012,
+              "weight": 12.91,
+              "value": 55410565.58
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1491012,
+              "weight": 12.72,
+              "value": 54325663.93
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1491012,
+              "weight": 12.33,
+              "value": 52751272.89
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1488029,
+              "weight": 12.14,
+              "value": 51798289.49
+            }
+          ]
+        },
+        {
+          "ticker": "NTLA",
+          "company": "Intellia Therapeutics Inc",
+          "shares": 1818061,
+          "shares_prev": 1814433,
+          "shares_diff": 3628,
+          "shares_diff_pct": 0.2,
+          "value": 30325257.48,
+          "value_diff": -602756.0300000012,
+          "weight": 7.11,
+          "rank": 6,
+          "rank_prev": 6,
+          "rank_shift": 0,
+          "streak": 1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1803600,
+              "weight": 6.94,
+              "value": 29692356.28
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1803600,
+              "weight": 6.87,
+              "value": 29506455.28
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1807207,
+              "weight": 7.01,
+              "value": 30027925.34
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1810821,
+              "weight": 7.0,
+              "value": 29915260.76
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1810821,
+              "weight": 6.82,
+              "value": 29122671.22
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1814442,
+              "weight": 6.97,
+              "value": 29840128.58
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1818070,
+              "weight": 7.05,
+              "value": 30254930.45
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1818070,
+              "weight": 7.16,
+              "value": 30605796.12
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1814433,
+              "weight": 7.23,
+              "value": 30928013.51
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1818061,
+              "weight": 7.11,
+              "value": 30325257.48
+            }
+          ]
+        },
+        {
+          "ticker": "SDGR",
+          "company": "Schrodinger Inc",
+          "shares": 940532,
+          "shares_prev": 942417,
+          "shares_diff": -1885,
+          "shares_diff_pct": -0.2,
+          "value": 15857369.52,
+          "value_diff": 403282.30999999866,
+          "weight": 3.72,
+          "rank": 7,
+          "rank_prev": 7,
+          "rank_shift": 0,
+          "streak": -2,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 949996,
+              "weight": 3.77,
+              "value": 16101930.91
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 948096,
+              "weight": 3.74,
+              "value": 16047823.52
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 948096,
+              "weight": 3.66,
+              "value": 15666265.92
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 946199,
+              "weight": 3.69,
+              "value": 15781524.53
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 944306,
+              "weight": 3.71,
+              "value": 15834690.5
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 944306,
+              "weight": 3.7,
+              "value": 15822123.35
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 944306,
+              "weight": 3.61,
+              "value": 15511557.39
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 944306,
+              "weight": 3.62,
+              "value": 15482896.34
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 942417,
+              "weight": 3.61,
+              "value": 15454087.21
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 940532,
+              "weight": 3.72,
+              "value": 15857369.52
+            }
+          ]
+        }
+      ],
+      "streaks": {
+        "buying": [
+          {
+            "ticker": "TEM",
+            "company": "Tempus AI Inc",
+            "streak": 10,
+            "weight": 15.3
+          },
+          {
+            "ticker": "RXRX",
+            "company": "Recursion Pharmaceuticals",
+            "streak": 10,
+            "weight": 3.3
+          },
+          {
+            "ticker": "NTLA",
+            "company": "Intellia Therapeutics Inc",
+            "streak": 1,
+            "weight": 7.11
+          }
+        ],
+        "selling": [
+          {
+            "ticker": "CRSP",
+            "company": "CRISPR Therapeutics AG",
+            "streak": -10,
+            "weight": 14.96
+          },
+          {
+            "ticker": "EXAI",
+            "company": "Exscientia plc",
+            "streak": -10,
+            "weight": 3.09
+          },
+          {
+            "ticker": "SDGR",
+            "company": "Schrodinger Inc",
+            "streak": -2,
+            "weight": 3.72
+          },
+          {
+            "ticker": "REGN",
+            "company": "Regeneron Pharmaceuticals",
+            "streak": -1,
+            "weight": 18.11
+          },
+          {
+            "ticker": "BEAM",
+            "company": "Beam Therapeutics Inc",
+            "streak": -1,
+            "weight": 12.14
+          }
+        ]
+      },
+      "weekly_digest": {
+        "base_date": "2026-06-22",
+        "today_date": "2026-06-29",
+        "accumulations": [
+          {
+            "ticker": "RXRX",
+            "company": "Recursion Pharmaceuticals",
+            "pct_change": 2.81,
+            "shares_change": 109285
+          },
+          {
+            "ticker": "TEM",
+            "company": "Tempus AI Inc",
+            "pct_change": 2.57,
+            "shares_change": 29177
+          }
+        ],
+        "distributions": [
+          {
+            "ticker": "CRSP",
+            "company": "CRISPR Therapeutics AG",
+            "pct_change": -3.54,
+            "shares_change": -42694
+          },
+          {
+            "ticker": "EXAI",
+            "company": "Exscientia plc",
+            "pct_change": -3.48,
+            "shares_change": -83378
+          },
+          {
+            "ticker": "BEAM",
+            "company": "Beam Therapeutics Inc",
+            "pct_change": -0.6,
+            "shares_change": -8965
+          }
+        ],
+        "new_additions": [],
+        "exits": [],
+        "narrative": "顯著加倉 **RXRX** (+2.81% 股數), **TEM** (+2.57% 股數)。顯著減持 **CRSP** (-3.54% 股數), **EXAI** (-3.48% 股數), **BEAM** (-0.6% 股數)。"
+      },
+      "historical_aum": [
+        {
+          "date": "2026-06-15",
+          "aum": 426472038.44000006
+        },
+        {
+          "date": "2026-06-16",
+          "aum": 427615930.82
+        },
+        {
+          "date": "2026-06-17",
+          "aum": 429333909.28000003
+        },
+        {
+          "date": "2026-06-18",
+          "aum": 428464262.05
+        },
+        {
+          "date": "2026-06-19",
+          "aum": 427375518.71
+        },
+        {
+          "date": "2026-06-22",
+          "aum": 426980953.61
+        },
+        {
+          "date": "2026-06-23",
+          "aum": 428105073.76
+        },
+        {
+          "date": "2026-06-24",
+          "aum": 429123136.56999993
+        },
+        {
+          "date": "2026-06-25",
+          "aum": 427242684.44000006
+        },
+        {
+          "date": "2026-06-26",
+          "aum": 427936278.23999995
+        },
+        {
+          "date": "2026-06-29",
+          "aum": 426785894.43
+        }
+      ]
+    },
+    "VHT": {
+      "name": "Vanguard Health Care ETF",
+      "date": "2026-06-29",
+      "aum": 2553395192.88,
+      "holdings_count": 7,
+      "trades_count": {
+        "buys": 4,
+        "sells": 2,
+        "unchanged": 1
+      },
+      "holdings": [
+        {
+          "ticker": "LLY",
+          "company": "Eli Lilly & Co",
+          "shares": 898867,
+          "shares_prev": 896840,
+          "shares_diff": 2027,
+          "shares_diff_pct": 0.23,
+          "value": 1085939200.04,
+          "value_diff": -59241.73000001907,
+          "weight": 42.53,
+          "rank": 1,
+          "rank_prev": 1,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 856244,
+              "weight": 37.85,
+              "value": 926076185.56
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 862998,
+              "weight": 38.46,
+              "value": 953352158.2
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 865267,
+              "weight": 38.79,
+              "value": 961602379.6
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 872128,
+              "weight": 39.75,
+              "value": 989679179.91
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 879032,
+              "weight": 40.89,
+              "value": 1024111984.6
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 884466,
+              "weight": 40.43,
+              "value": 1012820691.88
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 888564,
+              "weight": 40.96,
+              "value": 1041502077.26
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 890519,
+              "weight": 41.47,
+              "value": 1073859627.88
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 896840,
+              "weight": 42.18,
+              "value": 1085998441.77
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 898867,
+              "weight": 42.53,
+              "value": 1085939200.04
+            }
+          ]
+        },
+        {
+          "ticker": "PLTR",
+          "company": "Palantir Technologies Inc",
+          "shares": 3991966,
+          "shares_prev": 3991966,
+          "shares_diff": 0,
+          "shares_diff_pct": 0.0,
+          "value": 709571956.5,
+          "value_diff": -16896772.350000024,
+          "weight": 27.79,
+          "rank": 2,
+          "rank_prev": 2,
+          "rank_shift": 0,
+          "streak": 0,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 3992000,
+              "weight": 30.79,
+              "value": 753209250.54
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 3992000,
+              "weight": 30.55,
+              "value": 757360493.09
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 3984016,
+              "weight": 30.46,
+              "value": 755091857.12
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 3976047,
+              "weight": 29.54,
+              "value": 735586423.2
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 3976047,
+              "weight": 28.72,
+              "value": 719278122.73
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 3983999,
+              "weight": 29.12,
+              "value": 729556412.35
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 3983999,
+              "weight": 28.78,
+              "value": 731947381.42
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 3983999,
+              "weight": 28.81,
+              "value": 745957511.73
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 3991966,
+              "weight": 28.22,
+              "value": 726468728.85
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 3991966,
+              "weight": 27.79,
+              "value": 709571956.5
+            }
+          ]
+        },
+        {
+          "ticker": "REGN",
+          "company": "Regeneron Pharmaceuticals",
+          "shares": 321918,
+          "shares_prev": 321276,
+          "shares_diff": 642,
+          "shares_diff_pct": 0.2,
+          "value": 309834213.8,
+          "value_diff": -500351.5899999738,
+          "weight": 12.13,
+          "rank": 3,
+          "rank_prev": 3,
+          "rank_shift": 0,
+          "streak": 1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 319998,
+              "weight": 12.77,
+              "value": 312344706.94
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 319998,
+              "weight": 12.48,
+              "value": 309271370.99
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 319998,
+              "weight": 12.41,
+              "value": 307721741.03
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 320637,
+              "weight": 12.57,
+              "value": 312903755.92
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 321278,
+              "weight": 12.39,
+              "value": 310385660.45
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 321920,
+              "weight": 12.56,
+              "value": 314717621.38
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 321920,
+              "weight": 12.47,
+              "value": 317151165.58
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 321920,
+              "weight": 12.16,
+              "value": 314814903.12
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 321276,
+              "weight": 12.05,
+              "value": 310334565.39
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 321918,
+              "weight": 12.13,
+              "value": 309834213.8
+            }
+          ]
+        },
+        {
+          "ticker": "VRTX",
+          "company": "Vertex Pharmaceuticals Inc",
+          "shares": 648694,
+          "shares_prev": 649994,
+          "shares_diff": -1300,
+          "shares_diff_pct": -0.2,
+          "value": 300356384.5,
+          "value_diff": -4658322.920000017,
+          "weight": 11.76,
+          "rank": 4,
+          "rank_prev": 4,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 651300,
+              "weight": 12.45,
+              "value": 304621212.41
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 651300,
+              "weight": 12.38,
+              "value": 306755402.91
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 649997,
+              "weight": 12.36,
+              "value": 306394302.67
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 648697,
+              "weight": 12.26,
+              "value": 305307721.18
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 648697,
+              "weight": 12.12,
+              "value": 303450471.92
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 649994,
+              "weight": 12.04,
+              "value": 301686883.48
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 649994,
+              "weight": 12.01,
+              "value": 305539998.65
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 649994,
+              "weight": 11.94,
+              "value": 309136734.17
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 649994,
+              "weight": 11.85,
+              "value": 305014707.42
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 648694,
+              "weight": 11.76,
+              "value": 300356384.5
+            }
+          ]
+        },
+        {
+          "ticker": "CRSP",
+          "company": "CRISPR Therapeutics AG",
+          "shares": 1674044,
+          "shares_prev": 1678519,
+          "shares_diff": -4475,
+          "shares_diff_pct": -0.27,
+          "value": 91938496.48,
+          "value_diff": -291347.8299999982,
+          "weight": 3.6,
+          "rank": 5,
+          "rank_prev": 5,
+          "rank_shift": 0,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1780679,
+              "weight": 3.95,
+              "value": 96531429.18
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1765568,
+              "weight": 3.97,
+              "value": 98443426.53
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1749732,
+              "weight": 3.85,
+              "value": 95485869.47
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1733864,
+              "weight": 3.72,
+              "value": 92565728.89
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1727577,
+              "weight": 3.7,
+              "value": 92617972.88
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1718569,
+              "weight": 3.62,
+              "value": 90692178.6
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1705668,
+              "weight": 3.6,
+              "value": 91472242.56
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1694862,
+              "weight": 3.5,
+              "value": 90534602.65
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1678519,
+              "weight": 3.58,
+              "value": 92229844.31
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1674044,
+              "weight": 3.6,
+              "value": 91938496.48
+            }
+          ]
+        },
+        {
+          "ticker": "TEM",
+          "company": "Tempus AI Inc",
+          "shares": 847322,
+          "shares_prev": 840667,
+          "shares_diff": 6655,
+          "shares_diff_pct": 0.79,
+          "value": 47568657.08,
+          "value_diff": 1099289.5899999961,
+          "weight": 1.86,
+          "rank": 6,
+          "rank_prev": 6,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 807051,
+              "weight": 1.87,
+              "value": 45662570.79
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 810837,
+              "weight": 1.84,
+              "value": 45626511.04
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 815265,
+              "weight": 1.81,
+              "value": 44901062.24
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 820583,
+              "weight": 1.84,
+              "value": 45817240.84
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 825452,
+              "weight": 1.86,
+              "value": 46577648.45
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 828307,
+              "weight": 1.89,
+              "value": 47469100.3
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 831599,
+              "weight": 1.85,
+              "value": 47170001.22
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 837128,
+              "weight": 1.83,
+              "value": 47271429.43
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 840667,
+              "weight": 1.8,
+              "value": 46469367.49
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 847322,
+              "weight": 1.86,
+              "value": 47568657.08
+            }
+          ]
+        },
+        {
+          "ticker": "RXRX",
+          "company": "Recursion Pharmaceuticals",
+          "shares": 2325649,
+          "shares_prev": 2309457,
+          "shares_diff": 16192,
+          "shares_diff_pct": 0.7,
+          "value": 8186284.48,
+          "value_diff": 116887.53000000026,
+          "weight": 0.32,
+          "rank": 7,
+          "rank_prev": 7,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 2221811,
+              "weight": 0.33,
+              "value": 8182921.82
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 2226758,
+              "weight": 0.32,
+              "value": 7970451.74
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 2237638,
+              "weight": 0.32,
+              "value": 7892987.52
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 2251511,
+              "weight": 0.32,
+              "value": 8052024.8
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 2261134,
+              "weight": 0.32,
+              "value": 7969484.43
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 2271191,
+              "weight": 0.33,
+              "value": 8164508.02
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 2276257,
+              "weight": 0.32,
+              "value": 8237757.86
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 2293115,
+              "weight": 0.31,
+              "value": 8099695.22
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 2309457,
+              "weight": 0.31,
+              "value": 8069396.95
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 2325649,
+              "weight": 0.32,
+              "value": 8186284.48
+            }
+          ]
+        }
+      ],
+      "recent_trades": [
+        {
+          "ticker": "TEM",
+          "company": "Tempus AI Inc",
+          "shares": 847322,
+          "shares_prev": 840667,
+          "shares_diff": 6655,
+          "shares_diff_pct": 0.79,
+          "value": 47568657.08,
+          "value_diff": 1099289.5899999961,
+          "weight": 1.86,
+          "rank": 6,
+          "rank_prev": 6,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 807051,
+              "weight": 1.87,
+              "value": 45662570.79
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 810837,
+              "weight": 1.84,
+              "value": 45626511.04
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 815265,
+              "weight": 1.81,
+              "value": 44901062.24
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 820583,
+              "weight": 1.84,
+              "value": 45817240.84
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 825452,
+              "weight": 1.86,
+              "value": 46577648.45
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 828307,
+              "weight": 1.89,
+              "value": 47469100.3
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 831599,
+              "weight": 1.85,
+              "value": 47170001.22
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 837128,
+              "weight": 1.83,
+              "value": 47271429.43
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 840667,
+              "weight": 1.8,
+              "value": 46469367.49
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 847322,
+              "weight": 1.86,
+              "value": 47568657.08
+            }
+          ]
+        },
+        {
+          "ticker": "RXRX",
+          "company": "Recursion Pharmaceuticals",
+          "shares": 2325649,
+          "shares_prev": 2309457,
+          "shares_diff": 16192,
+          "shares_diff_pct": 0.7,
+          "value": 8186284.48,
+          "value_diff": 116887.53000000026,
+          "weight": 0.32,
+          "rank": 7,
+          "rank_prev": 7,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 2221811,
+              "weight": 0.33,
+              "value": 8182921.82
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 2226758,
+              "weight": 0.32,
+              "value": 7970451.74
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 2237638,
+              "weight": 0.32,
+              "value": 7892987.52
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 2251511,
+              "weight": 0.32,
+              "value": 8052024.8
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 2261134,
+              "weight": 0.32,
+              "value": 7969484.43
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 2271191,
+              "weight": 0.33,
+              "value": 8164508.02
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 2276257,
+              "weight": 0.32,
+              "value": 8237757.86
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 2293115,
+              "weight": 0.31,
+              "value": 8099695.22
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 2309457,
+              "weight": 0.31,
+              "value": 8069396.95
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 2325649,
+              "weight": 0.32,
+              "value": 8186284.48
+            }
+          ]
+        },
+        {
+          "ticker": "CRSP",
+          "company": "CRISPR Therapeutics AG",
+          "shares": 1674044,
+          "shares_prev": 1678519,
+          "shares_diff": -4475,
+          "shares_diff_pct": -0.27,
+          "value": 91938496.48,
+          "value_diff": -291347.8299999982,
+          "weight": 3.6,
+          "rank": 5,
+          "rank_prev": 5,
+          "rank_shift": 0,
+          "streak": -10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 1780679,
+              "weight": 3.95,
+              "value": 96531429.18
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 1765568,
+              "weight": 3.97,
+              "value": 98443426.53
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 1749732,
+              "weight": 3.85,
+              "value": 95485869.47
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 1733864,
+              "weight": 3.72,
+              "value": 92565728.89
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 1727577,
+              "weight": 3.7,
+              "value": 92617972.88
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 1718569,
+              "weight": 3.62,
+              "value": 90692178.6
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 1705668,
+              "weight": 3.6,
+              "value": 91472242.56
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 1694862,
+              "weight": 3.5,
+              "value": 90534602.65
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 1678519,
+              "weight": 3.58,
+              "value": 92229844.31
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 1674044,
+              "weight": 3.6,
+              "value": 91938496.48
+            }
+          ]
+        },
+        {
+          "ticker": "LLY",
+          "company": "Eli Lilly & Co",
+          "shares": 898867,
+          "shares_prev": 896840,
+          "shares_diff": 2027,
+          "shares_diff_pct": 0.23,
+          "value": 1085939200.04,
+          "value_diff": -59241.73000001907,
+          "weight": 42.53,
+          "rank": 1,
+          "rank_prev": 1,
+          "rank_shift": 0,
+          "streak": 10,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 856244,
+              "weight": 37.85,
+              "value": 926076185.56
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 862998,
+              "weight": 38.46,
+              "value": 953352158.2
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 865267,
+              "weight": 38.79,
+              "value": 961602379.6
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 872128,
+              "weight": 39.75,
+              "value": 989679179.91
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 879032,
+              "weight": 40.89,
+              "value": 1024111984.6
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 884466,
+              "weight": 40.43,
+              "value": 1012820691.88
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 888564,
+              "weight": 40.96,
+              "value": 1041502077.26
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 890519,
+              "weight": 41.47,
+              "value": 1073859627.88
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 896840,
+              "weight": 42.18,
+              "value": 1085998441.77
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 898867,
+              "weight": 42.53,
+              "value": 1085939200.04
+            }
+          ]
+        },
+        {
+          "ticker": "REGN",
+          "company": "Regeneron Pharmaceuticals",
+          "shares": 321918,
+          "shares_prev": 321276,
+          "shares_diff": 642,
+          "shares_diff_pct": 0.2,
+          "value": 309834213.8,
+          "value_diff": -500351.5899999738,
+          "weight": 12.13,
+          "rank": 3,
+          "rank_prev": 3,
+          "rank_shift": 0,
+          "streak": 1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 319998,
+              "weight": 12.77,
+              "value": 312344706.94
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 319998,
+              "weight": 12.48,
+              "value": 309271370.99
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 319998,
+              "weight": 12.41,
+              "value": 307721741.03
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 320637,
+              "weight": 12.57,
+              "value": 312903755.92
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 321278,
+              "weight": 12.39,
+              "value": 310385660.45
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 321920,
+              "weight": 12.56,
+              "value": 314717621.38
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 321920,
+              "weight": 12.47,
+              "value": 317151165.58
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 321920,
+              "weight": 12.16,
+              "value": 314814903.12
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 321276,
+              "weight": 12.05,
+              "value": 310334565.39
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 321918,
+              "weight": 12.13,
+              "value": 309834213.8
+            }
+          ]
+        },
+        {
+          "ticker": "VRTX",
+          "company": "Vertex Pharmaceuticals Inc",
+          "shares": 648694,
+          "shares_prev": 649994,
+          "shares_diff": -1300,
+          "shares_diff_pct": -0.2,
+          "value": 300356384.5,
+          "value_diff": -4658322.920000017,
+          "weight": 11.76,
+          "rank": 4,
+          "rank_prev": 4,
+          "rank_shift": 0,
+          "streak": -1,
+          "trend": [
+            {
+              "date": "2026-06-16",
+              "shares": 651300,
+              "weight": 12.45,
+              "value": 304621212.41
+            },
+            {
+              "date": "2026-06-17",
+              "shares": 651300,
+              "weight": 12.38,
+              "value": 306755402.91
+            },
+            {
+              "date": "2026-06-18",
+              "shares": 649997,
+              "weight": 12.36,
+              "value": 306394302.67
+            },
+            {
+              "date": "2026-06-19",
+              "shares": 648697,
+              "weight": 12.26,
+              "value": 305307721.18
+            },
+            {
+              "date": "2026-06-22",
+              "shares": 648697,
+              "weight": 12.12,
+              "value": 303450471.92
+            },
+            {
+              "date": "2026-06-23",
+              "shares": 649994,
+              "weight": 12.04,
+              "value": 301686883.48
+            },
+            {
+              "date": "2026-06-24",
+              "shares": 649994,
+              "weight": 12.01,
+              "value": 305539998.65
+            },
+            {
+              "date": "2026-06-25",
+              "shares": 649994,
+              "weight": 11.94,
+              "value": 309136734.17
+            },
+            {
+              "date": "2026-06-26",
+              "shares": 649994,
+              "weight": 11.85,
+              "value": 305014707.42
+            },
+            {
+              "date": "2026-06-29",
+              "shares": 648694,
+              "weight": 11.76,
+              "value": 300356384.5
+            }
+          ]
+        }
+      ],
+      "streaks": {
+        "buying": [
+          {
+            "ticker": "LLY",
+            "company": "Eli Lilly & Co",
+            "streak": 10,
+            "weight": 42.53
+          },
+          {
+            "ticker": "TEM",
+            "company": "Tempus AI Inc",
+            "streak": 10,
+            "weight": 1.86
+          },
+          {
+            "ticker": "RXRX",
+            "company": "Recursion Pharmaceuticals",
+            "streak": 10,
+            "weight": 0.32
+          },
+          {
+            "ticker": "REGN",
+            "company": "Regeneron Pharmaceuticals",
+            "streak": 1,
+            "weight": 12.13
+          }
+        ],
+        "selling": [
+          {
+            "ticker": "CRSP",
+            "company": "CRISPR Therapeutics AG",
+            "streak": -10,
+            "weight": 3.6
+          },
+          {
+            "ticker": "VRTX",
+            "company": "Vertex Pharmaceuticals Inc",
+            "streak": -1,
+            "weight": 11.76
+          }
+        ]
+      },
+      "weekly_digest": {
+        "base_date": "2026-06-22",
+        "today_date": "2026-06-29",
+        "accumulations": [
+          {
+            "ticker": "RXRX",
+            "company": "Recursion Pharmaceuticals",
+            "pct_change": 2.85,
+            "shares_change": 64515
+          },
+          {
+            "ticker": "TEM",
+            "company": "Tempus AI Inc",
+            "pct_change": 2.65,
+            "shares_change": 21870
+          },
+          {
+            "ticker": "LLY",
+            "company": "Eli Lilly & Co",
+            "pct_change": 2.26,
+            "shares_change": 19835
+          }
+        ],
+        "distributions": [
+          {
+            "ticker": "CRSP",
+            "company": "CRISPR Therapeutics AG",
+            "pct_change": -3.1,
+            "shares_change": -53533
+          }
+        ],
+        "new_additions": [],
+        "exits": [],
+        "narrative": "顯著加倉 **RXRX** (+2.85% 股數), **TEM** (+2.65% 股數), **LLY** (+2.26% 股數)。顯著減持 **CRSP** (-3.1% 股數)。"
+      },
+      "historical_aum": [
+        {
+          "date": "2026-06-15",
+          "aum": 2425984798.17
+        },
+        {
+          "date": "2026-06-16",
+          "aum": 2446628277.24
+        },
+        {
+          "date": "2026-06-17",
+          "aum": 2478779814.5
+        },
+        {
+          "date": "2026-06-18",
+          "aum": 2479090199.65
+        },
+        {
+          "date": "2026-06-19",
+          "aum": 2489912074.74
+        },
+        {
+          "date": "2026-06-22",
+          "aum": 2504391345.46
+        },
+        {
+          "date": "2026-06-23",
+          "aum": 2505107396.01
+        },
+        {
+          "date": "2026-06-24",
+          "aum": 2543020624.5499997
+        },
+        {
+          "date": "2026-06-25",
+          "aum": 2589674504.2000003
+        },
+        {
+          "date": "2026-06-26",
+          "aum": 2574585052.18
+        },
+        {
+          "date": "2026-06-29",
+          "aum": 2553395192.88
+        }
+      ]
     }
-  }
+  },
+  "consensus_data": [
+    {
+      "ticker": "TEM",
+      "company": "Tempus AI Inc",
+      "sector": "AI 臨床數據與癌症基因診斷",
+      "funds": {
+        "ARK": {
+          "owned": true,
+          "weight": 7.51
+        },
+        "NVIDIA": {
+          "owned": true,
+          "weight": 55.31
+        },
+        "BlackRock": {
+          "owned": true,
+          "weight": 15.3
+        },
+        "Vanguard": {
+          "owned": true,
+          "weight": 1.86
+        }
+      },
+      "consensus_score": 4,
+      "total_value": 1026883069.6600001,
+      "collective_action": "持續加碼 (Accumulating)",
+      "description": "提供 AI 驅動的精密醫療與基因組學臨床數據分析。NVIDIA 與木頭姐共同重倉，BlackRock/Vanguard 在其上市後快速納入主題指數配置。"
+    },
+    {
+      "ticker": "RXRX",
+      "company": "Recursion Pharmaceuticals",
+      "sector": "AI 藥物研發與化學模擬",
+      "funds": {
+        "ARK": {
+          "owned": true,
+          "weight": 2.76
+        },
+        "NVIDIA": {
+          "owned": true,
+          "weight": 3.44
+        },
+        "BlackRock": {
+          "owned": true,
+          "weight": 3.3
+        },
+        "Vanguard": {
+          "owned": true,
+          "weight": 0.32
+        }
+      },
+      "consensus_score": 4,
+      "total_value": 166092681.92,
+      "collective_action": "高檔盤整 (Holding)",
+      "description": "AI 製藥龍頭，使用超級計算機模擬細胞與分子交互作用。NVIDIA 戰略投資 5000 萬美元並提供算力支持，為機構共識極高的 AI 醫療標的。"
+    },
+    {
+      "ticker": "CRSP",
+      "company": "CRISPR Therapeutics AG",
+      "sector": "基因編輯與新型免疫療法",
+      "funds": {
+        "ARK": {
+          "owned": true,
+          "weight": 6.7
+        },
+        "NVIDIA": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "BlackRock": {
+          "owned": true,
+          "weight": 14.96
+        },
+        "Vanguard": {
+          "owned": true,
+          "weight": 3.6
+        }
+      },
+      "consensus_score": 3,
+      "total_value": 587484457.4,
+      "collective_action": "小幅調節 (Distributing)",
+      "description": "利用 CRISPR/Cas9 基因編輯技術開發重症療法。為 ARK (ARKG) 前三大重倉股，BlackRock (IDNA) 亦將其列為第一權重股。"
+    },
+    {
+      "ticker": "SDGR",
+      "company": "Schrodinger Inc",
+      "sector": "物理化學計算與分子模擬軟體",
+      "funds": {
+        "ARK": {
+          "owned": true,
+          "weight": 2.06
+        },
+        "NVIDIA": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "BlackRock": {
+          "owned": true,
+          "weight": 3.72
+        },
+        "Vanguard": {
+          "owned": false,
+          "weight": 0.0
+        }
+      },
+      "consensus_score": 2,
+      "total_value": 49911197.519999996,
+      "collective_action": "持續加碼 (Accumulating)",
+      "description": "為製藥和材料科學提供物理物理基礎的軟件平台。擁有比爾蓋茨基金會、ARK 和 BlackRock 共同背書。"
+    },
+    {
+      "ticker": "NNOX",
+      "company": "Nano-X Imaging Ltd",
+      "sector": "AI 醫療影像與雲端診斷",
+      "funds": {
+        "ARK": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "NVIDIA": {
+          "owned": true,
+          "weight": 0.07
+        },
+        "BlackRock": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "Vanguard": {
+          "owned": false,
+          "weight": 0.0
+        }
+      },
+      "consensus_score": 1,
+      "total_value": 535184.44,
+      "collective_action": "持平 (Stable)",
+      "description": "利用冷陰極技術開發新型低成本數位 X 光機，並利用 AI 進行雲端輔助自動篩查。NVIDIA 在其 13F 中披露持有該公司股權。"
+    },
+    {
+      "ticker": "PLTR",
+      "company": "Palantir Technologies Inc",
+      "sector": "AI 數據決策平台 (AIP)",
+      "funds": {
+        "ARK": {
+          "owned": true,
+          "weight": 2.56
+        },
+        "NVIDIA": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "BlackRock": {
+          "owned": false,
+          "weight": 0.0
+        },
+        "Vanguard": {
+          "owned": true,
+          "weight": 27.79
+        }
+      },
+      "consensus_score": 2,
+      "total_value": 871154684.96,
+      "collective_action": "強力買入 (Buying Streak)",
+      "description": "雖然不屬於純醫療股，但其 AI 平台（AIP）目前已被克利夫蘭診所等數十家全美顶级醫院採購，用於優化醫療資源配置與病患流動分析。ARK 在 ARKK 中持續加碼。"
+    }
+  ]
 }

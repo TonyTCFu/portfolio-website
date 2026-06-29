@@ -59,10 +59,16 @@ async function loadData() {
     }
 }
 
-// Initialize ETF selectors in Sidebar
+// Initialize ETF selectors in Sidebar (Split into ARK ETFs and Other Institutional portfolios)
 function initSelectors() {
-    const list = document.getElementById('etf-selector-list');
-    list.innerHTML = '';
+    const arkList = document.getElementById('etf-selector-list');
+    const otherList = document.getElementById('other-selector-list');
+    
+    arkList.innerHTML = '';
+    otherList.innerHTML = '';
+    
+    const arkFunds = ["ARKK", "ARKG", "ARKW", "ARKF", "ARKQ", "ARKX"];
+    const otherFunds = ["NVIDIA", "IDNA", "VHT"];
     
     appData.available_funds.forEach(fundId => {
         const fund = appData.funds_data[fundId];
@@ -73,8 +79,28 @@ function initSelectors() {
             <span>${fundId}</span>
             <span class="etf-badge">${fund.holdings_count}</span>
         `;
-        item.addEventListener('click', () => switchEtf(fundId));
-        list.appendChild(item);
+        item.addEventListener('click', () => {
+            // If in consensus tab, switch back to overview when clicking a specific fund
+            if (activeTab === 'consensus-comparison') {
+                // Update active tab UI
+                document.querySelectorAll('.nav-tab').forEach(t => {
+                    if (t.dataset.tab === 'overview') t.classList.add('active');
+                    else t.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-pane').forEach(p => {
+                    if (p.id === 'overview-pane') p.classList.add('active');
+                    else p.classList.remove('active');
+                });
+                activeTab = 'overview';
+            }
+            switchEtf(fundId);
+        });
+        
+        if (arkFunds.includes(fundId)) {
+            arkList.appendChild(item);
+        } else if (otherFunds.includes(fundId)) {
+            otherList.appendChild(item);
+        }
     });
 }
 
@@ -116,7 +142,36 @@ function updateStatsRow(fund) {
 
 // Update Active Panel View
 function updateView() {
+    if (activeTab === 'consensus-comparison') {
+        // Hide stats row and header search bar for consensus
+        document.querySelector('.stats-grid').style.display = 'none';
+        document.querySelector('.header-actions').style.display = 'none';
+        document.getElementById('active-etf-title').textContent = '全球頂級機構 AI 醫療共識榜';
+        document.getElementById('active-etf-subtitle').textContent = '對比分析 ARK Invest / NVIDIA Ventures / BlackRock IDNA / Vanguard VHT';
+        
+        // Remove active state from sidebar fund selectors
+        document.querySelectorAll('.etf-item').forEach(item => item.classList.remove('active'));
+        
+        renderConsensusTab();
+        return;
+    }
+    
+    // Restore layout for normal tabs
+    document.querySelector('.stats-grid').style.display = 'grid';
+    document.querySelector('.header-actions').style.display = 'block';
+    
+    // Restore highlighted sidebar active fund
+    document.querySelectorAll('.etf-item').forEach(item => {
+        if (item.dataset.etf === activeEtf) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+    
     const fund = appData.funds_data[activeEtf];
+    document.getElementById('active-etf-title').textContent = `${activeEtf} - ${fund.name}`;
+    document.getElementById('active-etf-subtitle').textContent = `持股數據基準日：${fund.date}`;
     
     if (activeTab === 'overview') {
         renderOverviewTab(fund);
@@ -670,3 +725,85 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// 5. CONSENSUS COMPARISON TAB
+function renderConsensusTab() {
+    const tbody = document.getElementById('consensus-table-body');
+    tbody.innerHTML = '';
+    
+    const consensus = appData.consensus_data;
+    
+    // Sort consensus by score descending, then total value descending
+    const sorted = [...consensus].sort((a, b) => {
+        if (b.consensus_score !== a.consensus_score) {
+            return b.consensus_score - a.consensus_score;
+        }
+        return b.total_value - a.total_value;
+    });
+    
+    sorted.forEach(c => {
+        const row = document.createElement('tr');
+        
+        const arkInfo = c.funds.ARK;
+        const nvInfo = c.funds.NVIDIA;
+        const brInfo = c.funds.BlackRock;
+        const vgInfo = c.funds.Vanguard;
+        
+        const arkText = arkInfo.owned ? `${arkInfo.weight.toFixed(1)}%` : '--';
+        const nvText = nvInfo.owned ? `${nvInfo.weight.toFixed(1)}%` : '--';
+        const brText = brInfo.owned ? `${brInfo.weight.toFixed(1)}%` : '--';
+        const vgText = vgInfo.owned ? `${vgInfo.weight.toFixed(1)}%` : '--';
+        
+        let stars = '';
+        for (let i = 0; i < 4; i++) {
+            if (i < c.consensus_score) {
+                stars += '<i class="fa-solid fa-star" style="color: #fbbf24; margin: 0 1px; font-size: 11px;"></i>';
+            } else {
+                stars += '<i class="fa-regular fa-star" style="color: var(--text-dark); margin: 0 1px; font-size: 11px;"></i>';
+            }
+        }
+        
+        row.innerHTML = `
+            <td class="ticker-cell">${c.ticker}</td>
+            <td>
+                <div style="font-weight:600; color:#fff;">${c.company}</div>
+                <div style="font-size:11px; color:var(--text-dark); margin-top:2px; line-height:1.4;">${c.description}</div>
+            </td>
+            <td style="font-weight:500;">${c.sector}</td>
+            <td class="text-center" style="white-space: nowrap;">
+                <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">${c.consensus_score} / 4</div>
+                <div>${stars}</div>
+            </td>
+            <td class="text-center ${arkInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${arkText}</td>
+            <td class="text-center ${nvInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${nvText}</td>
+            <td class="text-center ${brInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${brText}</td>
+            <td class="text-center ${vgInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${vgText}</td>
+            <td class="text-center">
+                <span class="badge ${c.collective_action.includes('加碼') || c.collective_action.includes('買入') ? 'buy' : (c.collective_action.includes('減持') || c.collective_action.includes('調節') ? 'sell' : 'rank-new')}">
+                    ${c.collective_action}
+                </span>
+            </td>
+        `;
+        
+        row.addEventListener('click', () => {
+            let holdingObj = null;
+            // Seek this stock's details in ARKG first (main medical ETF), then other funds
+            const order_to_seek = ["ARKG", "ARKK", "IDNA", "VHT", "NVIDIA"];
+            for (let fId of order_to_seek) {
+                const fData = appData.funds_data[fId];
+                if (fData) {
+                    const found = fData.holdings.find(x => x.ticker === c.ticker);
+                    if (found) {
+                        holdingObj = found;
+                        break;
+                    }
+                }
+            }
+            if (holdingObj) {
+                openDetailPanel(holdingObj);
+            }
+        });
+        
+        tbody.appendChild(row);
+    });
+}

@@ -27,9 +27,14 @@
             </div>
             
             <nav class="sidebar-nav">
-                <div class="nav-section-title">觀測基金</div>
+                <div class="nav-section-title">ARK 主動型 ETF</div>
                 <ul class="etf-list" id="etf-selector-list">
                     <!-- Dynamic ETF selection -->
+                </ul>
+                
+                <div class="nav-section-title">其他頂級機構佈局</div>
+                <ul class="etf-list" id="other-selector-list">
+                    <!-- Dynamic Other Selector -->
                 </ul>
                 
                 <div class="nav-section-title">觀測維度</div>
@@ -49,6 +54,10 @@
                     <li class="nav-tab" data-tab="weekly-summary">
                         <i class="fa-solid fa-chart-pie"></i>
                         <span>每週決策總結</span>
+                    </li>
+                    <li class="nav-tab" data-tab="consensus-comparison">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <span>全球機構共識榜</span>
                     </li>
                 </ul>
             </nav>
@@ -303,6 +312,43 @@
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. CONSENSUS COMPARISON TAB -->
+                <div class="tab-pane" id="consensus-comparison-pane">
+                    <div class="streaks-alert" style="background: rgba(59, 130, 246, 0.04); border-color: rgba(59, 130, 246, 0.15); margin-bottom: 24px;">
+                        <div class="alert-icon" style="color: var(--secondary);"><i class="fa-solid fa-circle-info"></i></div>
+                        <div class="alert-content">
+                            <h4 style="color: var(--secondary);">全球頂級機構 AI 醫療共識度分析</h4>
+                            <p>本模組對比分析了 ARK Invest (ARKK/ARKG)、NVIDIA Ventures、BlackRock (IDNA) 以及 Vanguard (VHT) 在前沿 AI 醫療與基因編輯領域共同重倉的標的。共識得分越高，代表該標的同時被越多頂級機構看好，代表市場對其產業落地共識越強。</p>
+                        </div>
+                    </div>
+
+                    <div class="card list-card">
+                        <div class="card-header list-header">
+                            <h3 class="card-title">AI 醫療共識股對比清單</h3>
+                        </div>
+                        <div class="table-scroll-container">
+                            <table class="data-table" id="consensus-table">
+                                <thead>
+                                    <tr>
+                                        <th>代碼</th>
+                                        <th>公司名稱</th>
+                                        <th>共識細分板塊</th>
+                                        <th class="text-center">共識得分</th>
+                                        <th class="text-center">ARK 權重</th>
+                                        <th class="text-center">NVIDIA 權重</th>
+                                        <th class="text-center">BlackRock 權重</th>
+                                        <th class="text-center">Vanguard 權重</th>
+                                        <th class="text-center">集體調倉狀態</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="consensus-table-body">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
