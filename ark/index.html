@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Invest 投資組合動態觀測看板</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-chart-line-up"></i></span>
+                    <span class="logo-text">ARK Tracker</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">觀測基金</div>
+                <ul class="etf-list" id="etf-selector-list">
+                    <!-- Dynamic ETF selection -->
+                </ul>
+                
+                <div class="nav-section-title">觀測維度</div>
+                <ul class="nav-tabs">
+                    <li class="nav-tab active" data-tab="overview">
+                        <i class="fa-solid fa-table-columns"></i>
+                        <span>總覽與持股</span>
+                    </li>
+                    <li class="nav-tab" data-tab="daily-monitor">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <span>每日交易監控</span>
+                    </li>
+                    <li class="nav-tab" data-tab="streaks">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>連續交易牆 (Streaks)</span>
+                    </li>
+                    <li class="nav-tab" data-tab="weekly-summary">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>每週決策總結</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="last-updated">
+                    <div class="updated-label">最後更新時間 (本地)</div>
+                    <div class="updated-time" id="last-updated-time">載入中...</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-title-container">
+                    <h1 id="active-etf-title">載入中...</h1>
+                    <p class="subtitle" id="active-etf-subtitle">載入中...</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="search-input" placeholder="搜尋股票代碼或公司名稱...">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Row -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper blue">
+                        <i class="fa-solid fa-vault"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">資產總市值 (AUM)</div>
+                        <div class="stat-value" id="stat-aum">-</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper purple">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">持股總數</div>
+                        <div class="stat-value" id="stat-holdings-count">-</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper green">
+                        <i class="fa-solid fa-right-left"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">今日交易次數 (買 / 賣)</div>
+                        <div class="stat-value" id="stat-trades-count">-</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Tab Contents -->
+            <div class="tab-content-container">
+                <!-- 1. OVERVIEW TAB -->
+                <div class="tab-pane active" id="overview-pane">
+                    <div class="dashboard-charts-grid">
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title">資產市值 (AUM) 趨勢 (過去 14 天)</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="aum-history-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title">前十大重倉股佔比</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="weight-pie-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card list-card">
+                        <div class="card-header list-header">
+                            <h3 class="card-title">完整持股名單</h3>
+                            <span class="count-badge" id="holdings-list-count">0</span>
+                        </div>
+                        <div class="table-scroll-container">
+                            <table class="data-table" id="holdings-table">
+                                <thead>
+                                    <tr>
+                                        <th class="sortable" data-sort="rank">排名 <i class="fa-solid fa-sort-up"></i></th>
+                                        <th class="sortable" data-sort="ticker">代碼 <i class="fa-solid fa-sort"></i></th>
+                                        <th class="sortable" data-sort="company">公司名稱 <i class="fa-solid fa-sort"></i></th>
+                                        <th class="sortable text-right" data-sort="shares">持有股數 <i class="fa-solid fa-sort"></i></th>
+                                        <th class="sortable text-right" data-sort="value">持股市值 <i class="fa-solid fa-sort"></i></th>
+                                        <th class="sortable text-right" data-sort="weight">權重 <i class="fa-solid fa-sort"></i></th>
+                                        <th class="sortable text-center" data-sort="streak">交易 Streak <i class="fa-solid fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="holdings-table-body">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DAILY MONITOR TAB -->
+                <div class="tab-pane" id="daily-monitor-pane">
+                    <div class="monitor-grid">
+                        <!-- Today's Trades List -->
+                        <div class="card monitor-trades-card">
+                            <div class="card-header">
+                                <h3 class="card-title">今日持股股數變動 (維度 1：買賣真實意圖)</h3>
+                                <p class="card-subtitle">依據實體持股數量增減排序，不受股價波動干擾</p>
+                            </div>
+                            <div class="table-scroll-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>代碼</th>
+                                            <th>公司</th>
+                                            <th class="text-right">變動股數</th>
+                                            <th class="text-right">增減幅 (%)</th>
+                                            <th class="text-right">目前權重</th>
+                                            <th class="text-center">連續交易</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="daily-trades-body">
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Top 10 Shifts -->
+                        <div class="card top10-shifts-card">
+                            <div class="card-header">
+                                <h3 class="card-title">前十大重倉股順序移轉 (維度 2：核心權重異動)</h3>
+                                <p class="card-subtitle">監測大股排序變動，掌握 ARK 研究團隊評級升降</p>
+                            </div>
+                            <div class="table-scroll-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">目前排名</th>
+                                            <th>代碼</th>
+                                            <th>權重</th>
+                                            <th class="text-center">排名升降</th>
+                                            <th class="text-right">今日股數變動</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="top10-shifts-body">
+                                        <!-- Dynamic rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. STREAKS TAB -->
+                <div class="tab-pane" id="streaks-pane">
+                    <div class="streaks-alert">
+                        <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="alert-content">
+                            <h4>連續交易維度監測說明 (維度 3)</h4>
+                            <p>ARK 的操作習慣是一旦看好某個新趨勢，會在連續幾週內每天「小量而持續地買進或賣出」。在此查看目前的加減倉「連勝紀錄」，連買/連賣天數越長代表操作方向性越強烈！</p>
+                        </div>
+                    </div>
+                    
+                    <div class="streaks-columns">
+                        <!-- Accumulation Leaderboard -->
+                        <div class="card streak-card accumulation">
+                            <div class="card-header streak-header-buy">
+                                <div class="streak-header-title">
+                                    <i class="fa-solid fa-fire"></i>
+                                    <span>連續加碼排行榜 (Accumulation Streaks)</span>
+                                </div>
+                            </div>
+                            <div class="streak-list" id="accumulation-streaks-list">
+                                <!-- Dynamic items -->
+                            </div>
+                        </div>
+
+                        <!-- Distribution Leaderboard -->
+                        <div class="card streak-card distribution">
+                            <div class="card-header streak-header-sell">
+                                <div class="streak-header-title">
+                                    <i class="fa-solid fa-snowflake"></i>
+                                    <span>連續減碼排行榜 (Distribution Streaks)</span>
+                                </div>
+                            </div>
+                            <div class="streak-list" id="distribution-streaks-list">
+                                <!-- Dynamic items -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. WEEKLY SUMMARY TAB -->
+                <div class="tab-pane" id="weekly-summary-pane">
+                    <div class="weekly-digest-narrative-card card" id="weekly-narrative-card">
+                        <div class="card-header">
+                            <h3 class="card-title">本週經理人操作報告</h3>
+                            <div class="digest-period" id="weekly-digest-period">期間：-</div>
+                        </div>
+                        <div class="digest-narrative-content" id="weekly-narrative-text">
+                            <!-- Narrative text -->
+                        </div>
+                    </div>
+
+                    <div class="weekly-details-grid">
+                        <!-- New additions & Exits -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">本週新進與清倉名單</h3>
+                            </div>
+                            <div class="weekly-adds-exits">
+                                <div class="digest-sub-section">
+                                    <h4 class="sub-section-title text-green"><i class="fa-solid fa-folder-plus"></i> 新進持股</h4>
+                                    <ul class="digest-list" id="weekly-new-additions">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                                <div class="digest-sub-section">
+                                    <h4 class="sub-section-title text-red"><i class="fa-solid fa-folder-minus"></i> 完全清倉</h4>
+                                    <ul class="digest-list" id="weekly-exits">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Top Changes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">本週累計加減倉幅度</h3>
+                            </div>
+                            <div class="weekly-changes-lists">
+                                <div class="digest-sub-section">
+                                    <h4 class="sub-section-title text-green"><i class="fa-solid fa-circle-arrow-up"></i> 累計增幅前五</h4>
+                                    <ul class="digest-list" id="weekly-top-accumulations">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                                <div class="digest-sub-section">
+                                    <h4 class="sub-section-title text-red"><i class="fa-solid fa-circle-arrow-down"></i> 累計減幅前五</h4>
+                                    <ul class="digest-list" id="weekly-top-distributions">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Slide-out Side Panel for Holding Detail Analysis -->
+        <div class="detail-panel" id="detail-panel">
+            <button class="close-panel-btn" id="close-panel-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="detail-panel-content">
+                <div class="detail-panel-header">
+                    <span class="detail-ticker" id="detail-ticker">TSLA</span>
+                    <h2 class="detail-company" id="detail-company">TESLA INC</h2>
+                    <span class="detail-cusip" id="detail-cusip">CUSIP: 123456789</span>
+                </div>
+                
+                <div class="detail-stats-grid">
+                    <div class="detail-stat-box">
+                        <div class="box-label">持有股數</div>
+                        <div class="box-value" id="detail-shares">-</div>
+                    </div>
+                    <div class="detail-stat-box">
+                        <div class="box-label">持股市值</div>
+                        <div class="box-value" id="detail-value">-</div>
+                    </div>
+                    <div class="detail-stat-box">
+                        <div class="box-label">目前權重</div>
+                        <div class="box-value" id="detail-weight">-</div>
+                    </div>
+                    <div class="detail-stat-box">
+                        <div class="box-label">目前排名</div>
+                        <div class="box-value" id="detail-rank">-</div>
+                    </div>
+                </div>
+                
+                <!-- Dynamic charts inside panel -->
+                <div class="detail-chart-card">
+                    <h4 class="detail-chart-title">股數歷史變動趨勢</h4>
+                    <div class="detail-chart-container">
+                        <canvas id="detail-shares-chart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="detail-chart-card">
+                    <h4 class="detail-chart-title">權重歷史變動趨勢</h4>
+                    <div class="detail-chart-container">
+                        <canvas id="detail-weight-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
