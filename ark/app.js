@@ -865,21 +865,21 @@ function renderConsensusTab() {
         }
         
         row.innerHTML = `
-            <td class="ticker-cell">${c.ticker} <span class="ticker-name-sub">(${getShortName(c.ticker)})</span></td>
-            <td>
-                <div style="font-weight:600; color:#fff;">${c.company}</div>
+            <td class="ticker-cell" style="white-space: nowrap;">${c.ticker} <span class="ticker-name-sub">(${getShortName(c.ticker)})</span></td>
+            <td style="min-width: 220px;">
+                <div style="font-weight:700; color:#fff; font-size:14px;">${c.company}</div>
                 <div style="font-size:11px; color:var(--text-dark); margin-top:2px; line-height:1.4;">${c.description}</div>
             </td>
-            <td style="font-weight:500;">${c.sector}</td>
+            <td style="font-weight:600; font-size:13px; color:#fff; white-space:nowrap;">${c.sector}</td>
             <td class="text-center" style="white-space: nowrap;">
                 <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">${c.consensus_score} / 4</div>
                 <div>${stars}</div>
             </td>
-            <td class="text-center ${arkInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${arkText}</td>
-            <td class="text-center ${nvInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${nvText}</td>
-            <td class="text-center ${brInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${brText}</td>
-            <td class="text-center ${vgInfo.owned ? 'text-green font-semibold' : 'text-muted'}">${vgText}</td>
-            <td class="text-center">
+            <td class="text-center ${arkInfo.owned ? 'text-green font-semibold' : 'text-muted'}" style="white-space: nowrap;">${arkText}</td>
+            <td class="text-center ${nvInfo.owned ? 'text-green font-semibold' : 'text-muted'}" style="white-space: nowrap;">${nvText}</td>
+            <td class="text-center ${brInfo.owned ? 'text-green font-semibold' : 'text-muted'}" style="white-space: nowrap;">${brText}</td>
+            <td class="text-center ${vgInfo.owned ? 'text-green font-semibold' : 'text-muted'}" style="white-space: nowrap;">${vgText}</td>
+            <td class="text-center" style="white-space: nowrap;">
                 <span class="badge ${c.collective_action.includes('加碼') || c.collective_action.includes('買入') ? 'buy' : (c.collective_action.includes('減持') || c.collective_action.includes('調節') ? 'sell' : 'rank-new')}">
                     ${c.collective_action}
                 </span>
