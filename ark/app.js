@@ -41,10 +41,10 @@ function formatPercent(value) {
     return (value >= 0 ? '+' : '') + value.toFixed(2) + '%';
 }
 
-// Fetch JSON data
+// Fetch JSON data with cache busting
 async function loadData() {
     try {
-        const response = await fetch('data/processed.json');
+        const response = await fetch('data/processed.json?t=' + new Date().getTime());
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -57,6 +57,33 @@ async function loadData() {
         document.getElementById('last-updated-time').textContent = '載入錯誤';
         alert('無法加載數據，請確認 update_data.py 是否已經成功運行並生成 JSON 文件。');
     }
+}
+
+// Short company names helper mapping
+function getShortName(ticker) {
+    const names = {
+        "TEM": "Tempus AI",
+        "RXRX": "Recursion",
+        "CRSP": "CRISPR",
+        "SDGR": "Schrodinger",
+        "NNOX": "Nano-X",
+        "PLTR": "Palantir",
+        "TSLA": "Tesla",
+        "AMD": "AMD",
+        "SHOP": "Shopify",
+        "HOOD": "Robinhood",
+        "COIN": "Coinbase",
+        "NVDA": "NVIDIA",
+        "LLY": "Eli Lilly",
+        "VRTX": "Vertex",
+        "REGN": "Regeneron",
+        "NTLA": "Intellia",
+        "BEAM": "Beam",
+        "EXAI": "Exscientia",
+        "ARM": "Arm",
+        "SOUN": "SoundHound"
+    };
+    return names[ticker] || ticker;
 }
 
 // Initialize ETF selectors in Sidebar (Split into ARK ETFs and Other Institutional portfolios)
@@ -374,7 +401,7 @@ function renderHoldingsTable(holdings) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${h.rank}</td>
-            <td class="ticker-cell">${h.ticker}</td>
+            <td class="ticker-cell">${h.ticker} <span class="ticker-name-sub">(${getShortName(h.ticker)})</span></td>
             <td class="company-name-cell">${h.company}</td>
             <td class="text-right">${formatNumber(h.shares)}</td>
             <td class="text-right">${formatCurrency(h.value)}</td>
@@ -414,7 +441,7 @@ function renderDailyMonitorTab(fund) {
             const diffText = (t.shares_diff > 0 ? '+' : '') + formatNumber(t.shares_diff);
             
             row.innerHTML = `
-                <td class="ticker-cell">${t.ticker}</td>
+                <td class="ticker-cell">${t.ticker} <span class="ticker-name-sub">(${getShortName(t.ticker)})</span></td>
                 <td class="company-name-cell">${t.company}</td>
                 <td class="text-right font-semibold ${t.shares_diff > 0 ? 'text-green' : 'text-red'}">${diffText}</td>
                 <td class="text-right"><span class="badge ${badgeClass}">${pctText}</span></td>
@@ -435,7 +462,7 @@ function renderDailyMonitorTab(fund) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td class="text-center font-bold">${h.rank}</td>
-            <td class="ticker-cell">${h.ticker}</td>
+            <td class="ticker-cell">${h.ticker} <span class="ticker-name-sub">(${getShortName(h.ticker)})</span></td>
             <td class="weight-cell">${h.weight.toFixed(2)}%</td>
             <td class="text-center">${renderRankShiftBadge(h.rank_shift)}</td>
             <td class="text-right ${h.shares_diff > 0 ? 'text-green' : (h.shares_diff < 0 ? 'text-red' : 'text-muted')}">
@@ -478,7 +505,7 @@ function renderStreaksTab(fund) {
             div.className = 'streak-item';
             div.innerHTML = `
                 <div class="streak-info-left">
-                    <span class="streak-ticker">${item.ticker}</span>
+                    <span class="streak-ticker">${item.ticker} <span class="ticker-name-sub" style="font-weight:normal; font-size:11px;">(${getShortName(item.ticker)})</span></span>
                     <span class="streak-company">${item.company}</span>
                 </div>
                 <div class="streak-val-right">
@@ -500,7 +527,7 @@ function renderStreaksTab(fund) {
             div.className = 'streak-item';
             div.innerHTML = `
                 <div class="streak-info-left">
-                    <span class="streak-ticker">${item.ticker}</span>
+                    <span class="streak-ticker">${item.ticker} <span class="ticker-name-sub" style="font-weight:normal; font-size:11px;">(${getShortName(item.ticker)})</span></span>
                     <span class="streak-company">${item.company}</span>
                 </div>
                 <div class="streak-val-right">
@@ -571,7 +598,7 @@ function renderWeeklySummaryTab(fund) {
 // ----------------------------------------------------
 
 function openDetailPanel(holding) {
-    document.getElementById('detail-ticker').textContent = holding.ticker;
+    document.getElementById('detail-ticker').textContent = `${holding.ticker} (${getShortName(holding.ticker)})`;
     document.getElementById('detail-company').textContent = holding.company;
     document.getElementById('detail-shares').textContent = formatNumber(holding.shares);
     document.getElementById('detail-value').textContent = formatCurrency(holding.value);
@@ -764,7 +791,7 @@ function renderConsensusTab() {
         }
         
         row.innerHTML = `
-            <td class="ticker-cell">${c.ticker}</td>
+            <td class="ticker-cell">${c.ticker} <span class="ticker-name-sub">(${getShortName(c.ticker)})</span></td>
             <td>
                 <div style="font-weight:600; color:#fff;">${c.company}</div>
                 <div style="font-size:11px; color:var(--text-dark); margin-top:2px; line-height:1.4;">${c.description}</div>
