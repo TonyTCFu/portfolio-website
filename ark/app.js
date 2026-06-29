@@ -102,8 +102,23 @@ function initSelectors() {
         const item = document.createElement('li');
         item.className = `etf-item ${fundId === activeEtf ? 'active' : ''}`;
         item.dataset.etf = fundId;
+        
+        const displayNames = {
+            "ARKK": "ARKK (Flagship 旗艦創新)",
+            "ARKG": "ARKG (Genomics 基因醫學)",
+            "ARKW": "ARKW (Web 下一代網路)",
+            "ARKF": "ARKF (Fintech 金融科技)",
+            "ARKQ": "ARKQ (Autonomous 自主與機器人)",
+            "ARKX": "ARKX (space eXploration 太空探索)",
+            "NVIDIA": "NVIDIA",
+            "IDNA": "IDNA (BlackRock)",
+            "VHT": "VHT (Vanguard)"
+        };
+        
+        const dispName = displayNames[fundId] || fundId;
+        
         item.innerHTML = `
-            <span>${fundId}</span>
+            <span>${dispName}</span>
             <span class="etf-badge">${fund.holdings_count}</span>
         `;
         item.addEventListener('click', () => {
