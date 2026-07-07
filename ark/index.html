@@ -34,6 +34,7 @@
             <div class="mobile-tabs-scroll">
                 <ul class="mobile-nav-tabs">
                     <li class="mobile-nav-tab active" data-tab="overview">總覽持股</li>
+                    <li class="mobile-nav-tab" data-tab="daily-analysis">每日分析</li>
                     <li class="mobile-nav-tab" data-tab="daily-monitor">交易監控</li>
                     <li class="mobile-nav-tab" data-tab="streaks">連續交易</li>
                     <li class="mobile-nav-tab" data-tab="weekly-summary">每週決策</li>
@@ -67,6 +68,10 @@
                     <li class="nav-tab active" data-tab="overview">
                         <i class="fa-solid fa-table-columns"></i>
                         <span>總覽與持股</span>
+                    </li>
+                    <li class="nav-tab" data-tab="daily-analysis">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>每日深度分析</span>
                     </li>
                     <li class="nav-tab" data-tab="daily-monitor">
                         <i class="fa-solid fa-calendar-day"></i>
@@ -333,6 +338,72 @@
                                 <div class="digest-sub-section">
                                     <h4 class="sub-section-title text-red"><i class="fa-solid fa-circle-arrow-down"></i> 累計減幅前五</h4>
                                     <ul class="digest-list" id="weekly-top-distributions">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DAILY ANALYSIS TAB -->
+                <div class="tab-pane" id="daily-analysis-pane">
+                    <!-- Daily Narrative Analysis -->
+                    <div class="card list-card" style="margin-bottom: 24px;">
+                        <div class="card-header list-header">
+                            <h3 class="card-title"><i class="fa-solid fa-brain" style="color: var(--secondary); margin-right: 8px;"></i>今日調倉解讀與板塊輪動主題</h3>
+                        </div>
+                        <div class="card-body" style="padding: 20px;">
+                            <p id="analysis-narrative-text" style="font-size: 15px; line-height: 1.8; color: var(--text-muted); margin: 0;"></p>
+                        </div>
+                    </div>
+
+                    <!-- Daily Metrics Summary Card Grid -->
+                    <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 24px;">
+                        <div class="stat-card">
+                            <div class="stat-label">今日資金淨流出入估算</div>
+                            <div class="stat-value" id="analysis-net-cash" style="font-family: monospace;">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">今日規模 (AUM) 增幅</div>
+                            <div class="stat-value" id="analysis-aum-change">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">前十大持股佔比 (集中度)</div>
+                            <div class="stat-value" id="analysis-concentration">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">集中度日變動</div>
+                            <div class="stat-value" id="analysis-concentration-diff">-</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-charts-grid" style="margin-bottom: 24px;">
+                        <!-- Sector Shift Bar Chart -->
+                        <div class="chart-card">
+                            <div class="card-header">
+                                <h3 class="card-title">今日板塊權重偏離與輪動偏移度 (%)</h3>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="analysis-sector-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Individual Shifts Gainer/Loser Lists -->
+                        <div class="chart-card" style="display: flex; flex-direction: column;">
+                            <div class="card-header" style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px;">
+                                <h3 class="card-title">個股權重增減倉偏離度排行榜</h3>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 15px; flex-grow: 1;">
+                                <div>
+                                    <h4 style="font-size: 13px; color: var(--green); margin-bottom: 10px;"><i class="fa-solid fa-circle-chevron-up"></i> 權重增幅前五</h4>
+                                    <ul id="analysis-weight-gainers" style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2.2;">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 13px; color: var(--red); margin-bottom: 10px;"><i class="fa-solid fa-circle-chevron-down"></i> 權重減幅前五</h4>
+                                    <ul id="analysis-weight-losers" style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2.2;">
                                         <!-- Dynamic items -->
                                     </ul>
                                 </div>

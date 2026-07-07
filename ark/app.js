@@ -241,6 +241,8 @@ function updateView() {
     
     if (activeTab === 'overview') {
         renderOverviewTab(fund);
+    } else if (activeTab === 'daily-analysis') {
+        renderDailyAnalysisTab(fund);
     } else if (activeTab === 'daily-monitor') {
         renderDailyMonitorTab(fund);
     } else if (activeTab === 'streaks') {
@@ -460,6 +462,141 @@ function renderStreakBadge(streak) {
     } else {
         return `<span style="color: var(--text-dark); font-size:12px;">無</span>`;
     }
+}
+
+// 1.5 DAILY DEEP ANALYSIS TAB
+function renderDailyAnalysisTab(fund) {
+    const analysis = fund.daily_analysis;
+    if (!analysis) {
+        document.getElementById('analysis-narrative-text').textContent = '該基金暫無今日深度調倉與板塊偏移數據分析。';
+        document.getElementById('analysis-net-cash').textContent = '-';
+        document.getElementById('analysis-aum-change').textContent = '-';
+        document.getElementById('analysis-concentration').textContent = '-';
+        document.getElementById('analysis-concentration-diff').textContent = '-';
+        document.getElementById('analysis-weight-gainers').innerHTML = '<li style="color:var(--text-dark);">無分析數據</li>';
+        document.getElementById('analysis-weight-losers').innerHTML = '<li style="color:var(--text-dark);">無分析數據</li>';
+        if (activeCharts.sectorShiftChart) {
+            activeCharts.sectorShiftChart.destroy();
+            activeCharts.sectorShiftChart = null;
+        }
+        return;
+    }
+    
+    // Narrative Text
+    document.getElementById('analysis-narrative-text').textContent = analysis.narrative || '今日板塊權重與個股持倉比例保持穩定。';
+    
+    // Metrics Card formatting
+    const cashEl = document.getElementById('analysis-net-cash');
+    cashEl.textContent = (analysis.net_cash_flow >= 0 ? '+' : '') + formatCurrency(analysis.net_cash_flow);
+    cashEl.className = 'stat-value ' + (analysis.net_cash_flow >= 0 ? 'text-green' : 'text-red');
+    
+    const aumEl = document.getElementById('analysis-aum-change');
+    aumEl.textContent = (analysis.aum_change_pct >= 0 ? '+' : '') + analysis.aum_change_pct.toFixed(2) + '%';
+    aumEl.className = 'stat-value ' + (analysis.aum_change_pct >= 0 ? 'text-green' : 'text-red');
+    
+    document.getElementById('analysis-concentration').textContent = analysis.concentration_today.toFixed(2) + '%';
+    
+    const concDiffEl = document.getElementById('analysis-concentration-diff');
+    concDiffEl.textContent = (analysis.concentration_diff >= 0 ? '+' : '') + analysis.concentration_diff.toFixed(2) + '%';
+    concDiffEl.className = 'stat-value ' + (analysis.concentration_diff >= 0 ? 'text-green' : 'text-red');
+    
+    // Lists populating
+    const gainersList = document.getElementById('analysis-weight-gainers');
+    gainersList.innerHTML = '';
+    if (analysis.weight_gainers && analysis.weight_gainers.length > 0) {
+        analysis.weight_gainers.forEach(g => {
+            const li = document.createElement('li');
+            li.style.display = 'flex';
+            li.style.justifyContent = 'space-between';
+            li.style.borderBottom = '1px solid rgba(255,255,255,0.02)';
+            li.style.padding = '4px 0';
+            li.innerHTML = `
+                <span><strong>${g.ticker}</strong> <span style="font-size:11px; color:var(--text-dark);">${getShortName(g.ticker)}</span></span>
+                <span class="text-green" style="font-family:monospace; font-weight: 600;">${g.weight.toFixed(2)}% (+${g.weight_diff.toFixed(2)}%)</span>
+            `;
+            gainersList.appendChild(li);
+        });
+    } else {
+        gainersList.innerHTML = '<li style="color:var(--text-dark); padding: 10px 0;">無顯著增倉</li>';
+    }
+    
+    const losersList = document.getElementById('analysis-weight-losers');
+    losersList.innerHTML = '';
+    if (analysis.weight_losers && analysis.weight_losers.length > 0) {
+        analysis.weight_losers.forEach(l => {
+            const li = document.createElement('li');
+            li.style.display = 'flex';
+            li.style.justifyContent = 'space-between';
+            li.style.borderBottom = '1px solid rgba(255,255,255,0.02)';
+            li.style.padding = '4px 0';
+            li.innerHTML = `
+                <span><strong>${l.ticker}</strong> <span style="font-size:11px; color:var(--text-dark);">${getShortName(l.ticker)}</span></span>
+                <span class="text-red" style="font-family:monospace; font-weight: 600;">${l.weight.toFixed(2)}% (${l.weight_diff.toFixed(2)}%)</span>
+            `;
+            losersList.appendChild(li);
+        });
+    } else {
+        losersList.innerHTML = '<li style="color:var(--text-dark); padding: 10px 0;">無顯著減倉</li>';
+    }
+    
+    // Render Sector Shifts Chart
+    renderSectorShiftChart(analysis.sector_shifts || []);
+}
+
+function renderSectorShiftChart(shifts) {
+    const ctx = document.getElementById('analysis-sector-chart').getContext('2d');
+    if (activeCharts.sectorShiftChart) {
+        activeCharts.sectorShiftChart.destroy();
+    }
+    
+    const labels = shifts.map(s => s.sector);
+    const data = shifts.map(s => s.weight_diff);
+    
+    const backgroundColors = data.map(val => val >= 0 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.25)');
+    const borderColors = data.map(val => val >= 0 ? 'rgb(16, 185, 129)' : 'rgb(239, 68, 68)');
+    
+    activeCharts.sectorShiftChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '板塊權重增減 (百分點)',
+                data: data,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1.5,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return '權重變動: ' + (context.raw >= 0 ? '+' : '') + context.raw.toFixed(2) + ' 百分點';
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(255,255,255,0.05)' },
+                    ticks: {
+                        color: 'rgba(255,255,255,0.6)',
+                        callback: function(value) { return (value >= 0 ? '+' : '') + value + '%'; }
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: { color: 'rgba(255,255,255,0.8)' }
+                }
+            }
+        }
+    });
 }
 
 // 2. DAILY MONITOR TAB
