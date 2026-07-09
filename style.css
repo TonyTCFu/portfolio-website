@@ -653,7 +653,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
 }
 
@@ -1038,6 +1038,11 @@ a.method-value:hover {
 }
 
 @media (max-width: 768px) {
+    /* Projects grid mobile layout override */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     /* Mobile Navigation */
     .mobile-menu-btn {
         display: flex;
