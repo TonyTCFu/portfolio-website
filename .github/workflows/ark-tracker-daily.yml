@@ -1,0 +1,55 @@
+name: ARK Portfolio Daily Tracker
+
+on:
+  schedule:
+    # 台北時間每週二至週六早上 06:30 執行（對應 UTC 時間 22:30 Monday-Friday）
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch: # 支援在 GitHub 網頁端手動點擊執行
+
+jobs:
+  run-tracker:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run Live Update Data Engine
+        run: |
+          cd ark-tracker-backend
+          python3 update_data.py
+
+      - name: Sync Processed Data to Web Folder
+        run: |
+          mkdir -p ark/data
+          cp ark-tracker-backend/data/processed.json ark/data/processed.json
+
+      - name: Send Daily Summary Email
+        run: |
+          cd ark-tracker-backend
+          python3 send_summary_email.py
+
+      - name: Compile Daily Note for Obsidian Sync
+        run: |
+          cd ark-tracker-backend
+          export GITHUB_ACTIONS=true
+          python3 save_to_obsidian.py
+
+      - name: Commit and Push Updated Data
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "actions@github.com"
+          git add ark/data/processed.json ark/data/daily-notes/
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "deploy: sync ARK holdings and daily notes from cloud run on $(date)"
+            git push origin main
+          else
+            echo "No data or note changes to commit. Push skipped."
+          fi
