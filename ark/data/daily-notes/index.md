@@ -8,6 +8,7 @@ description: "Index of ARK & Global Top Funds Daily Tracker notes"
 
 ## Daily Reports
 
+- [[2026-07-28]]
 - [[2026-07-27]]
 - [[2026-07-24]]
 - [[2026-07-23]]
