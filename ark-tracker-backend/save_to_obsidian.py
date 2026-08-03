@@ -193,24 +193,26 @@ description: "Index of ARK & Global Top Funds Daily Tracker notes"
     except Exception as e:
         print(f"Warning: Failed to update tracker index.md: {e}")
         
-    # 2. Update parent directory index
-    parent_index_path = os.path.join(RESEARCH_DIR, "index.md")
-    parent_link = f"- [ARK-Daily-Tracker Index](ARK-Daily-Tracker/index.md)"
-    try:
-        if os.path.exists(parent_index_path):
-            with open(parent_index_path, 'r', encoding='utf-8') as f:
-                p_content = f.read()
-            if parent_link not in p_content:
-                # Append it to the Concepts section
-                if "## Concepts" in p_content:
-                    p_content = p_content.replace("## Concepts", f"## Concepts\n\n{parent_link}")
+    # 2. Update parent directory index (02-The-Wiki/index.md)
+    if not IS_GITHUB_ACTIONS:
+        parent_index_path = os.path.join(THE_WIKI_DIR, "index.md")
+        parent_link = f"- [22-ARK-Daily-Tracker](22-ARK-Daily-Tracker/index.md)"
+        try:
+            if os.path.exists(parent_index_path):
+                with open(parent_index_path, 'r', encoding='utf-8') as f:
+                    p_content = f.read()
+                if parent_link not in p_content:
+                    if "## Concepts" in p_content:
+                        p_content = p_content.replace("## Concepts", f"## Concepts\n\n{parent_link}")
+                    else:
+                        p_content += f"\n\n{parent_link}\n"
                     with open(parent_index_path, 'w', encoding='utf-8') as f:
                         f.write(p_content)
-                    print("Linked tracker index inside research index.md.")
-    except PermissionError as pe:
-        print(f"Warning: Permission denied when reading parent index.md. Linking skipped. ({pe})")
-    except Exception as e:
-        print(f"Warning: Failed to update parent index.md: {e}")
+                    print("Linked tracker index inside 02-The-Wiki index.md.")
+        except PermissionError as pe:
+            print(f"Warning: Permission denied when reading parent index.md. Linking skipped. ({pe})")
+        except Exception as e:
+            print(f"Warning: Failed to update parent index.md: {e}")
 
 def main():
     data = load_processed_data()
