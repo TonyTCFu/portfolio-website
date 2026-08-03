@@ -35,17 +35,23 @@ def generate_markdown(data, active_date):
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     
     md = f"""---
+type: daily-report
+title: "ARK & 全球頂級基金持股觀測日報 ({active_date})"
 date: {active_date}
 tags:
-  - investment/ark-tracker
-  - investment/portfolio-daily
-  - finance/quant
-type: research-note
-title: "ARK & 全球頂級基金持股觀測日報 ({active_date})"
+  - ARK/DailyTracker
+  - 商业金融与量化交易/ARK
+  - 市场分析与产品研究/ARK
+aliases:
+  - {active_date}
+status: completed
 ---
+
+[[index|← 返回 22-ARK-Daily-Tracker 索引]]
 
 # ARK & 全球頂級基金持股觀測日報 ({active_date})
 
+> [!NOTE] 數據基準與線上看板
 > **數據基準時間**：{date_str}  
 > **線上看板**：[futienchun.com/ark/](https://futienchun.com/ark/)
 
@@ -130,6 +136,7 @@ title: "ARK & 全球頂級基金持股觀測日報 ({active_date})"
         weights_str = f"{ark_w} / {nv_w} / {idna_w} / {vht_w}"
         md += f"| {idx} | **{c['ticker']}** | {c['company']} | {c['sector']} | {stars} ({c['consensus_score']}/4) | {weights_str} |\n"
         
+    md += "\n---\n\n[[index|← 返回 22-ARK-Daily-Tracker 索引]]\n"
     return md
 
 def update_index_files(active_date):
