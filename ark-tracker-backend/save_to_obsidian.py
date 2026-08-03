@@ -17,8 +17,8 @@ if IS_GITHUB_ACTIONS:
     TRACKER_DIR = os.path.join(RESEARCH_DIR, "daily-notes")
 else:
     OBSIDIAN_VAULT_PATH = "/Users/tonyfu/Library/Mobile Documents/iCloud~md~obsidian/Documents/AI-Knowledge-Wiki"
-    RESEARCH_DIR = os.path.join(OBSIDIAN_VAULT_PATH, "02-The-Wiki", "05-商业金融与量化交易", "03-市场分析与产品研究")
-    TRACKER_DIR = os.path.join(RESEARCH_DIR, "ARK-Daily-Tracker")
+    THE_WIKI_DIR = os.path.join(OBSIDIAN_VAULT_PATH, "02-The-Wiki")
+    TRACKER_DIR = os.path.join(THE_WIKI_DIR, "ARK-Daily-Tracker")
 
 def load_processed_data():
     if not os.path.exists(PROCESSED_FILE):
