@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-14 14:50:04",
+  "last_updated": "2026-08-14 22:51:23",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -8792,15 +8792,15 @@
             "weight_diff": -0.04
           },
           {
-            "sector": "基因編輯與細胞治療",
-            "weight_today": 11.42,
-            "weight_prev": 11.39,
-            "weight_diff": 0.03
-          },
-          {
             "sector": "計算物理與藥物模擬",
             "weight_today": 2.25,
             "weight_prev": 2.22,
+            "weight_diff": 0.03
+          },
+          {
+            "sector": "基因編輯與細胞治療",
+            "weight_today": 11.42,
+            "weight_prev": 11.39,
             "weight_diff": 0.03
           }
         ],
@@ -12459,15 +12459,15 @@
             "weight_diff": 0.16
           },
           {
-            "sector": "智能硬體與自動駕駛",
-            "weight_today": 7.24,
-            "weight_prev": 7.13,
-            "weight_diff": 0.11
-          },
-          {
             "sector": "數字金融交易",
             "weight_today": 4.64,
             "weight_prev": 4.53,
+            "weight_diff": 0.11
+          },
+          {
+            "sector": "智能硬體與自動駕駛",
+            "weight_today": 7.24,
+            "weight_prev": 7.13,
             "weight_diff": 0.11
           },
           {
@@ -17193,9 +17193,9 @@
             "weight_diff": -0.29
           },
           {
-            "sector": "AI 數據決策平台",
-            "weight_today": 4.53,
-            "weight_prev": 4.8,
+            "sector": "數字資產交易",
+            "weight_today": 5.67,
+            "weight_prev": 5.94,
             "weight_diff": -0.27
           }
         ],
