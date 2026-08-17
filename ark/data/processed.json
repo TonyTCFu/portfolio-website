@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-18 01:00:52",
+  "last_updated": "2026-08-17 22:52:00",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -11309,9 +11309,9 @@
             "weight_diff": 0.12
           },
           {
-            "sector": "數字資產交易",
-            "weight_today": 3.21,
-            "weight_prev": 3.29,
+            "sector": "電子商務基礎設施",
+            "weight_today": 4.71,
+            "weight_prev": 4.79,
             "weight_diff": -0.08
           }
         ],
@@ -16031,9 +16031,9 @@
             "weight_diff": -0.29
           },
           {
-            "sector": "數字資產交易",
-            "weight_today": 5.67,
-            "weight_prev": 5.94,
+            "sector": "AI 數據決策平台",
+            "weight_today": 4.53,
+            "weight_prev": 4.8,
             "weight_diff": -0.27
           }
         ],
