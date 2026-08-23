@@ -482,7 +482,11 @@ def process_processed_json(history, last_updated_time):
         weekly_base_date = sorted_dates[weekly_base_idx]
         weekly_base_holdings = fund_hist[weekly_base_date]
         
-        weekly_digest = generate_weekly_digest(today_holdings, weekly_base_holdings, today_date, weekly_base_date)
+        eight_w_base_idx = max(0, len(sorted_dates) - 40)
+        eight_w_base_date = sorted_dates[eight_w_base_idx]
+        eight_w_base_holdings = fund_hist[eight_w_base_date]
+        
+        weekly_digest = generate_weekly_digest(today_holdings, weekly_base_holdings, today_date, weekly_base_date, eight_w_base_holdings, eight_w_base_date)
         
         # Calculate daily analysis metrics
         concentration_today = sum(h["weight"] for h in holdings_list[:10])
@@ -681,7 +685,7 @@ def get_historical_aum(fund_hist, sorted_dates):
         })
     return aum_list
 
-def generate_weekly_digest(today_holdings, base_holdings, today_date, base_date):
+def generate_weekly_digest(today_holdings, base_holdings, today_date, base_date, eight_w_base_holdings=None, eight_w_base_date=None):
     accumulations = []
     distributions = []
     new_additions = []
@@ -741,15 +745,76 @@ def generate_weekly_digest(today_holdings, base_holdings, today_date, base_date)
         narrative_parts.append(f"本週清倉了 {', '.join(exit_strs)}" + (f" 等共 {len(exits)} 隻股票" if len(exits) > 3 else "") + "。")
         
     narrative = "".join(narrative_parts) if narrative_parts else "本週持股相對穩定，未發生大規模調倉。"
+
+    # 8-week Top 10 Trend and Forward-Looking Forecast
+    top10_8w_forecast = []
+    sorted_today_list = sorted(today_holdings.items(), key=lambda x: x[1].get("weight", 0), reverse=True)[:10]
+
+    FORECAST_KNOWLEDGE = {
+        "TSLA": {"sector": "Robotaxi / 自動駕駛", "forecast": "持續增持 (Overweight)", "forecast_type": "BULL", "action": "逢低堅決增持", "logic": "Robotaxi 落地與 FSD 算力飛輪加速，木頭姐最高確信第一大核心重倉。"},
+        "SPCX": {"sector": "商業航天 / 星鏈基建", "forecast": "積極增持 (Overweight)", "forecast_type": "BULL", "action": "持續強勁吸籌", "logic": "Starlink 盈利爆發 + Starship 密集試飛，迅速躍升為第二大重倉。"},
+        "TEM": {"sector": "AI 精準腫瘤醫療", "forecast": "逢低增持 (Buy Dips)", "forecast_type": "BULL", "action": "高確信度持有", "logic": "臨床病理與多組學 AI 醫療數據絕對壁壘，鎖定前三重倉底倉。"},
+        "CRSP": {"sector": "基因編輯 / Casgevy", "forecast": "中性觀望 (Neutral)", "forecast_type": "NEUTRAL", "action": "階段再平衡減持", "logic": "Casgevy 商業化平穩放量中，短期催化劑平淡，適度控制醫藥風險。"},
+        "CRCL": {"sector": "USDC 穩定幣 / 結算", "forecast": "積極增持 (Overweight)", "forecast_type": "BULL", "action": "多輪大額建倉", "logic": "合規穩定幣全球清結算基礎設施爆發，為 ARK 加密資產新主力重倉。"},
+        "TWST": {"sector": "合成生物 / DNA寫入", "forecast": "階段減持 (Underweight)", "forecast_type": "BEAR", "action": "防守性微調", "logic": "板塊波動較大，資金向更高集中度的大 AI 與航天主線轉移。"},
+        "COIN": {"sector": "加密交易所 / Base鏈", "forecast": "逢低吸籌 (Buy Dips)", "forecast_type": "BULL", "action": "財報跌勢逆勢吸籌", "logic": "加密週期核心通道，木頭姐貫徹『逢大跌必買』操作法則。"},
+        "SHOP": {"sector": "電商基建 / AI商戶", "forecast": "持續減持 (Trim)", "forecast_type": "BEAR", "action": "逢高持續止盈", "logic": "估值修復充分，非當下最高賠率標的，嚴格執行紀律性獲利兌現。"},
+        "PLTR": {"sector": "企業級 AI / AIP平台", "forecast": "逢高減持 (Trim)", "forecast_type": "BEAR", "action": "高位密集獲利了結", "logic": "處於歷史高估值倍數區間，執行嚴苛的 Gain Harvesting 止盈策略。"},
+        "HOOD": {"sector": "新一代零售經紀商", "forecast": "階段減持 (Underweight)", "forecast_type": "BEAR", "action": "階梯式獲利退出", "logic": "加密賽道內部大輪動，資金從零售前端向底層清結算協議資產轉移。"}
+    }
+
+    for rank_idx, (tk, h) in enumerate(sorted_today_list, 1):
+        cur_shares = h.get("shares", 0)
+        cur_val = h.get("value", 0.0)
+        cur_wt = h.get("weight", 0.0)
+        comp = h.get("company", tk)
+
+        base_8w = eight_w_base_holdings.get(tk) if eight_w_base_holdings else None
+        if base_8w:
+            base_shares = base_8w.get("shares", cur_shares)
+            base_val = base_8w.get("value", cur_val)
+            s_diff = cur_shares - base_shares
+            s_diff_pct = (s_diff / base_shares * 100) if base_shares > 0 else 0.0
+            v_diff = cur_val - base_val
+        else:
+            s_diff = 0
+            s_diff_pct = 0.0
+            v_diff = 0.0
+
+        know = FORECAST_KNOWLEDGE.get(tk, {})
+        sector = know.get("sector", "前沿破壞式創新")
+        forecast = know.get("forecast", ("增持 (Overweight)" if s_diff > 0 else ("減持 (Trim)" if s_diff < 0 else "持平觀望 (Hold)")))
+        forecast_type = know.get("forecast_type", ("BULL" if s_diff > 0 else ("BEAR" if s_diff < 0 else "NEUTRAL")))
+        action = know.get("action", ("增持加倉" if s_diff > 0 else ("減持調倉" if s_diff < 0 else "持倉平穩")))
+        logic = know.get("logic", "根據近期資金流向與持股偏離度進行模型評估。")
+
+        top10_8w_forecast.append({
+            "rank": rank_idx,
+            "ticker": tk,
+            "company": comp,
+            "sector": sector,
+            "weight": cur_wt,
+            "shares": cur_shares,
+            "value": cur_val,
+            "shares_diff_8w": s_diff,
+            "shares_diff_pct_8w": round(s_diff_pct, 2),
+            "value_diff_8w": v_diff,
+            "action": action,
+            "forecast": forecast,
+            "forecast_type": forecast_type,
+            "logic": logic
+        })
     
     return {
         "base_date": base_date,
         "today_date": today_date,
+        "eight_w_base_date": eight_w_base_date or base_date,
         "accumulations": accumulations[:5],
         "distributions": distributions[:5],
         "new_additions": new_additions,
         "exits": exits,
-        "narrative": narrative
+        "narrative": narrative,
+        "top10_8w_forecast": top10_8w_forecast
     }
 
 def bootstrap_data():

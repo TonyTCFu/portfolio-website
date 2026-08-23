@@ -130,12 +130,73 @@ def build_plain_text_report(data):
     report += "=============================================\n"
     return report
 
+def build_weekly_text_report(data):
+    date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    
+    report = f"=============================================\n"
+    report += f"ARK & 全球頂級基金持股觀測【每週綜合投資報告】\n"
+    report += f"報告時間：{date_str} (週日報告)\n"
+    report += f"線上看板：https://futienchun.com/ark/\n"
+    report += f"=============================================\n\n"
+
+    # 1. Flagship ARKK Weekly Digest Narrative
+    arkk = data.get("funds_data", {}).get("ARKK", {})
+    digest = arkk.get("weekly_digest", {})
+    
+    report += "【本週經理人操作報告與週度概覽】\n"
+    report += "---------------------------------------------\n"
+    if digest:
+        report += f"■ ARKK 旗艦基金 (基準期：{digest.get('base_date', '-')} 至 {digest.get('today_date', '-')})\n"
+        report += f"  - 操作摘要：{digest.get('narrative', '持股平穩')}\n\n"
+        
+        # New additions & Exits
+        if digest.get("new_additions"):
+            adds = [f"{a['ticker']} ({a.get('weight', 0):.2f}%)" for a in digest["new_additions"]]
+            report += f"  - 本週新進持股：{', '.join(adds)}\n"
+        if digest.get("exits"):
+            exs = [e['ticker'] for e in digest["exits"]]
+            report += f"  - 本週完全清倉：{', '.join(exs)}\n"
+        if digest.get("accumulations"):
+            accs = [f"{a['ticker']} (+{a.get('pct_change', 0)}%)" for a in digest["accumulations"]]
+            report += f"  - 本週主要加倉：{', '.join(accs)}\n"
+        if digest.get("distributions"):
+            dists = [f"{d['ticker']} ({d.get('pct_change', 0)}%)" for d in digest["distributions"]]
+            report += f"  - 本週主要減倉：{', '.join(dists)}\n"
+        report += "\n"
+
+    # 2. Top 10 Holdings 8-Week Trend & Forecast Table
+    report += "【🚀 ARKK 前十大核心重倉 8 週持倉異動與未來增減持前瞻預測】\n"
+    report += "---------------------------------------------\n"
+    top10_forecast = digest.get("top10_8w_forecast", [])
+    if top10_forecast:
+        for item in top10_forecast:
+            s_diff_str = f"{item['shares_diff_8w']:+d} 股 ({item['shares_diff_pct_8w']:+.2f}%)" if item['shares_diff_8w'] != 0 else "持平/微調"
+            report += f"#{item['rank']} {item['ticker']} ({item['company']})\n"
+            report += f"   - 賽道：{item['sector']} | 權重：{item['weight']:.2f}% | 市值：${item['value']/1e6:.1f}M USD\n"
+            report += f"   - 8週股數變動：{s_diff_str} | 調倉動作：{item['action']}\n"
+            report += f"   - 未來趨勢預測：【{item['forecast']}】\n"
+            report += f"   - 核心邏輯：{item['logic']}\n\n"
+    else:
+        report += "無 8 週前十大持倉歷史明細。\n\n"
+
+    # 3. Key Takeaways
+    report += "【💡 木頭姐（Cathie Wood）調倉三大核心邏輯總結】\n"
+    report += "---------------------------------------------\n"
+    report += "1. 紀律性高位獲利了結 (Gain Harvesting)：對年內大漲的 PLTR (8/21單日大幅減持15.6萬股)、SHOP、HOOD 執行嚴格估值止盈，回籠充裕現金。\n"
+    report += "2. 戰略硬核 AI 與商業航天逆勢重倉 (High Conviction)：在 TSLA 回調期間大舉加倉超 45 萬股(第一大重倉)，持續大額增持 SPCX (第二大重倉) 與 TEM (醫療AI底倉)。\n"
+    report += "3. 數字資產內部結構性大輪動：資金從零售前端券商(HOOD)撤離，集中轉向底層合規穩定幣結算協議(CRCL)與核心交易通道(COIN)。\n\n"
+
+    report += "=============================================\n"
+    report += "線上觀測看板: https://futienchun.com/ark/\n"
+    report += "=============================================\n"
+    return report
+
 def send_via_formsubmit(subject, message_text, receiver_email):
     url = f"https://formsubmit.co/ajax/{receiver_email}"
     
     data = {
         "_subject": subject,
-        "日報內容": message_text,
+        "報告內容": message_text,
         "_template": "box"
     }
     
@@ -151,7 +212,7 @@ def send_via_formsubmit(subject, message_text, receiver_email):
     retry_delay = 12
     for attempt in range(max_retries + 1):
         try:
-            print(f"Sending daily report to {receiver_email} via FormSubmit.co HTTP API (Attempt {attempt + 1})...")
+            print(f"Sending email report to {receiver_email} via FormSubmit.co HTTP API (Attempt {attempt + 1})...")
             with urllib.request.urlopen(req, timeout=15) as response:
                 res = json.loads(response.read().decode('utf-8'))
                 if res.get("success") == "true":
@@ -172,30 +233,44 @@ def send_via_formsubmit(subject, message_text, receiver_email):
     return False
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Send ARK Summary Email Report")
+    parser.add_argument("--weekly", action="store_true", help="Send weekly comprehensive report instead of daily report")
+    parser.add_argument("--to", type=str, default=None, help="Override recipient email")
+    args = parser.parse_args()
+
     data = load_processed_data()
     if not data:
         print("Skipping email sending: No processed data found.")
         return
         
-    # Find active date
-    active_date = "Daily"
+    active_date = data.get("last_updated", datetime.now().strftime("%Y-%m-%d"))
     for fid in ["ARKK", "ARKG"]:
-        if fid in data["funds_data"]:
-            active_date = data["funds_data"][fid]["date"]
+        if fid in data.get("funds_data", {}):
+            active_date = data["funds_data"][fid].get("date", active_date)
             break
             
-    subject = f"ARK & 全球頂級基金持股觀測日報 ({active_date})"
-    message_text = build_plain_text_report(data)
+    # Determine if weekly
+    is_sunday = datetime.now().weekday() == 6
+    is_weekly = args.weekly or is_sunday
+
+    if is_weekly:
+        subject = f"ARK & 全球頂級基金持股觀測【每週綜合投資報告】({active_date})"
+        message_text = build_weekly_text_report(data)
+    else:
+        subject = f"ARK & 全球頂級基金持股觀測日報 ({active_date})"
+        message_text = build_plain_text_report(data)
     
-    # Send via FormSubmit to avoid local SMTP/Mail.app issues
     receiver_email = "tony.tc.fu@icloud.com"
     config = load_config()
     if config:
         receiver_email = config.get("receiver_email", receiver_email)
+    if args.to:
+        receiver_email = args.to
         
     success = send_via_formsubmit(subject, message_text, receiver_email)
     if success:
-        print("Daily tracker email report task executed.")
+        print(f"{'Weekly' if is_weekly else 'Daily'} tracker email report task executed successfully.")
     else:
         print("Email report delivery failed.")
 

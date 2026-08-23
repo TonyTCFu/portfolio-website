@@ -767,6 +767,59 @@ function renderWeeklySummaryTab(fund) {
             distList.innerHTML += `<li><span class="digest-list-item-ticker">${d.ticker}</span><span class="digest-list-item-val text-red">${d.pct_change}%</span></li>`;
         });
     }
+
+    // 8-Week Top 10 Trend & Forward Forecast Table
+    const forecastPeriodEl = document.getElementById('weekly-8w-forecast-period');
+    if (forecastPeriodEl && digest.eight_w_base_date) {
+        forecastPeriodEl.textContent = `8 週分析基準：${digest.eight_w_base_date} 至 ${digest.today_date}`;
+    }
+
+    const forecastBody = document.getElementById('weekly-top10-forecast-body');
+    if (forecastBody) {
+        forecastBody.innerHTML = '';
+        const forecastList = digest.top10_8w_forecast || [];
+        if (forecastList.length === 0) {
+            forecastBody.innerHTML = `<tr><td colspan="9" style="text-align:center; color:var(--text-muted); padding:20px;">無前十大 8 週持倉變化數據</td></tr>`;
+        } else {
+            forecastList.forEach(item => {
+                const isBuy = item.forecast_type === 'BULL';
+                const isSell = item.forecast_type === 'BEAR';
+                const colorClass = isBuy ? 'text-green' : (isSell ? 'text-red' : 'text-yellow');
+                const badgeBg = isBuy ? 'rgba(16, 185, 129, 0.15)' : (isSell ? 'rgba(239, 68, 68, 0.15)' : 'rgba(234, 179, 8, 0.15)');
+                const badgeColor = isBuy ? '#10b981' : (isSell ? '#ef4444' : '#eab308');
+
+                const sharesDiffStr = item.shares_diff_8w !== 0 
+                    ? `<span class="${colorClass}">${item.shares_diff_8w > 0 ? '+' : ''}${formatNumber(item.shares_diff_8w)} 股 (${item.shares_diff_pct_8w > 0 ? '+' : ''}${item.shares_diff_pct_8w}%)</span>`
+                    : `<span style="color:var(--text-muted);">持平 / 微調</span>`;
+
+                const valDiffStr = item.value_diff_8w !== 0
+                    ? `<span class="${colorClass}">${item.value_diff_8w > 0 ? '+' : ''}${formatCurrency(item.value_diff_8w)}</span>`
+                    : `<span style="color:var(--text-muted);">-</span>`;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight:700; color:var(--text-muted); text-align:center;">${item.rank}</td>
+                    <td>
+                        <div style="font-weight:700; color:var(--text-bright);">${item.ticker}</div>
+                        <div style="font-size:11px; color:var(--text-muted);">${item.company}</div>
+                    </td>
+                    <td style="font-size:12px; color:var(--text-muted);">${item.sector}</td>
+                    <td style="text-align: right; font-weight:700; font-family:monospace;">
+                        ${item.weight.toFixed(2)}%
+                        <div style="background:rgba(255,255,255,0.08); border-radius:2px; height:3px; width:60px; display:inline-block; margin-left:6px; vertical-align:middle;">
+                            <div style="background:var(--primary); height:3px; border-radius:2px; width:${Math.min(100, item.weight * 7)}%;"></div>
+                        </div>
+                    </td>
+                    <td style="text-align: right; font-family:monospace; font-size:12px;">${sharesDiffStr}</td>
+                    <td style="text-align: right; font-family:monospace; font-size:12px;">${valDiffStr}</td>
+                    <td><span style="display:inline-block; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:600; background:${badgeBg}; color:${badgeColor};">${item.action}</span></td>
+                    <td><span style="display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; background:${badgeBg}; color:${badgeColor};">${item.forecast}</span></td>
+                    <td style="font-size:11px; color:var(--text-muted); max-width:280px; line-height:1.4;">${item.logic}</td>
+                `;
+                forecastBody.appendChild(tr);
+            });
+        }
+    }
 }
 
 // ----------------------------------------------------

@@ -344,6 +344,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Top 10 8-Week Trend & Forward Forecast Report Card -->
+                    <div class="card list-card" style="margin-top: 24px;">
+                        <div class="card-header list-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 class="card-title"><i class="fa-solid fa-chart-line-up" style="color: var(--primary); margin-right: 8px;"></i>前十大重倉股過去 8 週持倉變化與增減持前瞻預測</h3>
+                            <div class="header-badge" id="weekly-8w-forecast-period" style="font-size:12px; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:6px;">8 週週期深度分析</div>
+                        </div>
+                        <div class="card-body" style="padding: 0; overflow-x: auto;">
+                            <table class="data-table" id="weekly-top10-forecast-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 45px;">#</th>
+                                        <th>標的代碼</th>
+                                        <th>核心賽道</th>
+                                        <th style="text-align: right;">當前權重</th>
+                                        <th style="text-align: right;">8週股數變動</th>
+                                        <th style="text-align: right;">8週金額變動</th>
+                                        <th>調倉動作</th>
+                                        <th>未來趨勢預測</th>
+                                        <th>核心驅動與調倉邏輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="weekly-top10-forecast-body">
+                                    <!-- Dynamic content populated by app.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 2. DAILY ANALYSIS TAB -->
