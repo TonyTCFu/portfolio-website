@@ -2,7 +2,8 @@
 import os
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, timezone
+import re
 
 # Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -34,9 +35,13 @@ def load_processed_data():
 def generate_markdown(data, active_date):
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    
     md = f"""---
-type: daily-report
+type: daily-note
 title: "ARK & 全球頂級基金持股觀測日報 ({active_date})"
+description: "ARK 与全球顶级基金每日持仓变动、资金流向、板块轮动与共识度观测日刊 ({active_date})。"
+timestamp: "{now_utc}"
 date: {active_date}
 tags:
   - ARK/DailyTracker
@@ -47,7 +52,7 @@ aliases:
 status: completed
 ---
 
-[[index|← 返回 22-ARK-Daily-Tracker 索引]]
+[← 返回 22-ARK-Daily-Tracker 索引](index.md)
 
 # ARK & 全球頂級基金持股觀測日報 ({active_date})
 
@@ -136,13 +141,14 @@ status: completed
         weights_str = f"{ark_w} / {nv_w} / {idna_w} / {vht_w}"
         md += f"| {idx} | **{c['ticker']}** | {c['company']} | {c['sector']} | {stars} ({c['consensus_score']}/4) | {weights_str} |\n"
         
-    md += "\n---\n\n[[index|← 返回 22-ARK-Daily-Tracker 索引]]\n"
+    md += "\n---\n\n[← 返回 22-ARK-Daily-Tracker 索引](index.md)\n"
     return md
 
 def update_index_files(active_date):
     # 1. Update sub-directory index
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     tracker_index_path = os.path.join(TRACKER_DIR, "index.md")
-    new_note_link = f"- [[{active_date}]]"
+    new_note_link = f"- [{active_date}]({active_date}.md)"
     
     try:
         if not os.path.exists(tracker_index_path):
@@ -150,6 +156,7 @@ def update_index_files(active_date):
 type: index
 title: "ARK & Global Top Funds Daily Tracker Index"
 description: "Index of ARK & Global Top Funds Daily Tracker notes"
+timestamp: "{now_utc}"
 ---
 
 # ARK & Global Top Funds Daily Tracker Index
@@ -168,10 +175,22 @@ description: "Index of ARK & Global Top Funds Daily Tracker notes"
             # Parse links and avoid duplicates
             existing_links = []
             header_lines = []
+            in_header = True
             for line in lines:
-                if line.strip().startswith("- [[") and "]]" in line:
-                    existing_links.append(line.strip())
-                else:
+                stripped = line.strip()
+                match_wiki = re.match(r'^\s*-\s*\[\[(.*?)\]\]', stripped)
+                match_md = re.match(r'^\s*-\s*\[(.*?)\]\((.*?)\)', stripped)
+                if match_wiki:
+                    in_header = False
+                    target = match_wiki.group(1)
+                    if "|" in target:
+                        target = target.split("|")[0]
+                    existing_links.append(f"- [{target}]({target}.md)")
+                elif match_md:
+                    in_header = False
+                    title, href = match_md.group(1), match_md.group(2)
+                    existing_links.append(f"- [{title}]({href})")
+                elif in_header:
                     header_lines.append(line)
                     
             if new_note_link not in existing_links:
@@ -181,10 +200,13 @@ description: "Index of ARK & Global Top Funds Daily Tracker notes"
             existing_links = sorted(list(set(existing_links)), reverse=True)
                 
             # Write back
-            new_content = "".join(header_lines)
-            if not new_content.endswith("\n\n"):
-                new_content += "\n"
-            new_content += "\n".join(existing_links) + "\n"
+            header_text = "".join(header_lines)
+            if "timestamp:" not in header_text and header_text.startswith("---"):
+                header_text = header_text.replace("---\n", f"---\ntimestamp: \"{now_utc}\"\n", 1)
+                
+            if not header_text.endswith("\n\n"):
+                header_text += "\n"
+            new_content = header_text + "\n".join(existing_links) + "\n"
             with open(tracker_index_path, 'w', encoding='utf-8') as f:
                 f.write(new_content)
             print("Updated tracker index.md links.")
