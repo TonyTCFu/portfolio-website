@@ -88,8 +88,8 @@
     </text>
 
     <!-- English Title -->
-    <text x="0" y="86" fill="#94a3b8" font-family="'Quicksand', -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="3">
-      CROSS-BORDER NOTES · PODCAST
+    <text x="0" y="86" fill="#94a3b8" font-family="'Quicksand', -apple-system, sans-serif" font-size="16" font-weight="700" letter-spacing="3">
+      TONY'S LAB · PODCAST
     </text>
   </g>
 

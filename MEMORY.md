@@ -16,12 +16,12 @@ This document records architectural decisions, major design iterations, and main
   * **Hero**: Executive profile (30-year corporate leader ✕ AI enthusiast).
   * **About / Strengths**: Executive leadership & familiar AI tool stacks (Codex, Antigravity, Claude Code, Open Claw, Hermes, Grok).
   * **Projects / AI Practice Notes**:
-    * Added `Dr eggbot / GrokBot 智能协同中枢` with high-fidelity multi-agent IM chat vector illustration (`grokbot-demo.svg`) reflecting real Chief of Staff workflows coordinating Podcast bots and Antigravity quant loops.
+    * Added `Dr eggbot / GrokBot 智能协同中枢` with high-fidelity animated GIF (`grokbot-demo.gif`) simulating a conversational multi-agent Chief of Staff workspace (scheduling market research, coordinating podcast bots, and syncing Antigravity quant loops). Fictionalized dialogue protects personal privacy.
     * Added Antigravity Taiwan Stock Quant Model, Open Claw Scraper, AI Task Orchestrator, and Obsidian Personal Wiki.
-  * **Podcast Section ("Tony的跨界笔记")**:
+  * **Podcast Section ("Tony的跨界笔记 / Tony's Lab")**:
     * Strictly corrected topic positioning: Does NOT cover corporate management history; focused 100% on global tech news, frontier AI shifts, visionary reports (ARK Big Ideas, Dario Amodei, Cybercab, GPT-6), biopharma breakthroughs, longevity medicine, and cross-border insights.
-    * Embedded 10 featured episodes (EP01-EP10) with duration and key takeaways.
-    * Multi-platform access: Apple Podcasts, Spotify, 小宇宙 (Xiaoyuzhou), 喜马拉雅 (Ximalaya).
+    * English branding established as `Tony's Lab`.
+    * Kept section evergreen by intentionally removing hard-coded episode lists, directing listeners seamlessly to Apple Podcasts, Spotify, 小宇宙, and 喜马拉雅.
   * **Contact & Social**: Email, locations (Shanghai & Taipei), direct feedback form.
 
 ---
