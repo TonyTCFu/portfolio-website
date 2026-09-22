@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1e1035" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#d946ef" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <radialGradient id="discShine" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="40%" stop-color="#3b82f6" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8" />
+    </radialGradient>
+    <filter id="coverGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#d946ef" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="500" height="500" rx="32" fill="url(#coverBg)" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+
+  <!-- Ambient Glowing Orbs -->
+  <circle cx="120" cy="120" r="140" fill="#00d2ff" opacity="0.18" filter="blur(60px)" />
+  <circle cx="380" cy="380" r="160" fill="#d946ef" opacity="0.2" filter="blur(70px)" />
+  <circle cx="250" cy="250" r="100" fill="#fbbf24" opacity="0.08" filter="blur(40px)" />
+
+  <!-- Decorative Vinyl Grooves Pattern in Background -->
+  <g opacity="0.25" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none">
+    <circle cx="420" cy="80" r="180" />
+    <circle cx="420" cy="80" r="150" />
+    <circle cx="420" cy="80" r="120" />
+    <circle cx="420" cy="80" r="90" />
+    <circle cx="420" cy="80" r="60" stroke="url(#primaryGrad)" stroke-width="2" />
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(40, 42)">
+    <rect width="170" height="28" rx="14" fill="rgba(0, 210, 255, 0.12)" stroke="rgba(0, 210, 255, 0.4)" stroke-width="1" />
+    <circle cx="14" cy="14" r="4" fill="#00d2ff" />
+    <text x="26" y="18" fill="#e0f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1">
+      TONY FU PODCAST
+    </text>
+  </g>
+
+  <!-- Sound Wave Graphic on Top Right -->
+  <g transform="translate(350, 42)">
+    <rect x="0" y="8" width="4" height="12" rx="2" fill="#00d2ff" opacity="0.7" />
+    <rect x="8" y="2" width="4" height="24" rx="2" fill="#38bdf8" />
+    <rect x="16" y="5" width="4" height="18" rx="2" fill="#818cf8" />
+    <rect x="24" y="0" width="4" height="28" rx="2" fill="#c084fc" />
+    <rect x="32" y="6" width="4" height="16" rx="2" fill="#f472b6" />
+    <rect x="40" y="10" width="4" height="8" rx="2" fill="#fb7185" />
+    <rect x="48" y="4" width="4" height="20" rx="2" fill="#00d2ff" />
+  </g>
+
+  <!-- Center Microphone & Sound Sphere Motif -->
+  <g transform="translate(250, 200)">
+    <!-- Outer Audio Pulse Rings -->
+    <circle r="76" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.3" stroke-dasharray="4 4" />
+    <circle r="60" fill="none" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.5" />
+    <circle r="46" fill="url(#discShine)" />
+    
+    <!-- Microphone Icon -->
+    <g transform="translate(-20, -26) scale(1.7)" fill="none" stroke="#f1f5f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="2" width="6" height="12" rx="3" fill="rgba(255,255,255,0.2)" />
+      <path d="M5 10a7 7 0 0 0 14 0" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+    </g>
+  </g>
+
+  <!-- Main Podcast Titles -->
+  <g transform="translate(42, 320)">
+    <!-- Subtitle Label -->
+    <text x="0" y="0" fill="#fbbf24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="2">
+      30年外商高管 ✕ 业余AI玩家
+    </text>
+
+    <!-- Main Chinese Title -->
+    <text x="0" y="52" fill="#ffffff" font-family="'M PLUS Rounded 1c', 'Quicksand', -apple-system, sans-serif" font-size="44" font-weight="800" letter-spacing="1">
+      Tony的<tspan fill="url(#accentGrad)">跨界笔记</tspan>
+    </text>
+
+    <!-- English Title -->
+    <text x="0" y="86" fill="#94a3b8" font-family="'Quicksand', -apple-system, sans-serif" font-size="16" font-weight="600" letter-spacing="3">
+      CROSS-BORDER NOTES
+    </text>
+  </g>
+
+  <!-- Bottom Platform Tag Badges Line -->
+  <g transform="translate(42, 442)">
+    <rect width="416" height="34" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+    <text x="20" y="22" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500">
+      Apple Podcasts · Spotify · 小宇宙 · 喜马拉雅
+    </text>
+    <text x="396" y="22" fill="#00d2ff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" text-anchor="end">
+      全网同步上线
+    </text>
+  </g>
+</svg>

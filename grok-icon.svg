@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="grokBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="grokSlash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#e0f2fe" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#grokBg)" stroke="rgba(0, 210, 255, 0.3)" stroke-width="2" />
+  <!-- xAI / Grok geometric slash mark -->
+  <g filter="url(#glow)">
+    <path d="M40 98 L56 98 L88 30 L72 30 Z" fill="url(#grokSlash)" />
+    <path d="M42 30 L54 30 L50 40 L38 40 Z" fill="#00d2ff" opacity="0.8" />
+    <path d="M74 88 L86 88 L82 98 L70 98 Z" fill="#d946ef" opacity="0.8" />
+  </g>
+</svg>

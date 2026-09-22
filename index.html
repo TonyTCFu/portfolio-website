@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Style Sheet -->
-    <link rel="stylesheet" href="style.css?v=20260922141717">
+    <link rel="stylesheet" href="style.css?v=20260922144300">
 </head>
 <body>
     <!-- Background Elements for Premium Glow Effects -->
@@ -36,6 +36,7 @@
                 <a href="#home" class="nav-link active">首页 / Home</a>
                 <a href="#about" class="nav-link">关于我 / About</a>
                 <a href="#projects" class="nav-link">精选项目 / Projects</a>
+                <a href="#podcast" class="nav-link">播客 / Podcast</a>
                 <a href="#contact" class="nav-link">联络我 / Contact</a>
             </nav>
 
@@ -147,6 +148,7 @@
                                     <span class="skill-tag">Claude Code</span>
                                     <span class="skill-tag">Open Claw</span>
                                     <span class="skill-tag">Hermes</span>
+                                    <span class="skill-tag">Grok Bot</span>
                                 </div>
                             </div>
                             
@@ -269,6 +271,34 @@
                     <!-- Project 4 -->
                     <article class="project-card reveal-up" style="animation-delay: 0.3s;">
                         <div class="project-image-wrapper">
+                            <img src="grokbot-demo.svg" alt="Grok Bot 守护进程与执行代理演示" class="project-image" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" aria-label="查看项目详情">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">AI Agent / Daemon (AI 代理与常驻守护)</span>
+                            <h3 class="project-title">运作 Grok Bot 智能执行代理 / Operating Grok Bot Agent</h3>
+                            <p class="project-desc">部署与运作 Grok Bot 本地常驻守护进程与执行监督器（Supervisor），深度结合 xAI Grok 的前沿推理能力，实现多渠道资讯挖掘、智能过滤与自动化工作流调度。
+                                <span class="en-text">Deploying and operating local Grok Bot supervisor and daemon services, leveraging xAI Grok's reasoning to automate multi-channel news curation and intelligent task scheduling.</span>
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag-small"><img src="grok-icon.svg" class="tag-icon-img" alt="Grok Bot" width="14" height="14" style="width: 14px; height: 14px; object-fit: contain; border-radius: 3px; flex-shrink: 0;"><span>Grok Bot</span></span>
+                                <span class="project-tag-small"><img src="grok-icon.svg" class="tag-icon-img" alt="xAI Grok" width="14" height="14" style="width: 14px; height: 14px; object-fit: contain; border-radius: 3px; flex-shrink: 0;"><span>xAI Grok</span></span>
+                                <span class="project-tag-small"><img src="logo-v3.png" class="tag-icon-img" alt="Daemon" width="14" height="14" style="width: 14px; height: 14px; object-fit: contain; border-radius: 3px; flex-shrink: 0;"><span>Daemon / Supervisor</span></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card featured-full reveal-up" style="animation-delay: 0.4s;">
+                        <div class="project-image-wrapper">
                             <img src="dashboard-demo.gif" alt="Antigravity 台股量化模型仪表盘演示" class="project-image" loading="lazy">
                             <div class="project-overlay">
                                 <a href="/dashboard/index.html?v=20260922141717" class="project-link" aria-label="查看项目详情">
@@ -292,6 +322,138 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Podcast Section -->
+        <section id="podcast" class="podcast-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Podcast / 个人播客</span>
+                    <h2 class="section-title">Tony的跨界笔记 / Tony's Cross-Border Notes</h2>
+                </div>
+
+                <div class="podcast-wrapper card-blur reveal-up">
+                    <div class="podcast-container-grid">
+                        <!-- Left Column: Cover & Sound Animation -->
+                        <div class="podcast-visual-col">
+                            <div class="podcast-cover-box">
+                                <img src="podcast-cover.svg" alt="Tony的跨界笔记 播客封面" class="podcast-cover-img" loading="lazy">
+                            </div>
+                            <div class="sound-wave-bar-container" aria-hidden="true">
+                                <div class="sound-wave-bar"></div>
+                                <div class="sound-wave-bar"></div>
+                                <div class="sound-wave-bar"></div>
+                                <div class="sound-wave-bar"></div>
+                                <div class="sound-wave-bar"></div>
+                                <div class="sound-wave-bar"></div>
+                            </div>
+                            <div class="podcast-meta-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                                </svg>
+                                <span>音频播客 · 持续更新</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Details & Platforms -->
+                        <div class="podcast-content-col">
+                            <span class="project-category">Original Podcast (原创播客节目)</span>
+                            <h3 class="podcast-title">Tony的跨界笔记</h3>
+                            <p class="podcast-tagline">30年外商高管 ✕ 业余AI玩家的跨界对谈与认知沉淀</p>
+                            
+                            <p class="podcast-desc-text">
+                                这是我创办的个人原创播客。在这里，我将 30 年跨国企业实战管理经验，与最前沿的生成式 AI 实操探索、量化思维与生活哲学深度交融。不讲假大空的套话，只聊最真实、能落地的跨界认知与人生智慧。
+                                <span class="en-text">Hosted by Tony Fu. A candid podcast bridging 30+ years of corporate multinational management with frontline AI experiments, quant models, and lifelong reflections.</span>
+                            </p>
+
+                            <div class="podcast-focus-list">
+                                <span class="podcast-focus-item">🏢 跨国管理与高阶领导力</span>
+                                <span class="podcast-focus-item">🤖 玩转 AI 落地与自动化工具</span>
+                                <span class="podcast-focus-item">📈 量化思维与终身成长</span>
+                            </div>
+
+                            <div class="podcast-platforms-heading">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                <span>全网收听平台 / Listen on Major Platforms</span>
+                            </div>
+
+                            <div class="podcast-platforms-grid">
+                                <!-- Apple Podcasts -->
+                                <a href="https://podcasts.apple.com" target="_blank" rel="noopener noreferrer" class="platform-card apple-podcasts">
+                                    <div class="platform-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" rx="6" fill="#872b96"/>
+                                            <path d="M12 5.5c-2.4 0-4.5 1.4-5.5 3.5-.2.5 0 1 .5 1.2.5.2 1 0 1.2-.5.7-1.6 2.3-2.7 4.1-2.7s3.4 1.1 4.1 2.7c.2.5.7.7 1.2.5.5-.2.7-.7.5-1.2-1-2.1-3.1-3.5-5.6-3.5zm0 3c-1.4 0-2.6.8-3.2 2-.2.5 0 1 .5 1.2.5.2 1 0 1.2-.5.3-.6 1-1.2 1.8-1.2s1.5.6 1.8 1.2c.2.5.7.7 1.2.5.5-.2.7-.7.5-1.2-.6-1.2-1.8-2-3.8-2zm0 3.2c-.9 0-1.6.7-1.6 1.6 0 .6.3 1.1.8 1.4v3.8c0 .4.3.7.8.7s.8-.3.8-.7v-3.8c.5-.3.8-.8.8-1.4 0-.9-.7-1.6-1.6-1.6z" fill="#ffffff"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-texts">
+                                        <span class="platform-name">Apple Podcasts</span>
+                                        <span class="platform-sub">苹果播客</span>
+                                    </div>
+                                </a>
+
+                                <!-- Spotify -->
+                                <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="platform-card spotify">
+                                    <div class="platform-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="11" fill="#1DB954"/>
+                                            <path d="M16.5 16.2c-.2 0-.4-.1-.5-.2-2.1-1.3-4.8-1.6-8-0.9-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 3.5-.8 6.5-.5 8.9 1 .3.2.4.6.2.9-.1.3-.3.5-.3.5zm1.1-2.5c-.2.3-.6.4-.9.2-2.4-1.5-6.1-1.9-8.9-1-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.2-1 7.3-.5 10 1.2.3.2.4.6.2 1zm.1-2.6c-2.9-1.7-7.7-1.9-10.5-1-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 3.3-1 8.6-.8 11.9 1.2.4.2.5.7.3 1.1-.2.3-.8.4-1.2.2z" fill="#000000"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-texts">
+                                        <span class="platform-name">Spotify</span>
+                                        <span class="platform-sub">全球主流收听</span>
+                                    </div>
+                                </a>
+
+                                <!-- 小宇宙 -->
+                                <a href="https://www.xiaoyuzhoufm.com" target="_blank" rel="noopener noreferrer" class="platform-card xiaoyuzhou">
+                                    <div class="platform-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" rx="6" fill="#FF6600"/>
+                                            <circle cx="12" cy="12" r="4.5" fill="#ffffff"/>
+                                            <circle cx="12" cy="12" r="2.2" fill="#FF6600"/>
+                                            <ellipse cx="12" cy="12" rx="7.5" ry="3.2" transform="rotate(-30 12 12)" stroke="#ffffff" stroke-width="1.3" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-texts">
+                                        <span class="platform-name">小宇宙</span>
+                                        <span class="platform-sub">中文播客社区</span>
+                                    </div>
+                                </a>
+
+                                <!-- 喜马拉雅 -->
+                                <a href="https://www.ximalaya.com" target="_blank" rel="noopener noreferrer" class="platform-card ximalaya">
+                                    <div class="platform-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" rx="6" fill="#F86442"/>
+                                            <path d="M6 13a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1zm3-3a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-7zm3-4a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H13a1 1 0 0 1-1-1V6zm3 4a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H16a1 1 0 0 1-1-1v-7zm3 3a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H19a1 1 0 0 1-1-1v-1z" fill="#ffffff"/>
+                                        </svg>
+                                    </div>
+                                    <div class="platform-texts">
+                                        <span class="platform-name">喜马拉雅</span>
+                                        <span class="platform-sub">移动音频平台</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="podcast-search-tip">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                <span>收听小贴士：打开 Apple Podcasts、Spotify、小宇宙或喜马拉雅 App，搜索 <strong>“Tony的跨界笔记”</strong> 即可订阅并收听所有期次。</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -383,6 +545,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js?v=20260922141717"></script>
+    <script src="script.js?v=20260922144300"></script>
 </body>
 </html>

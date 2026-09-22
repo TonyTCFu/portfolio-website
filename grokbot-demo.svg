@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d1a" />
+      <stop offset="50%" stop-color="#0c1224" />
+      <stop offset="100%" stop-color="#05070e" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(20, 30, 55, 0.85)" />
+      <stop offset="100%" stop-color="rgba(10, 16, 32, 0.95)" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d946ef" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="boxGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00d2ff" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="480" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="60" x2="800" y2="60" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="0" y1="420" x2="800" y2="420" />
+    <line x1="160" y1="0" x2="160" y2="480" />
+    <line x1="320" y1="0" x2="320" y2="480" />
+    <line x1="480" y1="0" x2="480" y2="480" />
+    <line x1="640" y1="0" x2="640" y2="480" />
+  </g>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="150" cy="120" r="140" fill="#00d2ff" opacity="0.12" filter="blur(50px)" />
+  <circle cx="680" cy="360" r="160" fill="#d946ef" opacity="0.1" filter="blur(60px)" />
+
+  <!-- Main Terminal Window Frame -->
+  <g transform="translate(30, 25)" filter="url(#boxGlow)">
+    <rect width="740" height="430" rx="14" fill="url(#cardGrad)" stroke="rgba(0, 210, 255, 0.25)" stroke-width="1.2" />
+    
+    <!-- Title Bar -->
+    <rect width="740" height="42" rx="14" fill="rgba(15, 23, 42, 0.9)" />
+    <rect y="30" width="740" height="12" fill="rgba(15, 23, 42, 0.9)" />
+    <line x1="0" y1="42" x2="740" y2="42" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+    <!-- Window Dots -->
+    <circle cx="22" cy="21" r="5.5" fill="#ff5f56" />
+    <circle cx="40" cy="21" r="5.5" fill="#ffbd2e" />
+    <circle cx="58" cy="21" r="5.5" fill="#27c93f" />
+
+    <!-- Window Title -->
+    <text x="370" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">
+      grok-bot-daemon :: local-exec-supervisor (active)
+    </text>
+
+    <!-- Top-Right Live Status Pill -->
+    <rect x="618" y="11" width="102" height="20" rx="10" fill="rgba(39, 201, 63, 0.15)" stroke="rgba(39, 201, 63, 0.4)" stroke-width="1" />
+    <circle cx="630" cy="21" r="3.5" fill="#27c93f" />
+    <text x="640" y="25" fill="#27c93f" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">DAEMON LIVE</text>
+
+    <!-- Content Layout: Left Sidebar (Telemetry) & Right Console -->
+    <!-- Divider -->
+    <line x1="220" y1="42" x2="220" y2="430" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+    <!-- Left Sidebar: Bot Info -->
+    <g transform="translate(18, 58)">
+      <text x="0" y="16" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">AGENT TELEMETRY</text>
+      
+      <!-- Metric Box 1 -->
+      <rect x="0" y="30" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+      <text x="12" y="50" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">SUPERVISOR STATUS</text>
+      <text x="12" y="70" fill="#10b981" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">● Running (PID 4821)</text>
+
+      <!-- Metric Box 2 -->
+      <rect x="0" y="92" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+      <text x="12" y="112" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">REASONING CORE</text>
+      <text x="12" y="132" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">xAI Grok Intelligence</text>
+
+      <!-- Metric Box 3 -->
+      <rect x="0" y="154" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+      <text x="12" y="174" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">EXECUTION DAEMON</text>
+      <text x="12" y="194" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Local Socket Loop</text>
+
+      <!-- Metric Box 4 -->
+      <rect x="0" y="216" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
+      <text x="12" y="236" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">UPTIME / SUCCESS</text>
+      <text x="12" y="256" fill="#d946ef" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">99.98% / 0 Failed</text>
+
+      <!-- Architecture Mini Graph -->
+      <rect x="0" y="280" width="186" height="74" rx="8" fill="rgba(0, 210, 255, 0.04)" stroke="rgba(0, 210, 255, 0.15)" />
+      <text x="12" y="300" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">WORKFLOW PIPELINE</text>
+      <text x="12" y="320" fill="#94a3b8" font-family="monospace" font-size="10">Grok ➔ Filter ➔ Action</text>
+      <text x="12" y="338" fill="#64748b" font-family="monospace" font-size="9">Continuous Autonomous Sync</text>
+    </g>
+
+    <!-- Right Main Console / Terminal Area -->
+    <g transform="translate(240, 60)" font-family="'SF Mono', 'Fira Code', Menlo, Consolas, monospace">
+      <!-- Command prompt -->
+      <text x="0" y="16" fill="#64748b" font-size="12">tony@macbook-pro:~/.grokbot $ </text>
+      <text x="210" y="16" fill="#00d2ff" font-size="12" font-weight="600">python3 -m grokbot.daemon --mode=supervisor</text>
+
+      <!-- Logs -->
+      <g font-size="11.5">
+        <text x="0" y="44" fill="#475569">[10:14:02]</text>
+        <text x="75" y="44" fill="#38bdf8">[INFO]</text>
+        <text x="125" y="44" fill="#e2e8f0">Initializing Grok Bot daemon runtime environment...</text>
+
+        <text x="0" y="70" fill="#475569">[10:14:03]</text>
+        <text x="75" y="70" fill="#a855f7">[SUPERVISOR]</text>
+        <text x="170" y="70" fill="#e2e8f0">Local exec daemon established on socket</text>
+
+        <text x="0" y="96" fill="#475569">[10:14:04]</text>
+        <text x="75" y="96" fill="#00d2ff">[xAI GROK]</text>
+        <text x="155" y="96" fill="#cbd5e1">Authentication verified · Reasoning API connected</text>
+
+        <text x="0" y="122" fill="#475569">[10:14:06]</text>
+        <text x="75" y="122" fill="#f59e0b">[INGEST]</text>
+        <text x="135" y="122" fill="#e2e8f0">Listening for tech trends, market news, multi-feeds</text>
+
+        <text x="0" y="148" fill="#475569">[10:14:08]</text>
+        <text x="75" y="148" fill="#10b981">[AUTONOMOUS]</text>
+        <text x="175" y="148" fill="#e2e8f0">Parsed 18 dynamic streams with high-salience tags</text>
+
+        <text x="0" y="174" fill="#475569">[10:14:10]</text>
+        <text x="75" y="174" fill="#d946ef">[REASONING]</text>
+        <text x="165" y="174" fill="#e2e8f0">Synthesizing executive summaries &amp; action triggers</text>
+
+        <text x="0" y="200" fill="#475569">[10:14:11]</text>
+        <text x="75" y="200" fill="#10b981">[DISPATCH]</text>
+        <text x="150" y="200" fill="#4ade80">✓ Sync completed to Obsidian vault &amp; local cache</text>
+
+        <text x="0" y="226" fill="#475569">[10:14:12]</text>
+        <text x="75" y="226" fill="#38bdf8">[STATUS]</text>
+        <text x="135" y="226" fill="#94a3b8">Daemon entering steady state. Polling every 60s...</text>
+      </g>
+
+      <!-- High-tech Bottom Highlight Card -->
+      <g transform="translate(0, 260)">
+        <rect width="470" height="85" rx="10" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" />
+        <text x="16" y="26" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">xAI Grok Bot 运作实录 / Autonomous Bot Operation</text>
+        <text x="16" y="48" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">常驻后台执行 · 动态资讯情报归集 · 自动化任务调度</text>
+        <text x="16" y="68" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">Powered by xAI Grok Engine &amp; Local Daemon Supervisor</text>
+      </g>
+    </g>
+  </g>
+</svg>
