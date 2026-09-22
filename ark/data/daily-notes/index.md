@@ -9,6 +9,7 @@ description: "Index of ARK & Global Top Funds Daily Tracker notes"
 
 ## Daily Reports
 
+- [2026-09-21](2026-09-21.md)
 - [2026-09-18](2026-09-18.md)
 - [2026-09-17](2026-09-17.md)
 - [2026-09-16](2026-09-16.md)
