@@ -13,8 +13,8 @@ This document records architectural decisions, major design iterations, and main
   * `/dashboard/`: Antigravity Taiwan Stock Quant Model real-time dashboard.
   * `/ark/`: ARK Investment Tracking and research daily notes.
 * **Content Organization**:
-  * **Hero**: Executive profile (30-year corporate leader ✕ AI enthusiast).
-  * **About / Strengths**: Executive leadership & familiar AI tool stacks (Codex, Antigravity, Claude Code, Open Claw, Hermes, Grok).
+  * **Hero**: Executive profile (30-year multinational corporate executive ✕ AI Builder & Tech Explorer). Narrative bridges strategic decision-making with hands-on quantitative finance models, cross-border eCommerce, multi-agent personal operations, and "Tony's Lab" tech podcast, guided by "Automate anything repeated three times".
+  * **About / Strengths**: Refined narrative on bridging executive vision with engineering reality; structured 3 clear skill pillars: Familiar AI Stack (Antigravity, Codex, Claude Code, Grok Bot, Open Claw, Hermes, Obsidian), Core Domains & Practices (Active Risk Parity Quant, Multi-Agent Ops, Cross-border eCommerce, Full-Stack, Podcasting), and Executive & Leadership (30+ Yrs Executive Leadership, Global Team Management, Strategic Planning, Enterprise AI Enablement).
   * **Projects / AI Practice Notes**:
     * Added `Dr eggbot / GrokBot 智能协同中枢` as the featured full-width card (`featured-full`) on desktop (swapped position with Taiwan Stock Quant model). Features a high-fidelity animated GIF (`grokbot-demo.gif`) simulating a conversational multi-agent Chief of Staff workspace (scheduling market research, coordinating podcast bots, and syncing Antigravity quant loops). Fictionalized dialogue protects personal privacy. Bottom badges updated to authentic `GrokBot` App icon (black squircle with 3D white dome character and diagonal capsule eyes), `Codex`, and `Antigravity`.
     * Added Antigravity Taiwan Stock Quant Model, Open Claw Scraper, AI Task Orchestrator, and Obsidian Personal Wiki.
