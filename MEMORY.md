@@ -16,7 +16,7 @@ This document records architectural decisions, major design iterations, and main
   * **Hero**: Executive profile (30-year corporate leader ✕ AI enthusiast).
   * **About / Strengths**: Executive leadership & familiar AI tool stacks (Codex, Antigravity, Claude Code, Open Claw, Hermes, Grok).
   * **Projects / AI Practice Notes**:
-    * Added `Dr eggbot / GrokBot 智能协同中枢` with high-fidelity animated GIF (`grokbot-demo.gif`) simulating a conversational multi-agent Chief of Staff workspace (scheduling market research, coordinating podcast bots, and syncing Antigravity quant loops). Fictionalized dialogue protects personal privacy.
+    * Added `Dr eggbot / GrokBot 智能协同中枢` as the featured full-width card (`featured-full`) on desktop (swapped position with Taiwan Stock Quant model). Features a high-fidelity animated GIF (`grokbot-demo.gif`) simulating a conversational multi-agent Chief of Staff workspace (scheduling market research, coordinating podcast bots, and syncing Antigravity quant loops). Fictionalized dialogue protects personal privacy. Bottom badges updated to `GrokBot` (official red droplet icon), `Codex`, and `Antigravity`.
     * Added Antigravity Taiwan Stock Quant Model, Open Claw Scraper, AI Task Orchestrator, and Obsidian Personal Wiki.
   * **Podcast Section ("Tony的跨界笔记 / Tony's Lab")**:
     * Strictly corrected topic positioning: Does NOT cover corporate management history; focused 100% on global tech news, frontier AI shifts, visionary reports (ARK Big Ideas, Dario Amodei, Cybercab, GPT-6), biopharma breakthroughs, longevity medicine, and cross-border insights.
