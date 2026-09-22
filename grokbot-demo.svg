@@ -1,156 +1,252 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" width="920" height="560">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d1a" />
-      <stop offset="50%" stop-color="#0c1224" />
-      <stop offset="100%" stop-color="#05070e" />
+    <linearGradient id="windowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d111e" />
+      <stop offset="100%" stop-color="#080a12" />
     </linearGradient>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(20, 30, 55, 0.85)" />
-      <stop offset="100%" stop-color="rgba(10, 16, 32, 0.95)" />
+    <linearGradient id="sidebarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121727" />
+      <stop offset="100%" stop-color="#0e1320" />
     </linearGradient>
-    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00d2ff" />
-      <stop offset="100%" stop-color="#3b82f6" />
+    <linearGradient id="chatBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e19" />
+      <stop offset="100%" stop-color="#06080e" />
     </linearGradient>
-    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d946ef" />
-      <stop offset="100%" stop-color="#8b5cf6" />
+    <linearGradient id="activeItem" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(244, 63, 94, 0.18)" />
+      <stop offset="100%" stop-color="rgba(244, 63, 94, 0.05)" />
     </linearGradient>
-    <filter id="boxGlow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00d2ff" flood-opacity="0.15" />
+    <filter id="winGlow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000000" flood-opacity="0.6" />
     </filter>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="800" height="480" fill="url(#bgGrad)" />
-  
-  <!-- Subtle Grid Pattern -->
-  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
-    <line x1="0" y1="60" x2="800" y2="60" />
-    <line x1="0" y1="120" x2="800" y2="120" />
-    <line x1="0" y1="180" x2="800" y2="180" />
-    <line x1="0" y1="240" x2="800" y2="240" />
-    <line x1="0" y1="300" x2="800" y2="300" />
-    <line x1="0" y1="360" x2="800" y2="360" />
-    <line x1="0" y1="420" x2="800" y2="420" />
-    <line x1="160" y1="0" x2="160" y2="480" />
-    <line x1="320" y1="0" x2="320" y2="480" />
-    <line x1="480" y1="0" x2="480" y2="480" />
-    <line x1="640" y1="0" x2="640" y2="480" />
-  </g>
+  <!-- Background Canvas -->
+  <rect width="920" height="560" fill="#04060b" />
+  <circle cx="200" cy="180" r="220" fill="#00d2ff" opacity="0.08" filter="blur(80px)" />
+  <circle cx="750" cy="380" r="240" fill="#d946ef" opacity="0.08" filter="blur(90px)" />
 
-  <!-- Ambient Glow Orbs -->
-  <circle cx="150" cy="120" r="140" fill="#00d2ff" opacity="0.12" filter="blur(50px)" />
-  <circle cx="680" cy="360" r="160" fill="#d946ef" opacity="0.1" filter="blur(60px)" />
+  <!-- App Window Container -->
+  <g transform="translate(20, 20)" filter="url(#winGlow)">
+    <rect width="880" height="520" rx="16" fill="url(#windowBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2" />
 
-  <!-- Main Terminal Window Frame -->
-  <g transform="translate(30, 25)" filter="url(#boxGlow)">
-    <rect width="740" height="430" rx="14" fill="url(#cardGrad)" stroke="rgba(0, 210, 255, 0.25)" stroke-width="1.2" />
-    
-    <!-- Title Bar -->
-    <rect width="740" height="42" rx="14" fill="rgba(15, 23, 42, 0.9)" />
-    <rect y="30" width="740" height="12" fill="rgba(15, 23, 42, 0.9)" />
-    <line x1="0" y1="42" x2="740" y2="42" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <!-- Window Title Bar -->
+    <rect width="880" height="42" rx="16" fill="#141a2c" />
+    <rect y="30" width="880" height="12" fill="#141a2c" />
+    <line x1="0" y1="42" x2="880" y2="42" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
 
-    <!-- Window Dots -->
+    <!-- Window Controls -->
     <circle cx="22" cy="21" r="5.5" fill="#ff5f56" />
     <circle cx="40" cy="21" r="5.5" fill="#ffbd2e" />
     <circle cx="58" cy="21" r="5.5" fill="#27c93f" />
 
-    <!-- Window Title -->
-    <text x="370" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">
-      grok-bot-daemon :: local-exec-supervisor (active)
+    <text x="440" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+      Dr eggbot · Chief of Staff Multi-Agent Workspace
     </text>
 
-    <!-- Top-Right Live Status Pill -->
-    <rect x="618" y="11" width="102" height="20" rx="10" fill="rgba(39, 201, 63, 0.15)" stroke="rgba(39, 201, 63, 0.4)" stroke-width="1" />
-    <circle cx="630" cy="21" r="3.5" fill="#27c93f" />
-    <text x="640" y="25" fill="#27c93f" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">DAEMON LIVE</text>
+    <!-- App Body: Left Sidebar (230px) & Right Chat Area (650px) -->
+    
+    <!-- LEFT SIDEBAR -->
+    <g transform="translate(0, 42)">
+      <rect width="230" height="478" fill="url(#sidebarBg)" />
+      <line x1="230" y1="0" x2="230" y2="478" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
 
-    <!-- Content Layout: Left Sidebar (Telemetry) & Right Console -->
-    <!-- Divider -->
-    <line x1="220" y1="42" x2="220" y2="430" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+      <!-- Search Bar -->
+      <g transform="translate(14, 12)">
+        <rect width="202" height="28" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" />
+        <circle cx="16" cy="14" r="4" fill="none" stroke="#64748b" stroke-width="1.2" />
+        <line x1="19" y1="17" x2="23" y2="21" stroke="#64748b" stroke-width="1.2" />
+        <text x="28" y="18" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">搜尋 (Search)</text>
+      </g>
 
-    <!-- Left Sidebar: Bot Info -->
-    <g transform="translate(18, 58)">
-      <text x="0" y="16" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1">AGENT TELEMETRY</text>
+      <!-- Chief of Staff (總經理) Card -->
+      <g transform="translate(14, 48)">
+        <circle cx="101" cy="26" r="22" fill="#3b82f6" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+        <!-- Headshot Silhouette -->
+        <circle cx="101" cy="22" r="8" fill="#f8fafc" />
+        <path d="M89 40 C91 32 111 32 113 40 Z" fill="#f8fafc" />
+        <text x="101" y="60" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" text-anchor="middle">總經理</text>
+        <rect x="66" y="66" width="70" height="16" rx="8" fill="rgba(255,255,255,0.08)" />
+        <text x="101" y="77" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Chief of Staff</text>
+      </g>
+
+      <!-- Agent List (Item Height: 44px) -->
+      <g transform="translate(0, 140)">
+        <!-- 1. Podcast Agent -->
+        <g transform="translate(0, 0)">
+          <circle cx="28" cy="18" r="12" fill="#8b5cf6" />
+          <circle cx="28" cy="18" r="5" fill="#ffffff" />
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Podcast</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">桌面交回來了；喜馬頁當掉...</text>
+        </g>
+
+        <!-- 2. Antigravity Agent -->
+        <g transform="translate(0, 42)">
+          <circle cx="28" cy="18" r="12" fill="#0284c7" />
+          <path d="M22 23 L28 12 L34 23" stroke="#ffffff" stroke-width="2" fill="none" />
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Antigravity</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">定了。v4b 已改名成 Final...</text>
+        </g>
+
+        <!-- 3. 小秘書 -->
+        <g transform="translate(0, 84)">
+          <circle cx="28" cy="18" r="12" fill="#ec4899" />
+          <text x="28" y="22" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="10" text-anchor="middle">秘</text>
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">小秘書</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">已回總經理：Huberman 兩份...</text>
+        </g>
+
+        <!-- 4. Dr eggbot (ACTIVE SELECTED) -->
+        <g transform="translate(0, 126)">
+          <rect width="230" height="42" fill="url(#activeItem)" />
+          <rect width="3" height="42" fill="#f43f5e" />
+          <circle cx="28" cy="21" r="12" fill="#f43f5e" />
+          <path d="M28 14 C25 18 24 21 24 23 A4 4 0 0 0 32 23 C32 21 31 18 28 14 Z" fill="#ffffff" />
+          <text x="48" y="19" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Dr eggbot</text>
+          <text x="48" y="33" fill="#f43f5e" font-family="-apple-system, sans-serif" font-size="9.5">Antigravity 看板重開已改...</text>
+        </g>
+
+        <!-- 5. 股票深挖分析 -->
+        <g transform="translate(0, 168)">
+          <circle cx="28" cy="18" r="12" fill="#0f766e" />
+          <text x="28" y="22" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">股</text>
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">股票深挖分析</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">週一複盤已交總經理。不下單</text>
+        </g>
+
+        <!-- 6. Codex -->
+        <g transform="translate(0, 210)">
+          <circle cx="28" cy="18" r="12" fill="#334155" />
+          <rect x="23" y="13" width="10" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="1.5" />
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Codex</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">本週複盤已私訊總經理。</text>
+        </g>
+
+        <!-- 7. Gmail manager -->
+        <g transform="translate(0, 252)">
+          <circle cx="28" cy="18" r="12" fill="#dc2626" />
+          <text x="28" y="22" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">M</text>
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Gmail <tspan fill="#64748b" font-size="9.5">[manager]</tspan></text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">已移出 Inbox 11 封工作...</text>
+        </g>
+
+        <!-- 8. 賬房 -->
+        <g transform="translate(0, 294)">
+          <circle cx="28" cy="18" r="12" fill="#b45309" />
+          <text x="28" y="22" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">賬</text>
+          <text x="48" y="16" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">賬房</text>
+          <text x="48" y="30" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9.5">月結每月1日 09:00 再開...</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT CHAT AREA -->
+    <g transform="translate(230, 42)">
+      <rect width="650" height="478" fill="url(#chatBg)" />
       
-      <!-- Metric Box 1 -->
-      <rect x="0" y="30" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
-      <text x="12" y="50" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">SUPERVISOR STATUS</text>
-      <text x="12" y="70" fill="#10b981" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">● Running (PID 4821)</text>
-
-      <!-- Metric Box 2 -->
-      <rect x="0" y="92" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
-      <text x="12" y="112" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">REASONING CORE</text>
-      <text x="12" y="132" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">xAI Grok Intelligence</text>
-
-      <!-- Metric Box 3 -->
-      <rect x="0" y="154" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
-      <text x="12" y="174" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">EXECUTION DAEMON</text>
-      <text x="12" y="194" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Local Socket Loop</text>
-
-      <!-- Metric Box 4 -->
-      <rect x="0" y="216" width="186" height="52" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" />
-      <text x="12" y="236" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">UPTIME / SUCCESS</text>
-      <text x="12" y="256" fill="#d946ef" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">99.98% / 0 Failed</text>
-
-      <!-- Architecture Mini Graph -->
-      <rect x="0" y="280" width="186" height="74" rx="8" fill="rgba(0, 210, 255, 0.04)" stroke="rgba(0, 210, 255, 0.15)" />
-      <text x="12" y="300" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">WORKFLOW PIPELINE</text>
-      <text x="12" y="320" fill="#94a3b8" font-family="monospace" font-size="10">Grok ➔ Filter ➔ Action</text>
-      <text x="12" y="338" fill="#64748b" font-family="monospace" font-size="9">Continuous Autonomous Sync</text>
-    </g>
-
-    <!-- Right Main Console / Terminal Area -->
-    <g transform="translate(240, 60)" font-family="'SF Mono', 'Fira Code', Menlo, Consolas, monospace">
-      <!-- Command prompt -->
-      <text x="0" y="16" fill="#64748b" font-size="12">tony@macbook-pro:~/.grokbot $ </text>
-      <text x="210" y="16" fill="#00d2ff" font-size="12" font-weight="600">python3 -m grokbot.daemon --mode=supervisor</text>
-
-      <!-- Logs -->
-      <g font-size="11.5">
-        <text x="0" y="44" fill="#475569">[10:14:02]</text>
-        <text x="75" y="44" fill="#38bdf8">[INFO]</text>
-        <text x="125" y="44" fill="#e2e8f0">Initializing Grok Bot daemon runtime environment...</text>
-
-        <text x="0" y="70" fill="#475569">[10:14:03]</text>
-        <text x="75" y="70" fill="#a855f7">[SUPERVISOR]</text>
-        <text x="170" y="70" fill="#e2e8f0">Local exec daemon established on socket</text>
-
-        <text x="0" y="96" fill="#475569">[10:14:04]</text>
-        <text x="75" y="96" fill="#00d2ff">[xAI GROK]</text>
-        <text x="155" y="96" fill="#cbd5e1">Authentication verified · Reasoning API connected</text>
-
-        <text x="0" y="122" fill="#475569">[10:14:06]</text>
-        <text x="75" y="122" fill="#f59e0b">[INGEST]</text>
-        <text x="135" y="122" fill="#e2e8f0">Listening for tech trends, market news, multi-feeds</text>
-
-        <text x="0" y="148" fill="#475569">[10:14:08]</text>
-        <text x="75" y="148" fill="#10b981">[AUTONOMOUS]</text>
-        <text x="175" y="148" fill="#e2e8f0">Parsed 18 dynamic streams with high-salience tags</text>
-
-        <text x="0" y="174" fill="#475569">[10:14:10]</text>
-        <text x="75" y="174" fill="#d946ef">[REASONING]</text>
-        <text x="165" y="174" fill="#e2e8f0">Synthesizing executive summaries &amp; action triggers</text>
-
-        <text x="0" y="200" fill="#475569">[10:14:11]</text>
-        <text x="75" y="200" fill="#10b981">[DISPATCH]</text>
-        <text x="150" y="200" fill="#4ade80">✓ Sync completed to Obsidian vault &amp; local cache</text>
-
-        <text x="0" y="226" fill="#475569">[10:14:12]</text>
-        <text x="75" y="226" fill="#38bdf8">[STATUS]</text>
-        <text x="135" y="226" fill="#94a3b8">Daemon entering steady state. Polling every 60s...</text>
+      <!-- Top Chat Header -->
+      <g transform="translate(0, 0)">
+        <rect width="650" height="46" fill="rgba(255,255,255,0.02)" />
+        <line x1="0" y1="46" x2="650" y2="46" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        
+        <circle cx="26" cy="23" r="10" fill="#f43f5e" />
+        <path d="M26 17 C23.5 20.5 22.5 23 22.5 24.5 A3.5 3.5 0 0 0 29.5 24.5 C29.5 23 28.5 20.5 26 17 Z" fill="#ffffff" />
+        <text x="44" y="28" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Dr eggbot</text>
+        
+        <!-- Action buttons -->
+        <g transform="translate(580, 14)">
+          <rect width="24" height="24" rx="4" fill="rgba(255,255,255,0.05)" />
+          <path d="M12 7 L12 15 M8 11 L12 7 L16 11" stroke="#94a3b8" stroke-width="1.5" fill="none" />
+          <rect x="32" width="24" height="24" rx="4" fill="rgba(255,255,255,0.05)" />
+          <rect x="38" y="6" width="12" height="12" rx="2" fill="none" stroke="#94a3b8" stroke-width="1.5" />
+        </g>
       </g>
 
-      <!-- High-tech Bottom Highlight Card -->
-      <g transform="translate(0, 260)">
-        <rect width="470" height="85" rx="10" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" />
-        <text x="16" y="26" fill="#00d2ff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">xAI Grok Bot 运作实录 / Autonomous Bot Operation</text>
-        <text x="16" y="48" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">常驻后台执行 · 动态资讯情报归集 · 自动化任务调度</text>
-        <text x="16" y="68" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">Powered by xAI Grok Engine &amp; Local Daemon Supervisor</text>
+      <!-- CHAT MESSAGE THREAD -->
+      <g transform="translate(18, 56)">
+        
+        <!-- 1. Tony's Command (Right aligned bubble) -->
+        <g transform="translate(260, 10)">
+          <rect width="355" height="34" rx="14" fill="#181e2e" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" />
+          <text x="16" y="22" fill="#e2e8f0" font-family="-apple-system, sans-serif" font-size="12">
+            podcast小宇宙可以停，沒有新發podcast時都不需要，xzep
+          </text>
+        </g>
+
+        <!-- 2. Dr eggbot Response (Left aligned bubble) -->
+        <g transform="translate(10, 52)">
+          <rect width="210" height="32" rx="14" fill="#1e293b" />
+          <text x="14" y="21" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">
+            好，叫 Podcast 把小宇宙盯梢停掉。
+          </text>
+          
+          <text x="360" y="38" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10.5">已傳訊息給 <tspan fill="#a855f7" font-weight="bold">🟣 Podcast</tspan></text>
+        </g>
+
+        <!-- 3. Dr eggbot Followup Bubble -->
+        <g transform="translate(10, 94)">
+          <rect width="380" height="32" rx="14" fill="#1e293b" />
+          <text x="14" y="21" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">
+            已請它 pause；回驗收我再跟你說。之後有新集要盯再打開就行。
+          </text>
+
+          <text x="360" y="38" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10.5">訊息來自 <tspan fill="#a855f7" font-weight="bold">🟣 Podcast</tspan></text>
+        </g>
+
+        <!-- 4. Agent Confirmation Bubble -->
+        <g transform="translate(10, 138)">
+          <rect width="360" height="32" rx="14" fill="rgba(139, 92, 246, 0.12)" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1" />
+          <text x="14" y="21" fill="#c4b5fd" font-family="-apple-system, sans-serif" font-size="11.5">
+            小宇宙盯梢已暫停（排程留著，有新集再說一聲就能開）。
+          </text>
+        </g>
+
+        <!-- 5. Tony's Command 2 (Right aligned bubble) -->
+        <g transform="translate(390, 178)">
+          <rect width="225" height="34" rx="14" fill="#181e2e" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" />
+          <text x="16" y="22" fill="#e2e8f0" font-family="-apple-system, sans-serif" font-size="12">
+            antigravity看板一天一次就可以了
+          </text>
+        </g>
+
+        <!-- 6. Dr eggbot Response 2 -->
+        <g transform="translate(10, 220)">
+          <rect width="160" height="32" rx="14" fill="#1e293b" />
+          <text x="14" y="21" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">
+            好，改成平日一天一次。
+          </text>
+
+          <text x="340" y="38" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10.5">已傳訊息給 <tspan fill="#0284c7" font-weight="bold">🔵 Antigravity</tspan></text>
+        </g>
+
+        <!-- 7. Tony's Command 3 (Right aligned bubble) -->
+        <g transform="translate(385, 266)">
+          <rect width="230" height="34" rx="14" fill="#181e2e" stroke="rgba(0, 210, 255, 0.2)" stroke-width="1" />
+          <text x="16" y="22" fill="#e2e8f0" font-family="-apple-system, sans-serif" font-size="12">
+            現在ep10都做不出來，盯個頭呀？
+          </text>
+        </g>
+
+        <!-- 8. Dr eggbot Response 3 -->
+        <g transform="translate(10, 308)">
+          <rect width="365" height="32" rx="14" fill="#1e293b" />
+          <text x="14" y="21" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">
+            對，沒上架盯了也沒用——所以才停掉。有新集真要過審再說。
+          </text>
+
+          <text x="340" y="38" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10.5">訊息來自 <tspan fill="#0284c7" font-weight="bold">🔵 Antigravity</tspan></text>
+        </g>
+
+        <!-- 9. Antigravity Status Confirmation -->
+        <g transform="translate(10, 354)">
+          <rect width="340" height="32" rx="14" fill="rgba(2, 132, 199, 0.12)" stroke="rgba(2, 132, 199, 0.3)" stroke-width="1" />
+          <text x="14" y="21" fill="#7dd3fc" font-family="-apple-system, sans-serif" font-size="11.5">
+            Antigravity 看板重開已改成平日一天一次（09:10）。
+          </text>
+        </g>
+
       </g>
     </g>
+
   </g>
 </svg>
