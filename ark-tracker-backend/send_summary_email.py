@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """
 ARK & Top Global Funds Daily Summary Email Dispatcher
-Refined Apple-standard newsletter layout matching high-fidelity typography:
-- Native Apple system typography (PingFang SC & SF Pro)
-- Strict hierarchy: Bold large category headlines, distinct metric bars, comfortable narrative body
-- Actionable advice callouts with color-coded side indicators
-- Pill source badges matching reference newsletter style
-- Zero ugly SVG bar charts (clean, premium text-first presentation)
-- Local native dispatch via Apple Mail (AppleScript) using iCloud account (clean HTML, no third-party wrapper)
-- Automatic fallback to SMTP or FormSubmit when Apple Mail is unavailable
+- Pure FormSubmit.co HTTP API transport (sender: submissions@formsubmit.co)
+- Zero local Mail.app / AppleScript calls (completely avoids local SSL errors and popups)
+- Single-field structured text payload (avoids FormSubmit field-name underscores like 1__xxx)
+- Clean, high-legibility plain text typography matching Apple Mobile Mail rendering
+- Export companion HTML to futienchun.com/ark/daily_digest.html
 """
 
 import os
@@ -17,12 +14,7 @@ import json
 import urllib.request
 import urllib.parse
 from datetime import datetime
-import html
-import subprocess
 import time
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROCESSED_FILE = os.path.join(BASE_DIR, "data", "processed.json")
@@ -92,29 +84,29 @@ def generate_stock_narrative(item, is_buy=True):
     
     if is_buy:
         if streak >= 3:
-            narrative = f"机构对 <strong>{company}</strong> 展现极高确定性，已<strong>连续 {streak} 个交易日持续净增仓</strong>。在 <strong>{sector}</strong> 景气度持续上行阶段，木头姐正逢低强化其行业定价权筹码。"
+            narrative = f"机构对 {company} 展现极高确定性，已连续 {streak} 个交易日持续净增仓。在 {sector} 景气度持续上行阶段，木头姐正逢低强化其行业定价权筹码。"
             advice = "高置信多头标的，行业基本面扎实；建议列入重点观察池，可待盘中回撤分批低吸跟投。"
             advice_tag = "逢低跟投 / 积极关注"
         elif shares_diff_pct > 15:
-            narrative = f"单日增持比例高达 <strong>{shares_diff_pct:.1f}%</strong>，属于<strong>战术性突击建仓动作</strong>。主力资金借估值回调快速锁仓优质筹码，中短线进攻信号鲜明。"
+            narrative = f"单日增持比例高达 {shares_diff_pct:.1f}%，属于战术性突击建仓动作。主力资金借估值回调快速锁仓优质筹码，中短线进攻信号鲜明。"
             advice = "机构突击建仓，短期波动弹性加剧；建议轻仓试探，避免盲目追高，严格设好动态止损线。"
             advice_tag = "轻仓跟进 / 注意防守"
         else:
-            narrative = f"主力小幅加码，当前持仓权重稳步抬升至 <strong>{weight:.2f}%</strong>。该标的在 <strong>{sector}</strong> 领域具备核心护城河，属于资产组合中的稳健核心持仓。"
+            narrative = f"主力小幅加码，当前持仓权重稳步抬升至 {weight:.2f}%。该标的在 {sector} 领域具备核心护城河，属于资产组合中的稳健核心持仓。"
             advice = "底仓稳健增持，中长线发展逻辑良好；建议长期投资者继续保持底仓并耐心持有。"
             advice_tag = "底仓持有 / 长期看好"
     else:
         abs_streak = abs(streak)
         if weight > 8.0:
-            narrative = f"<strong>{company}</strong> 当前持仓权重仍高达 <strong>{weight:.2f}%</strong>。本次微幅减持主要受限于基金单一标的 10% 顶格风控红线，属于<strong>被动再平衡 (Passive Rebalance)</strong> 获利了结，中长期赛道逻辑未变。"
+            narrative = f"{company} 当前持仓权重仍高达 {weight:.2f}%。本次微幅减持主要受限于基金单一标的 10% 顶格风控红线，属于被动再平衡 (Passive Rebalance) 获利了结，中长期赛道逻辑未变。"
             advice = "规则性被动减持而非基本面恶化；中长期多头逻辑完好，无需过度恐慌杀跌。"
             advice_tag = "被动再平衡 / 无需恐慌"
         elif abs_streak >= 3 or shares_diff_pct < -8.0:
-            narrative = f"主力对 <strong>{company}</strong> 展开持续性减持（<strong>连续减仓 {abs_streak} 天</strong>），持仓敞口显著收缩。在 <strong>{sector}</strong> 行业研发周期或资金成本压力下，机构选择战略性回收流动性。"
+            narrative = f"主力对 {company} 展开持续性减持（连续减仓 {abs_streak} 天），持仓敞口显著收缩。在 {sector} 行业研发周期或资金成本压力下，机构选择战略性回收流动性。"
             advice = "主力持续离场信号明确，短期承压动能较强；建议逢反弹减持多头头寸，暂不建议盲目抄底。"
             advice_tag = "反弹离场 / 暂不抄底"
         else:
-            narrative = f"单日小额获利减持，仓位占比微调至 <strong>{weight:.2f}%</strong>。在近期股价上行后释放部分浮盈，属于常规仓位管理操作。"
+            narrative = f"单日小额获利减持，仓位占比微调至 {weight:.2f}%。在近期股价上行后释放部分浮盈，属于常规仓位管理操作。"
             advice = "技术性小幅锁定利润，整体趋势中性偏多；已有盈利持仓可适当分批止盈，保留核心底仓。"
             advice_tag = "适度止盈 / 观察支撑"
             
@@ -125,7 +117,6 @@ def extract_market_intelligence(data):
     all_buys = []
     all_sells = []
     
-    # 1. Extract Trades across active ARK ETFs
     for fid, fund in funds.items():
         if not fid.startswith("ARK"):
             continue
@@ -164,7 +155,6 @@ def extract_market_intelligence(data):
         s["advice_tag"] = tag
         top_sells.append(s)
 
-    # 2. Extract Consecutive Streaks
     streak_buys = []
     streak_sells = []
     for fid, fund in funds.items():
@@ -217,12 +207,7 @@ def extract_market_intelligence(data):
 
 def build_apple_style_html_report(data, intel):
     """
-    Renders pure Apple-aesthetic HTML matching the user reference screenshot:
-    - Pure white background, no card frames
-    - -apple-system, PingFang SC, SF Pro typography
-    - Bold section headlines, distinct font weights and colors
-    - Clean pill badges and color-accented recommendation strips
-    - No ugly SVG bar charts
+    Exportable companion HTML (for web view at futienchun.com/ark/daily_digest.html)
     """
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     ver_stamp = datetime.now().strftime("%Y%m%d%H%M")
@@ -260,9 +245,8 @@ def build_apple_style_html_report(data, intel):
   </div>
 '''
 
-    # Section 1: Top 5 Buys
+    # Section 1: Buys
     html_out += '''
-  <!-- Section 1: Top 5 Buys -->
   <div style="margin-bottom:34px;">
     <h2 style="font-size:18px; font-weight:800; color:#111827; margin:0 0 18px 0; line-height:1.35; letter-spacing:-0.2px;">
       1. 核心买入榜 | 机构重拳建仓与增持 Top 5 深度透视
@@ -272,40 +256,30 @@ def build_apple_style_html_report(data, intel):
         streak_str = f"连买 {b.get('streak')} 天" if b.get('streak', 0) > 1 else "单日加仓"
         html_out += f'''
     <div style="margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #F1F5F9;">
-      <!-- Title row -->
       <div style="font-size:16px; font-weight:700; color:#111827; margin-bottom:6px; line-height:1.4;">
-        #{idx} [{b['fund']}] {html.escape(b['ticker'])} · {html.escape(b['company'])}
+        #{idx} [{b['fund']}] {b['ticker']} · {b['company']}
         <span style="display:inline-block; background:#DCFCE7; color:#15803D; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle;">买入 {b.get('shares_diff_pct', 0):+.2f}%</span>
       </div>
-
-      <!-- Metric bar -->
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 变动股数：<strong style="color:#111827;">{b['shares_diff']:+,d} 股</strong> (总持股: <strong style="color:#111827;">{b.get('shares', 0):,} 股</strong>)<br>
         • 最新单价：<strong style="color:#111827;">${b['price']:.2f} USD</strong> | 增持市值：<strong style="color:#15803D;">+${abs(b.get('value_diff', 0))/1e6:.2f}M USD</strong><br>
         • 持仓权重：<strong style="color:#111827;">{b.get('weight', 0):.2f}%</strong> (日偏离 <strong style="color:#111827;">{b.get('weight_diff', 0):+.2f}%</strong>) | 状态：<strong style="color:#2563EB;">{streak_str}</strong>
       </div>
-
-      <!-- Narrative -->
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
         {b['narrative']}
       </div>
-
-      <!-- Actionable Advice Callout -->
       <div style="background:#F0FDF4; border-left:3px solid #16A34A; border-radius:2px; padding:9px 12px; font-size:13px; color:#14532D; margin-bottom:8px; line-height:1.55;">
-        <strong>💡 建议参考 [{html.escape(b['advice_tag'])}]</strong>：{html.escape(b['advice'])}
+        <strong>💡 建议参考 [{b['advice_tag']}]</strong>：{b['advice']}
       </div>
-
-      <!-- Pill Badge -->
       <div>
-        <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">来源 ARK官方持仓 · 赛道: {html.escape(b['sector'])}</span>
+        <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">来源 ARK官方持仓 · 赛道: {b['sector']}</span>
       </div>
     </div>
 '''
     html_out += "  </div>\n"
 
-    # Section 2: Top 5 Sells
+    # Section 2: Sells
     html_out += '''
-  <!-- Section 2: Top 5 Sells -->
   <div style="margin-bottom:34px;">
     <h2 style="font-size:18px; font-weight:800; color:#111827; margin:0 0 18px 0; line-height:1.35; letter-spacing:-0.2px;">
       2. 核心卖出榜 | 资金减持与获利防御 Top 5 深度透视
@@ -316,41 +290,31 @@ def build_apple_style_html_report(data, intel):
         streak_str = f"连卖 {abs_streak} 天" if abs_streak > 1 else "单日减持"
         html_out += f'''
     <div style="margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #F1F5F9;">
-      <!-- Title row -->
       <div style="font-size:16px; font-weight:700; color:#111827; margin-bottom:6px; line-height:1.4;">
-        #{idx} [{s['fund']}] {html.escape(s['ticker'])} · {html.escape(s['company'])}
+        #{idx} [{s['fund']}] {s['ticker']} · {s['company']}
         <span style="display:inline-block; background:#FEE2E2; color:#B91C1C; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle;">减持 {s.get('shares_diff_pct', 0):.2f}%</span>
       </div>
-
-      <!-- Metric bar -->
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 变动股数：<strong style="color:#111827;">{s['shares_diff']:+,d} 股</strong> (总持股: <strong style="color:#111827;">{s.get('shares', 0):,} 股</strong>)<br>
         • 最新单价：<strong style="color:#111827;">${s['price']:.2f} USD</strong> | 减持市值：<strong style="color:#B91C1C;">-${abs(s.get('value_diff', 0))/1e6:.2f}M USD</strong><br>
         • 持仓权重：<strong style="color:#111827;">{s.get('weight', 0):.2f}%</strong> (日偏离 <strong style="color:#111827;">{s.get('weight_diff', 0):+.2f}%</strong>) | 状态：<strong style="color:#EA580C;">{streak_str}</strong>
       </div>
-
-      <!-- Narrative -->
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
         {s['narrative']}
       </div>
-
-      <!-- Actionable Advice Callout -->
       <div style="background:#FEF2F2; border-left:3px solid #DC2626; border-radius:2px; padding:9px 12px; font-size:13px; color:#7F1D1D; margin-bottom:8px; line-height:1.55;">
-        <strong>⚠️ 建议参考 [{html.escape(s['advice_tag'])}]</strong>：{html.escape(s['advice'])}
+        <strong>⚠️ 建议参考 [{s['advice_tag']}]</strong>：{s['advice']}
       </div>
-
-      <!-- Pill Badge -->
       <div>
-        <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">来源 ARK官方持仓 · 赛道: {html.escape(s['sector'])}</span>
+        <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">来源 ARK官方持仓 · 赛道: {s['sector']}</span>
       </div>
     </div>
 '''
     html_out += "  </div>\n"
 
-    # Section 3: Consecutive Buying Streaks
+    # Section 3: Buying Streaks
     if streak_buys:
         html_out += '''
-  <!-- Section 3: Buying Streaks -->
   <div style="margin-bottom:34px;">
     <h2 style="font-size:18px; font-weight:800; color:#111827; margin:0 0 18px 0; line-height:1.35; letter-spacing:-0.2px;">
       3. 持续加仓追踪 | 机构高置信连买异动监控
@@ -359,29 +323,20 @@ def build_apple_style_html_report(data, intel):
         for idx, sb in enumerate(streak_buys, 1):
             html_out += f'''
     <div style="margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #F1F5F9;">
-      <!-- Title row -->
       <div style="font-size:16px; font-weight:700; color:#111827; margin-bottom:6px; line-height:1.4;">
-        #{idx} [{sb['fund']}] {html.escape(sb['ticker'])} · {html.escape(sb['company'])}
+        #{idx} [{sb['fund']}] {sb['ticker']} · {sb['company']}
         <span style="display:inline-block; background:#EFF6FF; color:#1D4ED8; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle;">连买 {sb['streak']} 天</span>
       </div>
-
-      <!-- Metric bar -->
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 持仓总量：<strong style="color:#111827;">{sb.get('shares', 0):,} 股</strong> | 最新单价：<strong style="color:#111827;">${sb.get('price', 0):.2f} USD</strong><br>
-        • 持仓权重：<strong style="color:#111827;">{sb.get('weight', 0):.2f}%</strong> | 赛道：<strong style="color:#4B5563;">{html.escape(sb['sector'])}</strong>
+        • 持仓权重：<strong style="color:#111827;">{sb.get('weight', 0):.2f}%</strong> | 赛道：<strong style="color:#4B5563;">{sb['sector']}</strong>
       </div>
-
-      <!-- Narrative -->
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
         {sb['narrative']}
       </div>
-
-      <!-- Actionable Advice Callout -->
       <div style="background:#EFF6FF; border-left:3px solid #2563EB; border-radius:2px; padding:9px 12px; font-size:13px; color:#1E3A8A; margin-bottom:8px; line-height:1.55;">
-        <strong>💡 建议参考 [{html.escape(sb['advice_tag'])}]</strong>：{html.escape(sb['advice'])}
+        <strong>💡 建议参考 [{sb['advice_tag']}]</strong>：{sb['advice']}
       </div>
-
-      <!-- Pill Badge -->
       <div>
         <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">连续加仓 {sb['streak']} 个交易日 · 机构持续建仓</span>
       </div>
@@ -389,10 +344,9 @@ def build_apple_style_html_report(data, intel):
 '''
         html_out += "  </div>\n"
 
-    # Section 4: Consecutive Selling Streaks
+    # Section 4: Selling Streaks
     if streak_sells:
         html_out += '''
-  <!-- Section 4: Selling Streaks -->
   <div style="margin-bottom:34px;">
     <h2 style="font-size:18px; font-weight:800; color:#111827; margin:0 0 18px 0; line-height:1.35; letter-spacing:-0.2px;">
       4. 持续减仓预警 | 资金撤离与防御收缩监控
@@ -402,29 +356,20 @@ def build_apple_style_html_report(data, intel):
             abs_days = abs(ss['streak'])
             html_out += f'''
     <div style="margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid #F1F5F9;">
-      <!-- Title row -->
       <div style="font-size:16px; font-weight:700; color:#111827; margin-bottom:6px; line-height:1.4;">
-        #{idx} [{ss['fund']}] {html.escape(ss['ticker'])} · {html.escape(ss['company'])}
+        #{idx} [{ss['fund']}] {ss['ticker']} · {ss['company']}
         <span style="display:inline-block; background:#FFF7ED; color:#C2410C; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; margin-left:6px; vertical-align:middle;">连卖 {abs_days} 天</span>
       </div>
-
-      <!-- Metric bar -->
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 剩余持股：<strong style="color:#111827;">{ss.get('shares', 0):,} 股</strong> | 最新单价：<strong style="color:#111827;">${ss.get('price', 0):.2f} USD</strong><br>
-        • 持仓权重：<strong style="color:#111827;">{ss.get('weight', 0):.2f}%</strong> | 赛道：<strong style="color:#4B5563;">{html.escape(ss['sector'])}</strong>
+        • 持仓权重：<strong style="color:#111827;">{ss.get('weight', 0):.2f}%</strong> | 赛道：<strong style="color:#4B5563;">{ss['sector']}</strong>
       </div>
-
-      <!-- Narrative -->
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
         {ss['narrative']}
       </div>
-
-      <!-- Actionable Advice Callout -->
       <div style="background:#FFF7ED; border-left:3px solid #EA580C; border-radius:2px; padding:9px 12px; font-size:13px; color:#7C2D12; margin-bottom:8px; line-height:1.55;">
-        <strong>⚠️ 建议参考 [{html.escape(ss['advice_tag'])}]</strong>：{html.escape(ss['advice'])}
+        <strong>⚠️ 建议参考 [{ss['advice_tag']}]</strong>：{ss['advice']}
       </div>
-
-      <!-- Pill Badge -->
       <div>
         <span style="display:inline-block; background:#F3F4F6; color:#6B7280; font-size:11px; padding:3px 9px; border-radius:9999px;">连续减持 {abs_days} 个交易日 · 警惕抛压风险</span>
       </div>
@@ -432,9 +377,8 @@ def build_apple_style_html_report(data, intel):
 '''
         html_out += "  </div>\n"
 
-    # Section 5: Macro & Sector Shifts
+    # Section 5: Sector Shifts
     html_out += '''
-  <!-- Section 5: Sector Shifts -->
   <div style="margin-bottom:34px;">
     <h2 style="font-size:18px; font-weight:800; color:#111827; margin:0 0 18px 0; line-height:1.35; letter-spacing:-0.2px;">
       5. 资金流向与板块轮动深度解读
@@ -451,13 +395,13 @@ def build_apple_style_html_report(data, intel):
             html_out += f'''
     <div style="margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid #F1F5F9;">
       <div style="font-size:15px; font-weight:700; color:#111827; margin-bottom:4px;">
-        ■ {fund_id} ({html.escape(fund['name'])})
+        ■ {fund_id} ({fund['name']})
       </div>
       <div style="font-size:13px; color:#4B5563; margin-bottom:6px;">
         规模变动: <strong style="color:#111827;">{aum_change}</strong> | 净现金流: <strong style="color:#111827;">${analysis['net_cash_flow']:+,.2f} USD</strong> | 前十大集中度: <strong style="color:#111827;">{analysis['concentration_today']}%</strong> ({conc_diff})
       </div>
       <div style="font-size:14px; color:#374151; line-height:1.65;">
-        {html.escape(analysis['narrative'])}
+        {analysis['narrative']}
       </div>
     </div>
 '''
@@ -477,6 +421,10 @@ def build_apple_style_html_report(data, intel):
     return html_out
 
 def build_plain_text_report(data, intel):
+    """
+    Renders pure, clean, beautifully structured plain text.
+    Uses consistent lines, clear spacing, zero underscores, and distinct section breaks.
+    """
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     ver_stamp = datetime.now().strftime("%Y%m%d%H%M")
     top_buys = intel["top_buys"]
@@ -484,67 +432,75 @@ def build_plain_text_report(data, intel):
     streak_buys = intel["streak_buys"]
     streak_sells = intel["streak_sells"]
 
-    report = f"=============================================\n"
-    report += f"ARK & 全球顶尖基金持股观测日刊\n"
-    report += f"数据基准时间：{date_str}\n"
-    report += f"线上看板：https://futienchun.com/ark/daily_digest.html?v={ver_stamp}\n"
-    report += f"=============================================\n\n"
+    report = "=====================================================\n"
+    report += "ARK & 全球顶尖基金持股观测日刊\n"
+    report += f"数据基准时间：{date_str} (美股收盘监控)\n"
+    report += f"📱 高清图文阅读器: https://futienchun.com/ark/daily_digest.html?v={ver_stamp}\n"
+    report += "=====================================================\n\n"
 
     # 1. Top 5 Buys
     report += "【1. 核心买入榜 | 机构增持 Top 5 深度透视】\n"
-    report += "---------------------------------------------\n"
+    report += "─────────────────────────────────────────────────────\n"
     for idx, b in enumerate(top_buys, 1):
         streak_str = f"连买 {b.get('streak')} 天" if b.get('streak', 0) > 1 else "单日加仓"
-        clean_nar = b['narrative'].replace("<strong>", "").replace("</strong>", "")
-        report += f"#{idx} [{b['fund']}] {b['ticker']} ({b['company']})\n"
-        report += f"  - 变动股数: {b['shares_diff']:+,d} 股 ({b.get('shares_diff_pct', 0):+.2f}%) | 总持股: {b.get('shares', 0):,} 股\n"
-        report += f"  - 最新单价: ${b['price']:.2f} USD | 估算变动市值: ${abs(b.get('value_diff', 0))/1e6:.2f}M USD\n"
-        report += f"  - 持仓权重: {b.get('weight', 0):.2f}% ({b.get('weight_diff', 0):+.2f}%) | 状态: {streak_str}\n"
-        report += f"  - 深度分析说明: {clean_nar}\n"
-        report += f"  - 💡 建议参考 [{b['advice_tag']}]: {b['advice']}\n\n"
+        report += f"#{idx} [{b['fund']}] {b['ticker']} · {b['company']}  [买入 {b.get('shares_diff_pct', 0):+.2f}%]\n"
+        report += f"  • 变动股数: {b['shares_diff']:+,d} 股  (总持股: {b.get('shares', 0):,} 股)\n"
+        report += f"  • 最新单价: ${b['price']:.2f} USD  |  增持市值: +${abs(b.get('value_diff', 0))/1e6:.2f}M USD\n"
+        report += f"  • 持仓权重: {b.get('weight', 0):.2f}% (日偏离 {b.get('weight_diff', 0):+.2f}%)  |  状态: {streak_str}\n\n"
+        report += f"  【深度分析说明】\n  {b['narrative']}\n\n"
+        report += f"  【💡 建议参考 · {b['advice_tag']}】\n  {b['advice']}\n\n"
+        report += f"  来源: ARK官方持仓 · 赛道: {b['sector']}\n"
+        report += "─────────────────────────────────────────────────────\n"
+    report += "\n"
 
     # 2. Top 5 Sells
     report += "【2. 核心卖出榜 | 资金减持 Top 5 深度透视】\n"
-    report += "---------------------------------------------\n"
+    report += "─────────────────────────────────────────────────────\n"
     for idx, s in enumerate(top_sells, 1):
         abs_streak = abs(s.get('streak', 0))
         streak_str = f"连卖 {abs_streak} 天" if abs_streak > 1 else "单日减持"
-        clean_nar = s['narrative'].replace("<strong>", "").replace("</strong>", "")
-        report += f"#{idx} [{s['fund']}] {s['ticker']} ({s['company']})\n"
-        report += f"  - 变动股数: {s['shares_diff']:+,d} 股 ({s.get('shares_diff_pct', 0):.2f}%) | 总持股: {s.get('shares', 0):,} 股\n"
-        report += f"  - 最新单价: ${s['price']:.2f} USD | 估算减持市值: ${abs(s.get('value_diff', 0))/1e6:.2f}M USD\n"
-        report += f"  - 持仓权重: {s.get('weight', 0):.2f}% ({s.get('weight_diff', 0):+.2f}%) | 状态: {streak_str}\n"
-        report += f"  - 深度分析说明: {clean_nar}\n"
-        report += f"  - ⚠️ 建议参考 [{s['advice_tag']}]: {s['advice']}\n\n"
+        report += f"#{idx} [{s['fund']}] {s['ticker']} · {s['company']}  [减持 {s.get('shares_diff_pct', 0):.2f}%]\n"
+        report += f"  • 变动股数: {s['shares_diff']:+,d} 股  (总持股: {s.get('shares', 0):,} 股)\n"
+        report += f"  • 最新单价: ${s['price']:.2f} USD  |  减持市值: -${abs(s.get('value_diff', 0))/1e6:.2f}M USD\n"
+        report += f"  • 持仓权重: {s.get('weight', 0):.2f}% (日偏离 {s.get('weight_diff', 0):+.2f}%)  |  状态: {streak_str}\n\n"
+        report += f"  【深度分析说明】\n  {s['narrative']}\n\n"
+        report += f"  【⚠️ 建议参考 · {s['advice_tag']}】\n  {s['advice']}\n\n"
+        report += f"  来源: ARK官方持仓 · 赛道: {s['sector']}\n"
+        report += "─────────────────────────────────────────────────────\n"
+    report += "\n"
 
     # 3. Buying Streaks
     if streak_buys:
-        report += "【3. 持续加仓追踪 | 机构高置信连买异动追踪】\n"
-        report += "---------------------------------------------\n"
+        report += "【3. 持续加仓追踪 | 机构高置信连买异动监控】\n"
+        report += "─────────────────────────────────────────────────────\n"
         for idx, sb in enumerate(streak_buys, 1):
-            clean_nar = sb['narrative'].replace("<strong>", "").replace("</strong>", "")
-            report += f"#{idx} [{sb['fund']}] {sb['ticker']} ({sb['company']}) | 连续买进 {sb['streak']} 天\n"
-            report += f"  - 当前持股: {sb.get('shares', 0):,} 股 | 最新价格: ${sb.get('price', 0):.2f} USD\n"
-            report += f"  - 持仓权重: {sb.get('weight', 0):.2f}% | 赛道: {sb['sector']}\n"
-            report += f"  - 异动说明: {clean_nar}\n"
-            report += f"  - 💡 建议参考 [{sb['advice_tag']}]: {sb['advice']}\n\n"
+            report += f"#{idx} [{sb['fund']}] {sb['ticker']} · {sb['company']}  [连续买进 {sb['streak']} 天]\n"
+            report += f"  • 当前持股: {sb.get('shares', 0):,} 股  |  最新单价: ${sb.get('price', 0):.2f} USD\n"
+            report += f"  • 持仓权重: {sb.get('weight', 0):.2f}%  |  赛道: {sb['sector']}\n\n"
+            report += f"  【异动说明】\n  {sb['narrative']}\n\n"
+            report += f"  【💡 建议参考 · {sb['advice_tag']}】\n  {sb['advice']}\n\n"
+            report += f"  连续加仓 {sb['streak']} 个交易日 · 机构持续建仓\n"
+            report += "─────────────────────────────────────────────────────\n"
+        report += "\n"
 
     # 4. Selling Streaks
     if streak_sells:
-        report += "【4. 持续减仓预警 | 资金撤离与防御收缩】\n"
-        report += "---------------------------------------------\n"
+        report += "【4. 持续减仓预警 | 资金撤离与防御收缩监控】\n"
+        report += "─────────────────────────────────────────────────────\n"
         for idx, ss in enumerate(streak_sells, 1):
             abs_days = abs(ss['streak'])
-            clean_nar = ss['narrative'].replace("<strong>", "").replace("</strong>", "")
-            report += f"#{idx} [{ss['fund']}] {ss['ticker']} ({ss['company']}) | 连续卖出 {abs_days} 天\n"
-            report += f"  - 剩余持股: {ss.get('shares', 0):,} 股 | 最新价格: ${ss.get('price', 0):.2f} USD\n"
-            report += f"  - 持仓权重: {ss.get('weight', 0):.2f}% | 赛道: {ss['sector']}\n"
-            report += f"  - 预警说明: {clean_nar}\n"
-            report += f"  - ⚠️ 建议参考 [{ss['advice_tag']}]: {ss['advice']}\n\n"
+            report += f"#{idx} [{ss['fund']}] {ss['ticker']} · {ss['company']}  [连续卖出 {abs_days} 天]\n"
+            report += f"  • 剩余持股: {ss.get('shares', 0):,} 股  |  最新单价: ${ss.get('price', 0):.2f} USD\n"
+            report += f"  • 持仓权重: {ss.get('weight', 0):.2f}%  |  赛道: {ss['sector']}\n\n"
+            report += f"  【预警说明】\n  {ss['narrative']}\n\n"
+            report += f"  【⚠️ 建议参考 · {ss['advice_tag']}】\n  {ss['advice']}\n\n"
+            report += f"  连续减持 {abs_days} 个交易日 · 警惕抛压风险\n"
+            report += "─────────────────────────────────────────────────────\n"
+        report += "\n"
 
     # 5. Sector Shifts & Daily Rotation
     report += "【5. 资金流向与板块轮动深度解读】\n"
-    report += "---------------------------------------------\n"
+    report += "─────────────────────────────────────────────────────\n"
     for fund_id in ["ARKK", "ARKG", "IDNA"]:
         if fund_id not in data["funds_data"]:
             continue
@@ -553,12 +509,14 @@ def build_plain_text_report(data, intel):
         if analysis:
             aum_change = f"{analysis['aum_change_pct']:+.2f}%"
             conc_diff = f"{analysis['concentration_diff']:+.2f}%"
-            report += f"■ {fund_id} ({fund['name']}):\n"
-            report += f"  - 资金规模变动: {aum_change} | 净流入出: ${analysis['net_cash_flow']:+,.2f} USD\n"
-            report += f"  - 前十持股集中度: {analysis['concentration_today']}% ({conc_diff})\n"
-            report += f"  - 板块解读: {analysis['narrative']}\n\n"
+            report += f"■ {fund_id} ({fund['name']})\n"
+            report += f"  • 规模变动: {aum_change}  |  净现金流: ${analysis['net_cash_flow']:+,.2f} USD\n"
+            report += f"  • 前十持仓集中度: {analysis['concentration_today']}% ({conc_diff})\n"
+            report += f"  • 宏观解读: {analysis['narrative']}\n\n"
 
-    report += f"=============================================\n"
+    report += "=====================================================\n"
+    report += "线上看板: https://futienchun.com/ark/\n"
+    report += "=====================================================\n"
     return report
 
 def export_web_digest(html_content):
@@ -579,84 +537,15 @@ def export_web_digest(html_content):
     except Exception as e:
         print(f"Warning: Failed to export website digest: {e}")
 
-def send_via_applescript(subject, html_content, receiver_email):
-    """
-    Sends pure HTML email via macOS Mail.app (iCloud account).
-    Bypasses third-party web forms, ensuring 100% native Apple typography and design.
-    """
-    tmp_path = "/tmp/ark_daily_digest_mail.html"
-    try:
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            f.write(html_content)
-        
-        escaped_subj = subject.replace('"', '\\"')
-        escaped_recv = receiver_email.replace('"', '\\"')
-        
-        scpt = f'''
-        set htmlFile to POSIX file "{tmp_path}"
-        set htmlSource to (read htmlFile as «class utf8»)
-        tell application "Mail"
-            set newMsg to make new outgoing message with properties {{subject:"{escaped_subj}", visible:false}}
-            tell newMsg
-                set html content to htmlSource
-                make new to recipient at end of to recipients with properties {{address:"{escaped_recv}"}}
-                send
-            end tell
-        end tell
-        '''
-        res = subprocess.run(["osascript", "-e", scpt], capture_output=True, text=True, timeout=25)
-        if res.returncode == 0:
-            print("Email dispatched successfully via native macOS Mail.app (iCloud)!")
-            return True
-        else:
-            print(f"AppleScript execution returned code {res.returncode}: {res.stderr.strip()}")
-            return False
-    except Exception as e:
-        print(f"AppleScript Mail dispatch error: {e}")
-        return False
-    finally:
-        if os.path.exists(tmp_path):
-            try: os.remove(tmp_path)
-            except: pass
-
-def send_via_smtp(subject, html_content, text_content, receiver_email, config):
-    smtp_host = config.get("smtp_host")
-    smtp_port = config.get("smtp_port", 587)
-    smtp_user = config.get("smtp_user")
-    smtp_pass = config.get("smtp_password")
-
-    if not (smtp_host and smtp_user and smtp_pass):
-        return False
-
-    try:
-        print(f"Sending HTML email via SMTP ({smtp_host}:{smtp_port}) to {receiver_email}...")
-        msg = MIMEMultipart("alternative")
-        msg["Subject"] = subject
-        msg["From"] = smtp_user
-        msg["To"] = receiver_email
-
-        part1 = MIMEText(text_content, "plain", "utf-8")
-        part2 = MIMEText(html_content, "html", "utf-8")
-        msg.attach(part1)
-        msg.attach(part2)
-
-        server = smtplib.SMTP(smtp_host, smtp_port, timeout=20)
-        server.ehlo()
-        server.starttls()
-        server.login(smtp_user, smtp_pass)
-        server.sendmail(smtp_user, receiver_email, msg.as_string())
-        server.quit()
-        print("HTML email sent successfully via SMTP!")
-        return True
-    except Exception as e:
-        print(f"SMTP sending failed: {e}")
-        return False
-
 def send_via_formsubmit(subject, message_text, receiver_email):
+    """
+    Delivers summary report via FormSubmit.co HTTP POST API.
+    Single message body parameter completely avoids FormSubmit generating underscores like 1__xxx.
+    """
     url = f"https://formsubmit.co/ajax/{receiver_email}"
     data = {
         "_subject": subject,
-        "简报内容": message_text,
+        "每日持仓投资简报": message_text,
         "_template": "box"
     }
     payload = urllib.parse.urlencode(data).encode('utf-8')
@@ -675,7 +564,7 @@ def send_via_formsubmit(subject, message_text, receiver_email):
             with urllib.request.urlopen(req, timeout=20) as response:
                 res = json.loads(response.read().decode('utf-8'))
                 if res.get("success") == "true":
-                    print("Email report sent successfully via FormSubmit!")
+                    print("Email report sent successfully via FormSubmit (submissions@formsubmit.co)!")
                     return True
                 else:
                     print(f"FormSubmit API Notice: {res.get('message')}")
@@ -690,11 +579,11 @@ def send_via_formsubmit(subject, message_text, receiver_email):
 
 def build_weekly_text_report(data):
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-    report = f"=============================================\n"
-    report += f"ARK & 全球顶尖基金持股观测【每周综合投资报告】\n"
+    report = "=====================================================\n"
+    report += "ARK & 全球顶尖基金持股观测【每周综合投资报告】\n"
     report += f"报告时间：{date_str} (周日报告)\n"
-    report += f"线上看板：https://futienchun.com/ark/\n"
-    report += f"=============================================\n\n"
+    report += "线上看板：https://futienchun.com/ark/\n"
+    report += "=====================================================\n\n"
     
     arkk = data.get("funds_data", {}).get("ARKK", {})
     digest = arkk.get("weekly_digest", {})
@@ -714,7 +603,6 @@ def main():
     parser.add_argument("--weekly", action="store_true", help="Send weekly report")
     parser.add_argument("--to", type=str, default=None, help="Override recipient email")
     parser.add_argument("--export-only", action="store_true", help="Export HTML/text locally without sending email")
-    parser.add_argument("--force-formsubmit", action="store_true", help="Force sending via FormSubmit API")
     args = parser.parse_args()
 
     data = load_processed_data()
@@ -754,24 +642,13 @@ def main():
         print("Export-only mode finished successfully.")
         return
 
-    sent = False
-
-    # Channel 1: Native macOS Mail.app (AppleScript) -> Sends 100% clean HTML via iCloud account
-    if sys.platform == "darwin" and not args.force_formsubmit:
-        sent = send_via_applescript(subject, html_content, receiver_email)
-
-    # Channel 2: SMTP if explicitly enabled
-    if not sent and config.get("smtp_enabled", False):
-        sent = send_via_smtp(subject, html_content, text_content, receiver_email, config)
-
-    # Channel 3: Fallback FormSubmit
-    if not sent:
-        sent = send_via_formsubmit(subject, text_content, receiver_email)
+    # Strictly use FormSubmit HTTP API (submissions@formsubmit.co)
+    sent = send_via_formsubmit(subject, text_content, receiver_email)
 
     if sent:
-        print("Summary email dispatched successfully.")
+        print("Summary email dispatched successfully via FormSubmit.")
     else:
-        print("Notice: Summary email sending completed with notice or fallback.")
+        print("Notice: Summary email sending completed with notice.")
 
 if __name__ == "__main__":
     main()
