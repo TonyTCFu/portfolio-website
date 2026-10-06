@@ -717,6 +717,81 @@ def build_plain_text_report(data, intel):
     report += f"=============================================\n"
     return report
 
+def build_sections_dict(data, intel):
+    ver_stamp = datetime.now().strftime("%Y%m%d%H%M")
+    top_buys = intel["top_buys"]
+    top_sells = intel["top_sells"]
+    streak_buys = intel["streak_buys"]
+    streak_sells = intel["streak_sells"]
+
+    sections = {}
+    sections["📱 手机全屏图文阅读器 (带矢量图表)"] = f"https://futienchun.com/ark/daily_digest.html?v={ver_stamp}"
+
+    # 1. Buys
+    buys_text = ""
+    for idx, b in enumerate(top_buys, 1):
+        streak_str = f"连买 {b.get('streak')} 天" if b.get('streak', 0) > 1 else "单日加仓"
+        buys_text += f"#{idx} [{b['fund']}] {b['ticker']} ({b['company']})\n"
+        buys_text += f"• 变动股数: {b['shares_diff']:+,d} 股 ({b.get('shares_diff_pct', 0):+.2f}%) | 总持股: {b.get('shares', 0):,} 股\n"
+        buys_text += f"• 最新单价: ${b['price']:.2f} USD | 变动市值: ${abs(b.get('value_diff', 0))/1e6:.2f}M USD\n"
+        buys_text += f"• 持仓权重: {b.get('weight', 0):.2f}% ({b.get('weight_diff', 0):+.2f}%) | 状态: {streak_str}\n"
+        buys_text += f"• 深度分析: {b['narrative']}\n"
+        buys_text += f"• 💡 建议参考 [{b['advice_tag']}]: {b['advice']}\n\n"
+    sections["1. 核心买入榜 Top 5 深度透视"] = buys_text.strip()
+
+    # 2. Sells
+    sells_text = ""
+    for idx, s in enumerate(top_sells, 1):
+        abs_streak = abs(s.get('streak', 0))
+        streak_str = f"连卖 {abs_streak} 天" if abs_streak > 1 else "单日减持"
+        sells_text += f"#{idx} [{s['fund']}] {s['ticker']} ({s['company']})\n"
+        sells_text += f"• 变动股数: {s['shares_diff']:+,d} 股 ({s.get('shares_diff_pct', 0):.2f}%) | 总持股: {s.get('shares', 0):,} 股\n"
+        sells_text += f"• 最新单价: ${s['price']:.2f} USD | 减持市值: ${abs(s.get('value_diff', 0))/1e6:.2f}M USD\n"
+        sells_text += f"• 持仓权重: {s.get('weight', 0):.2f}% ({s.get('weight_diff', 0):+.2f}%) | 状态: {streak_str}\n"
+        sells_text += f"• 深度分析: {s['narrative']}\n"
+        sells_text += f"• ⚠️ 建议参考 [{s['advice_tag']}]: {s['advice']}\n\n"
+    sections["2. 核心卖出榜 Top 5 深度透视"] = sells_text.strip()
+
+    # 3. Streaks
+    if streak_buys:
+        sb_text = ""
+        for idx, sb in enumerate(streak_buys, 1):
+            sb_text += f"#{idx} [{sb['fund']}] {sb['ticker']} ({sb['company']}) | 连续买进 {sb['streak']} 天\n"
+            sb_text += f"• 当前持股: {sb.get('shares', 0):,} 股 | 最新价格: ${sb.get('price', 0):.2f} USD\n"
+            sb_text += f"• 持仓权重: {sb.get('weight', 0):.2f}% | 赛道: {sb['sector']}\n"
+            sb_text += f"• 异动说明: {sb['narrative']}\n"
+            sb_text += f"• 💡 建议参考 [{sb['advice_tag']}]: {sb['advice']}\n\n"
+        sections["3. 持续加仓追踪 (连买多日)"] = sb_text.strip()
+
+    if streak_sells:
+        ss_text = ""
+        for idx, ss in enumerate(streak_sells, 1):
+            abs_days = abs(ss['streak'])
+            ss_text += f"#{idx} [{ss['fund']}] {ss['ticker']} ({ss['company']}) | 连续卖出 {abs_days} 天\n"
+            ss_text += f"• 剩余持股: {ss.get('shares', 0):,} 股 | 最新价格: ${ss.get('price', 0):.2f} USD\n"
+            ss_text += f"• 持仓权重: {ss.get('weight', 0):.2f}% | 赛道: {ss['sector']}\n"
+            ss_text += f"• 预警说明: {ss['narrative']}\n"
+            ss_text += f"• ⚠️ 建议参考 [{ss['advice_tag']}]: {ss['advice']}\n\n"
+        sections["4. 持续减仓预警 (连卖多日)"] = ss_text.strip()
+
+    # 5. Sector Shifts
+    macro_text = ""
+    for fund_id in ["ARKK", "ARKG", "IDNA"]:
+        if fund_id not in data["funds_data"]:
+            continue
+        fund = data["funds_data"][fund_id]
+        analysis = fund.get("daily_analysis")
+        if analysis:
+            aum_change = f"{analysis['aum_change_pct']:+.2f}%"
+            conc_diff = f"{analysis['concentration_diff']:+.2f}%"
+            macro_text += f"■ {fund_id} ({fund['name']}):\n"
+            macro_text += f"• 资金规模变动: {aum_change} | 净现金流: ${analysis['net_cash_flow']:+,.2f} USD\n"
+            macro_text += f"• 前十持仓集中度: {analysis['concentration_today']}% ({conc_diff})\n"
+            macro_text += f"• 宏观解读: {analysis['narrative']}\n\n"
+    sections["5. 资金流向与板块轮动解读"] = macro_text.strip()
+
+    return sections
+
 def export_web_digest(html_content):
     """
     Exports the generated HTML digest locally and into the website repo.
@@ -771,13 +846,17 @@ def send_via_smtp(subject, html_content, text_content, receiver_email, config):
         print(f"SMTP sending failed: {e}")
         return False
 
-def send_via_formsubmit(subject, message_text, receiver_email):
+def send_via_formsubmit(subject, payload_data, receiver_email):
     url = f"https://formsubmit.co/ajax/{receiver_email}"
     data = {
         "_subject": subject,
-        "简报内容": message_text,
         "_template": "box"
     }
+    if isinstance(payload_data, dict):
+        data.update(payload_data)
+    else:
+        data["简报内容"] = payload_data
+
     payload = urllib.parse.urlencode(data).encode('utf-8')
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
@@ -879,7 +958,8 @@ def main():
         sent = send_via_smtp(subject, html_content, text_content, receiver_email, config)
 
     if not sent:
-        sent = send_via_formsubmit(subject, text_content, receiver_email)
+        sections = build_sections_dict(data, intel)
+        sent = send_via_formsubmit(subject, sections, receiver_email)
 
     if sent:
         print("Summary email dispatched successfully.")
