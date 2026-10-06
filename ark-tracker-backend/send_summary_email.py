@@ -66,14 +66,18 @@ def load_processed_data():
         return None
 
 def load_config():
-    if not os.path.exists(CONFIG_FILE):
-        return {}
-    try:
-        with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"Error loading config: {e}")
-        return {}
+    cfg = {}
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
+                cfg = json.load(f)
+        except Exception as e:
+            print(f"Error loading config: {e}")
+    if os.environ.get("RESEND_API_KEY"):
+        cfg["resend_api_key"] = os.environ.get("RESEND_API_KEY")
+    if os.environ.get("RECEIVER_EMAIL"):
+        cfg["receiver_email"] = os.environ.get("RECEIVER_EMAIL")
+    return cfg
 
 def generate_stock_narrative(item, is_buy=True):
     ticker = item.get("ticker", "")
