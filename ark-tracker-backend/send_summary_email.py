@@ -15,6 +15,9 @@ import urllib.request
 import urllib.parse
 from datetime import datetime
 import time
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROCESSED_FILE = os.path.join(BASE_DIR, "data", "processed.json")
@@ -537,10 +540,88 @@ def export_web_digest(html_content):
     except Exception as e:
         print(f"Warning: Failed to export website digest: {e}")
 
+def send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg):
+    """
+    Delivers native HTML email via standard SMTP with plain-text fallback.
+    Renders 100% pristine Apple typography and cards directly inside Apple Mail.
+    """
+    host = smtp_cfg.get("host", "smtp.mail.me.com")
+    port = int(smtp_cfg.get("port", 587))
+    user = smtp_cfg.get("user")
+    password = smtp_cfg.get("pass")
+    sender = smtp_cfg.get("from", user)
+    use_tls = smtp_cfg.get("tls", True)
+    use_ssl = smtp_cfg.get("ssl", False) or port == 465
+
+    if not user or not password:
+        print("SMTP Error: user or password missing in smtp config.")
+        return False
+
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"] = sender
+    msg["To"] = receiver_email
+
+    # Attach plain text and HTML parts
+    part1 = MIMEText(text_content, "plain", "utf-8")
+    part2 = MIMEText(html_content, "html", "utf-8")
+    msg.attach(part1)
+    msg.attach(part2)
+
+    try:
+        print(f"Connecting to SMTP server {host}:{port} for {receiver_email}...")
+        if use_ssl:
+            server = smtplib.SMTP_SSL(host, port, timeout=25)
+        else:
+            server = smtplib.SMTP(host, port, timeout=25)
+            if use_tls:
+                server.starttls()
+        server.login(user, password)
+        server.sendmail(sender, [receiver_email], msg.as_string())
+        server.quit()
+        print(f"Native Apple-style HTML email successfully sent via SMTP ({host}) to {receiver_email}!")
+        return True
+    except Exception as e:
+        print(f"SMTP sending failed: {e}")
+        return False
+
+def send_via_resend(subject, html_content, text_content, receiver_email, api_key, from_email=None):
+    """
+    Delivers native HTML email via Resend Transactional Email REST API.
+    """
+    url = "https://api.resend.com/emails"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+        "User-Agent": "ARK-Digest/1.0"
+    }
+    payload = {
+        "from": from_email or "ARK Daily Digest <onboarding@resend.dev>",
+        "to": [receiver_email],
+        "subject": subject,
+        "html": html_content,
+        "text": text_content
+    }
+    try:
+        print(f"Sending native HTML email to {receiver_email} via Resend REST API...")
+        req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            res = json.loads(resp.read().decode("utf-8"))
+            if res.get("id"):
+                print(f"Native HTML email successfully sent via Resend API (ID: {res.get('id')})!")
+                return True
+            else:
+                print(f"Resend API Notice: {res}")
+                return False
+    except Exception as e:
+        print(f"Resend API request failed: {e}")
+        return False
+
 def send_via_formsubmit(subject, message_text, receiver_email):
     """
     Delivers summary report via FormSubmit.co HTTP POST API.
-    Single message body parameter completely avoids FormSubmit generating underscores like 1__xxx.
+    Notice: FormSubmit is a web-form relay and forcibly strips custom HTML for security,
+    delivering plain text wrapped in its form-submission template.
     """
     url = f"https://formsubmit.co/ajax/{receiver_email}"
     data = {
@@ -642,11 +723,30 @@ def main():
         print("Export-only mode finished successfully.")
         return
 
-    # Strictly use FormSubmit HTTP API (submissions@formsubmit.co)
-    sent = send_via_formsubmit(subject, text_content, receiver_email)
+    # Dispatch priority: Resend API (HTTPS 443) -> SMTP -> FormSubmit fallback
+    smtp_cfg = config.get("smtp")
+    resend_api_key = config.get("resend_api_key")
+    sent = False
+
+    if resend_api_key:
+        print("Using Resend API dispatcher for native HTML delivery...")
+        sent = send_via_resend(subject, html_content, text_content, receiver_email, resend_api_key, config.get("from_email"))
+        if not sent:
+            print("Resend API failed. Falling back to FormSubmit dispatch...")
+            sent = send_via_formsubmit(subject, text_content, receiver_email)
+    elif smtp_cfg and smtp_cfg.get("user") and smtp_cfg.get("pass"):
+        print("Using SMTP dispatcher for native Apple-style HTML delivery...")
+        sent = send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg)
+        if not sent:
+            print("SMTP transmission failed. Falling back to FormSubmit dispatch...")
+            sent = send_via_formsubmit(subject, text_content, receiver_email)
+    else:
+        print("Notice: No SMTP credentials or Resend API key found in .email_config.json.")
+        print("Falling back to FormSubmit plain text dispatch (FormSubmit blocks custom HTML rendering).")
+        sent = send_via_formsubmit(subject, text_content, receiver_email)
 
     if sent:
-        print("Summary email dispatched successfully via FormSubmit.")
+        print("Summary email dispatched successfully.")
     else:
         print("Notice: Summary email sending completed with notice.")
 
