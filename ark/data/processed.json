@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07 01:44:34",
+  "last_updated": "2026-10-07 09:22:19",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -31009,9 +31009,9 @@
             "weight_diff": 0.11
           },
           {
-            "sector": "基因技術與癌症診斷",
-            "weight_today": 2.84,
-            "weight_prev": 2.75,
+            "sector": "AI 藥物研發",
+            "weight_today": 0.45,
+            "weight_prev": 0.36,
             "weight_diff": 0.09
           }
         ],
