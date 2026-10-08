@@ -592,6 +592,7 @@ def send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg)
 def send_via_resend(subject, html_content, text_content, receiver_email, api_key, from_email=None):
     """
     Delivers native HTML email via Resend Transactional Email REST API.
+    Includes automated DNS/network retries for reliable delivery.
     """
     url = "https://api.resend.com/emails"
     headers = {
@@ -606,60 +607,25 @@ def send_via_resend(subject, html_content, text_content, receiver_email, api_key
         "html": html_content,
         "text": text_content
     }
-    try:
-        print(f"Sending native HTML email to {receiver_email} via Resend REST API...")
-        req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            res = json.loads(resp.read().decode("utf-8"))
-            if res.get("id"):
-                print(f"Native HTML email successfully sent via Resend API (ID: {res.get('id')})!")
-                return True
-            else:
-                print(f"Resend API Notice: {res}")
-                return False
-    except Exception as e:
-        print(f"Resend API request failed: {e}")
-        return False
-
-def send_via_formsubmit(subject, message_text, receiver_email):
-    """
-    Delivers summary report via FormSubmit.co HTTP POST API.
-    Notice: FormSubmit is a web-form relay and forcibly strips custom HTML for security,
-    delivering plain text wrapped in its form-submission template.
-    """
-    url = f"https://formsubmit.co/ajax/{receiver_email}"
-    data = {
-        "_subject": subject,
-        "每日持仓投资简报": message_text,
-        "_template": "box"
-    }
-    payload = urllib.parse.urlencode(data).encode('utf-8')
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
-        'Origin': 'https://futienchun.com',
-        'Referer': 'https://futienchun.com/ark/'
-    }
-    req = urllib.request.Request(url, data=payload, headers=headers)
+    data_bytes = json.dumps(payload).encode("utf-8")
     
-    max_retries = 3
-    retry_delay = 10
-    for attempt in range(max_retries + 1):
+    max_retries = 5
+    for attempt in range(1, max_retries + 1):
         try:
-            print(f"Sending email report to {receiver_email} via FormSubmit HTTP API (Attempt {attempt + 1})...")
-            with urllib.request.urlopen(req, timeout=20) as response:
-                res = json.loads(response.read().decode('utf-8'))
-                if res.get("success") == "true":
-                    print("Email report sent successfully via FormSubmit (submissions@formsubmit.co)!")
+            print(f"Sending native HTML email to {receiver_email} via Resend REST API (Attempt {attempt}/{max_retries})...")
+            req = urllib.request.Request(url, data=data_bytes, headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                res = json.loads(resp.read().decode("utf-8"))
+                if res.get("id"):
+                    print(f"Native HTML email successfully sent via Resend API (ID: {res.get('id')})!")
                     return True
                 else:
-                    print(f"FormSubmit API Notice: {res.get('message')}")
+                    print(f"Resend API Notice: {res}")
                     return False
         except Exception as e:
+            print(f"Resend attempt {attempt} failed: {e}")
             if attempt < max_retries:
-                print(f"Attempt {attempt + 1} failed: {e}. Retrying in {retry_delay}s...")
-                time.sleep(retry_delay)
-            else:
-                print(f"All FormSubmit attempts failed: {e}")
+                time.sleep(10)
     return False
 
 def build_weekly_text_report(data):
@@ -727,7 +693,7 @@ def main():
         print("Export-only mode finished successfully.")
         return
 
-    # Dispatch priority: Resend API (HTTPS 443) -> SMTP -> FormSubmit fallback
+    # Dispatch priority: Resend API (HTTPS 443) -> SMTP -> No FormSubmit
     smtp_cfg = config.get("smtp")
     resend_api_key = config.get("resend_api_key")
     sent = False
@@ -735,24 +701,17 @@ def main():
     if resend_api_key:
         print("Using Resend API dispatcher for native HTML delivery...")
         sent = send_via_resend(subject, html_content, text_content, receiver_email, resend_api_key, config.get("from_email"))
-        if not sent:
-            print("Resend API failed. Falling back to FormSubmit dispatch...")
-            sent = send_via_formsubmit(subject, text_content, receiver_email)
     elif smtp_cfg and smtp_cfg.get("user") and smtp_cfg.get("pass"):
         print("Using SMTP dispatcher for native Apple-style HTML delivery...")
         sent = send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg)
-        if not sent:
-            print("SMTP transmission failed. Falling back to FormSubmit dispatch...")
-            sent = send_via_formsubmit(subject, text_content, receiver_email)
     else:
-        print("Notice: No SMTP credentials or Resend API key found in .email_config.json.")
-        print("Falling back to FormSubmit plain text dispatch (FormSubmit blocks custom HTML rendering).")
-        sent = send_via_formsubmit(subject, text_content, receiver_email)
+        print("Notice: No Resend API key or SMTP credentials configured. Skipping email dispatch (FormSubmit permanently disabled).")
+        return
 
     if sent:
         print("Summary email dispatched successfully.")
     else:
-        print("Notice: Summary email sending completed with notice.")
+        print("Warning: Summary email sending failed.")
 
 if __name__ == "__main__":
     main()
