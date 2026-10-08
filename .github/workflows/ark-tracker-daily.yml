@@ -32,6 +32,9 @@ jobs:
           cp ark-tracker-backend/data/processed.json ark/data/processed.json
 
       - name: Send Daily Summary Email
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: |
           cd ark-tracker-backend
           python3 send_summary_email.py
