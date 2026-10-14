@@ -544,11 +544,21 @@ def export_web_digest(html_content):
     except Exception as e:
         print(f"Warning: Failed to export website digest: {e}")
 
-def send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg):
+def parse_recipients(receiver_input):
+    if isinstance(receiver_input, list):
+        return [str(e).strip() for e in receiver_input if str(e).strip()]
+    if isinstance(receiver_input, str):
+        return [e.strip() for e in receiver_input.split(",") if e.strip()]
+    return ["tony.tc.fu@icloud.com"]
+
+def send_via_smtp(subject, html_content, text_content, recipients, smtp_cfg):
     """
     Delivers native HTML email via standard SMTP with plain-text fallback.
-    Renders 100% pristine Apple typography and cards directly inside Apple Mail.
+    Supports a list of recipients.
     """
+    if isinstance(recipients, str):
+        recipients = parse_recipients(recipients)
+
     host = smtp_cfg.get("host", "smtp.mail.me.com")
     port = int(smtp_cfg.get("port", 587))
     user = smtp_cfg.get("user")
@@ -561,72 +571,93 @@ def send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg)
         print("SMTP Error: user or password missing in smtp config.")
         return False
 
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"] = sender
-    msg["To"] = receiver_email
+    all_success = True
+    for to_email in recipients:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = sender
+        msg["To"] = to_email
 
-    # Attach plain text and HTML parts
-    part1 = MIMEText(text_content, "plain", "utf-8")
-    part2 = MIMEText(html_content, "html", "utf-8")
-    msg.attach(part1)
-    msg.attach(part2)
+        # Attach plain text and HTML parts
+        part1 = MIMEText(text_content, "plain", "utf-8")
+        part2 = MIMEText(html_content, "html", "utf-8")
+        msg.attach(part1)
+        msg.attach(part2)
 
-    try:
-        print(f"Connecting to SMTP server {host}:{port} for {receiver_email}...")
-        if use_ssl:
-            server = smtplib.SMTP_SSL(host, port, timeout=25)
-        else:
-            server = smtplib.SMTP(host, port, timeout=25)
-            if use_tls:
-                server.starttls()
-        server.login(user, password)
-        server.sendmail(sender, [receiver_email], msg.as_string())
-        server.quit()
-        print(f"Native Apple-style HTML email successfully sent via SMTP ({host}) to {receiver_email}!")
-        return True
-    except Exception as e:
-        print(f"SMTP sending failed: {e}")
-        return False
+        try:
+            print(f"Connecting to SMTP server {host}:{port} for {to_email}...")
+            if use_ssl:
+                server = smtplib.SMTP_SSL(host, port, timeout=25)
+            else:
+                server = smtplib.SMTP(host, port, timeout=25)
+                if use_tls:
+                    server.starttls()
+            server.login(user, password)
+            server.sendmail(sender, [to_email], msg.as_string())
+            server.quit()
+            print(f"Native Apple-style HTML email successfully sent via SMTP ({host}) to {to_email}!")
+        except Exception as e:
+            print(f"SMTP sending to {to_email} failed: {e}")
+            all_success = False
 
-def send_via_resend(subject, html_content, text_content, receiver_email, api_key, from_email=None):
+    return all_success
+
+def send_via_resend(subject, html_content, text_content, recipients, api_key, from_email=None):
     """
     Delivers native HTML email via Resend Transactional Email REST API.
-    Includes automated DNS/network retries for reliable delivery.
+    Supports multiple recipients, delivering individually for privacy and delivery isolation.
+    Includes automated DNS/network retries.
     """
+    if isinstance(recipients, str):
+        recipients = parse_recipients(recipients)
+
     url = "https://api.resend.com/emails"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
         "User-Agent": "ARK-Digest/1.0"
     }
-    payload = {
-        "from": from_email or "ARK Daily Digest <onboarding@resend.dev>",
-        "to": [receiver_email],
-        "subject": subject,
-        "html": html_content,
-        "text": text_content
-    }
-    data_bytes = json.dumps(payload).encode("utf-8")
-    
-    max_retries = 5
-    for attempt in range(1, max_retries + 1):
-        try:
-            print(f"Sending native HTML email to {receiver_email} via Resend REST API (Attempt {attempt}/{max_retries})...")
-            req = urllib.request.Request(url, data=data_bytes, headers=headers, method="POST")
-            with urllib.request.urlopen(req, timeout=25) as resp:
-                res = json.loads(resp.read().decode("utf-8"))
-                if res.get("id"):
-                    print(f"Native HTML email successfully sent via Resend API (ID: {res.get('id')})!")
-                    return True
-                else:
-                    print(f"Resend API Notice: {res}")
-                    return False
-        except Exception as e:
-            print(f"Resend attempt {attempt} failed: {e}")
-            if attempt < max_retries:
-                time.sleep(10)
-    return False
+
+    all_success = True
+    for to_email in recipients:
+        payload = {
+            "from": from_email or "ARK Daily Digest <onboarding@resend.dev>",
+            "to": [to_email],
+            "subject": subject,
+            "html": html_content,
+            "text": text_content
+        }
+        data_bytes = json.dumps(payload).encode("utf-8")
+
+        delivered = False
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            try:
+                print(f"Sending native HTML email to {to_email} via Resend REST API (Attempt {attempt}/{max_retries})...")
+                req = urllib.request.Request(url, data=data_bytes, headers=headers, method="POST")
+                with urllib.request.urlopen(req, timeout=25) as resp:
+                    res = json.loads(resp.read().decode("utf-8"))
+                    if res.get("id"):
+                        print(f"Native HTML email successfully sent to {to_email} via Resend API (ID: {res.get('id')})!")
+                        delivered = True
+                        break
+                    else:
+                        print(f"Resend API Notice for {to_email}: {res}")
+            except Exception as e:
+                err_msg = str(e)
+                if hasattr(e, "read"):
+                    try:
+                        err_msg += f" - {e.read().decode('utf-8')}"
+                    except Exception:
+                        pass
+                print(f"Resend attempt {attempt} for {to_email} failed: {err_msg}")
+                if attempt < max_retries:
+                    time.sleep(5)
+
+        if not delivered:
+            all_success = False
+
+    return all_success
 
 def build_weekly_text_report(data):
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
@@ -671,9 +702,10 @@ def main():
     is_weekly = args.weekly or is_sunday
 
     config = load_config()
-    receiver_email = config.get("receiver_email", "tony.tc.fu@icloud.com")
+    receiver_raw = config.get("receiver_email", "tony.tc.fu@icloud.com")
     if args.to:
-        receiver_email = args.to
+        receiver_raw = args.to
+    recipients = parse_recipients(receiver_raw)
 
     # Extract intelligence & generate reports
     intel = extract_market_intelligence(data)
@@ -699,11 +731,11 @@ def main():
     sent = False
 
     if resend_api_key:
-        print("Using Resend API dispatcher for native HTML delivery...")
-        sent = send_via_resend(subject, html_content, text_content, receiver_email, resend_api_key, config.get("from_email"))
+        print(f"Using Resend API dispatcher for {len(recipients)} recipient(s): {', '.join(recipients)}...")
+        sent = send_via_resend(subject, html_content, text_content, recipients, resend_api_key, config.get("from_email"))
     elif smtp_cfg and smtp_cfg.get("user") and smtp_cfg.get("pass"):
-        print("Using SMTP dispatcher for native Apple-style HTML delivery...")
-        sent = send_via_smtp(subject, html_content, text_content, receiver_email, smtp_cfg)
+        print(f"Using SMTP dispatcher for {len(recipients)} recipient(s): {', '.join(recipients)}...")
+        sent = send_via_smtp(subject, html_content, text_content, recipients, smtp_cfg)
     else:
         print("Notice: No Resend API key or SMTP credentials configured. Skipping email dispatch (FormSubmit permanently disabled).")
         return
