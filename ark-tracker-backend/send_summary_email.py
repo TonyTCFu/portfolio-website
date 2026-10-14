@@ -618,7 +618,7 @@ def send_via_resend(subject, html_content, text_content, recipients, api_key, fr
         "User-Agent": "ARK-Digest/1.0"
     }
 
-    all_success = True
+    success_count = 0
     for to_email in recipients:
         payload = {
             "from": from_email or "ARK Daily Digest <onboarding@resend.dev>",
@@ -640,24 +640,29 @@ def send_via_resend(subject, html_content, text_content, recipients, api_key, fr
                     if res.get("id"):
                         print(f"Native HTML email successfully sent to {to_email} via Resend API (ID: {res.get('id')})!")
                         delivered = True
+                        success_count += 1
                         break
                     else:
                         print(f"Resend API Notice for {to_email}: {res}")
             except Exception as e:
                 err_msg = str(e)
+                is_validation_error = False
                 if hasattr(e, "read"):
                     try:
-                        err_msg += f" - {e.read().decode('utf-8')}"
+                        err_body = e.read().decode('utf-8')
+                        err_msg += f" - {err_body}"
+                        if "validation_error" in err_body or "403" in err_msg:
+                            is_validation_error = True
                     except Exception:
                         pass
                 print(f"Resend attempt {attempt} for {to_email} failed: {err_msg}")
+                if is_validation_error:
+                    print(f"Notice: {to_email} requires custom domain verification on Resend (sandbox mode only permits delivery to account owner).")
+                    break
                 if attempt < max_retries:
-                    time.sleep(5)
+                    time.sleep(3)
 
-        if not delivered:
-            all_success = False
-
-    return all_success
+    return success_count > 0
 
 def build_weekly_text_report(data):
     date_str = data.get("last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
