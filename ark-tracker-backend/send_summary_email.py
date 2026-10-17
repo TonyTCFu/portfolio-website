@@ -619,11 +619,11 @@ def send_via_smtp(subject, html_content, text_content, recipients, smtp_cfg):
 
     return all_success
 
-def send_via_resend(subject, html_content, text_content, recipients, api_key, from_email=None):
+def send_via_resend(subject, html_content, text_content, recipients, api_key, from_email=None, smtp_cfg=None):
     """
     Delivers native HTML email via Resend Transactional Email REST API.
     Supports multiple recipients, delivering individually for privacy and delivery isolation.
-    Includes automated DNS/network retries.
+    Includes automated DNS/network retries. Falls back to SMTP for recipients blocked by sandbox.
     """
     if isinstance(recipients, str):
         recipients = parse_recipients(recipients)
@@ -675,6 +675,12 @@ def send_via_resend(subject, html_content, text_content, recipients, api_key, fr
                 print(f"Resend attempt {attempt} for {to_email} failed: {err_msg}")
                 if is_validation_error:
                     print(f"Notice: {to_email} requires custom domain verification on Resend (sandbox mode only permits delivery to account owner).")
+                    if smtp_cfg and smtp_cfg.get("user") and smtp_cfg.get("pass"):
+                        print(f"Automatically falling back to SMTP dispatcher for {to_email}...")
+                        fallback_ok = send_via_smtp(subject, html_content, text_content, [to_email], smtp_cfg)
+                        if fallback_ok:
+                            delivered = True
+                            success_count += 1
                     break
                 if attempt < max_retries:
                     time.sleep(3)
@@ -754,7 +760,7 @@ def main():
 
     if resend_api_key:
         print(f"Using Resend API dispatcher for {len(recipients)} recipient(s): {', '.join(recipients)}...")
-        sent = send_via_resend(subject, html_content, text_content, recipients, resend_api_key, config.get("from_email"))
+        sent = send_via_resend(subject, html_content, text_content, recipients, resend_api_key, config.get("from_email"), smtp_cfg=smtp_cfg)
     elif smtp_cfg and smtp_cfg.get("user") and smtp_cfg.get("pass"):
         print(f"Using SMTP dispatcher for {len(recipients)} recipient(s): {', '.join(recipients)}...")
         sent = send_via_smtp(subject, html_content, text_content, recipients, smtp_cfg)
