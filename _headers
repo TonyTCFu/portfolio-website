@@ -1,2 +1,6 @@
 /dashboard/*
   Cache-Control: no-cache, no-store, must-revalidate
+
+/ark/*
+  Cache-Control: no-cache, no-store, must-revalidate
+

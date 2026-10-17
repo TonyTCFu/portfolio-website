@@ -23,7 +23,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROCESSED_FILE = os.path.join(BASE_DIR, "data", "processed.json")
 CONFIG_FILE = os.path.join(BASE_DIR, ".email_config.json")
 DIGEST_HTML_LOCAL = os.path.join(BASE_DIR, "data", "daily_digest.html")
-DIGEST_HTML_WEB = os.path.join(BASE_DIR, "..", "portfolio-website", "ark", "daily_digest.html")
+if os.path.exists(os.path.join(BASE_DIR, "..", "ark")):
+    DIGEST_HTML_WEB = os.path.join(BASE_DIR, "..", "ark", "daily_digest.html")
+else:
+    DIGEST_HTML_WEB = os.path.join(BASE_DIR, "..", "portfolio-website", "ark", "daily_digest.html")
 
 KNOWN_SECTORS = {
     "TSLA": "智能电动与空间算力 (Robotaxi/FSD)",
@@ -124,9 +127,17 @@ def extract_market_intelligence(data):
     all_buys = []
     all_sells = []
     
+    # Identify latest active date among ARK active funds to filter out stale data (e.g. ARKW, ARKF)
+    active_dates = [f.get("date") for fid, f in funds.items() if fid.startswith("ARK") and f.get("date")]
+    latest_date = max(active_dates) if active_dates else None
+    
     for fid, fund in funds.items():
         if not fid.startswith("ARK"):
             continue
+        # Strict Date Guard: Skip funds whose holdings were not updated for the current date
+        if latest_date and fund.get("date") != latest_date:
+            continue
+            
         trades = fund.get("recent_trades", [])
         for t in trades:
             item = dict(t)
@@ -136,13 +147,16 @@ def extract_market_intelligence(data):
             item["price"] = (value / shares) if (shares and value) else 0.0
             
             s_diff = item.get("shares_diff", 0)
+            # Use actual executed trade dollar volume (shares_diff * price) for ranking
+            item["trade_amount"] = abs(s_diff * item["price"])
+            
             if s_diff > 0:
                 all_buys.append(item)
             elif s_diff < 0:
                 all_sells.append(item)
                 
-    top_buys_raw = sorted(all_buys, key=lambda x: abs(x.get("value_diff", 0)), reverse=True)[:5]
-    top_sells_raw = sorted(all_sells, key=lambda x: abs(x.get("value_diff", 0)), reverse=True)[:5]
+    top_buys_raw = sorted(all_buys, key=lambda x: x.get("trade_amount", 0), reverse=True)[:5]
+    top_sells_raw = sorted(all_sells, key=lambda x: x.get("trade_amount", 0), reverse=True)[:5]
     
     top_buys = []
     for b in top_buys_raw:
@@ -167,6 +181,9 @@ def extract_market_intelligence(data):
     for fid, fund in funds.items():
         if not fid.startswith("ARK"):
             continue
+        if latest_date and fund.get("date") != latest_date:
+            continue
+            
         holdings_map = {h["ticker"]: h for h in fund.get("holdings", [])}
         streaks = fund.get("streaks", {})
         
@@ -269,7 +286,7 @@ def build_apple_style_html_report(data, intel):
       </div>
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 变动股数：<strong style="color:#111827;">{b['shares_diff']:+,d} 股</strong> (总持股: <strong style="color:#111827;">{b.get('shares', 0):,} 股</strong>)<br>
-        • 最新单价：<strong style="color:#111827;">${b['price']:.2f} USD</strong> | 增持市值：<strong style="color:#15803D;">+${abs(b.get('value_diff', 0))/1e6:.2f}M USD</strong><br>
+        • 最新单价：<strong style="color:#111827;">${b['price']:.2f} USD</strong> | 交易估值：<strong style="color:#15803D;">+${b.get('trade_amount', abs(b.get('value_diff', 0)))/1e6:.2f}M USD</strong><br>
         • 持仓权重：<strong style="color:#111827;">{b.get('weight', 0):.2f}%</strong> (日偏离 <strong style="color:#111827;">{b.get('weight_diff', 0):+.2f}%</strong>) | 状态：<strong style="color:#2563EB;">{streak_str}</strong>
       </div>
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
@@ -303,7 +320,7 @@ def build_apple_style_html_report(data, intel):
       </div>
       <div style="font-size:13px; color:#4B5563; margin-bottom:8px; line-height:1.55;">
         • 变动股数：<strong style="color:#111827;">{s['shares_diff']:+,d} 股</strong> (总持股: <strong style="color:#111827;">{s.get('shares', 0):,} 股</strong>)<br>
-        • 最新单价：<strong style="color:#111827;">${s['price']:.2f} USD</strong> | 减持市值：<strong style="color:#B91C1C;">-${abs(s.get('value_diff', 0))/1e6:.2f}M USD</strong><br>
+        • 最新单价：<strong style="color:#111827;">${s['price']:.2f} USD</strong> | 交易估值：<strong style="color:#B91C1C;">-${s.get('trade_amount', abs(s.get('value_diff', 0)))/1e6:.2f}M USD</strong><br>
         • 持仓权重：<strong style="color:#111827;">{s.get('weight', 0):.2f}%</strong> (日偏离 <strong style="color:#111827;">{s.get('weight_diff', 0):+.2f}%</strong>) | 状态：<strong style="color:#EA580C;">{streak_str}</strong>
       </div>
       <div style="font-size:14.5px; color:#374151; line-height:1.68; margin-bottom:10px;">
@@ -452,7 +469,7 @@ def build_plain_text_report(data, intel):
         streak_str = f"连买 {b.get('streak')} 天" if b.get('streak', 0) > 1 else "单日加仓"
         report += f"#{idx} [{b['fund']}] {b['ticker']} · {b['company']}  [买入 {b.get('shares_diff_pct', 0):+.2f}%]\n"
         report += f"  • 变动股数: {b['shares_diff']:+,d} 股  (总持股: {b.get('shares', 0):,} 股)\n"
-        report += f"  • 最新单价: ${b['price']:.2f} USD  |  增持市值: +${abs(b.get('value_diff', 0))/1e6:.2f}M USD\n"
+        report += f"  • 最新单价: ${b['price']:.2f} USD  |  交易估值: +${b.get('trade_amount', abs(b.get('value_diff', 0)))/1e6:.2f}M USD\n"
         report += f"  • 持仓权重: {b.get('weight', 0):.2f}% (日偏离 {b.get('weight_diff', 0):+.2f}%)  |  状态: {streak_str}\n\n"
         report += f"  【深度分析说明】\n  {b['narrative']}\n\n"
         report += f"  【💡 建议参考 · {b['advice_tag']}】\n  {b['advice']}\n\n"
@@ -468,7 +485,7 @@ def build_plain_text_report(data, intel):
         streak_str = f"连卖 {abs_streak} 天" if abs_streak > 1 else "单日减持"
         report += f"#{idx} [{s['fund']}] {s['ticker']} · {s['company']}  [减持 {s.get('shares_diff_pct', 0):.2f}%]\n"
         report += f"  • 变动股数: {s['shares_diff']:+,d} 股  (总持股: {s.get('shares', 0):,} 股)\n"
-        report += f"  • 最新单价: ${s['price']:.2f} USD  |  减持市值: -${abs(s.get('value_diff', 0))/1e6:.2f}M USD\n"
+        report += f"  • 最新单价: ${s['price']:.2f} USD  |  交易估值: -${s.get('trade_amount', abs(s.get('value_diff', 0)))/1e6:.2f}M USD\n"
         report += f"  • 持仓权重: {s.get('weight', 0):.2f}% (日偏离 {s.get('weight_diff', 0):+.2f}%)  |  状态: {streak_str}\n\n"
         report += f"  【深度分析说明】\n  {s['narrative']}\n\n"
         report += f"  【⚠️ 建议参考 · {s['advice_tag']}】\n  {s['advice']}\n\n"
