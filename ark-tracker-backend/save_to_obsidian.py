@@ -262,6 +262,16 @@ def main():
         
         # Update indices
         update_index_files(active_date)
+
+        # In GitHub Actions, also stage history.json and daily_digest.html so the commit step persists them
+        if IS_GITHUB_ACTIONS:
+            import subprocess
+            subprocess.run(
+                ["git", "add", "ark-tracker-backend/data/history.json", "ark/daily_digest.html"],
+                cwd=REPO_ROOT,
+                check=False,
+            )
+            print("Staged history.json and daily_digest.html for GitHub Actions commit.")
     except PermissionError as pe:
         print(f"Error: Permission denied when writing daily note to Obsidian folder: {pe}")
         print("Please check your iCloud directory permissions or grant Full Disk Access to /bin/bash or your python binary.")
