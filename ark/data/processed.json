@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-11 00:34:04",
+  "last_updated": "2026-11-11 02:07:40",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -9063,9 +9063,9 @@
             "weight_diff": -0.13
           },
           {
-            "sector": "前沿生物科技",
-            "weight_today": 62.34,
-            "weight_prev": 62.42,
+            "sector": "代謝與慢性病藥物",
+            "weight_today": 4.22,
+            "weight_prev": 4.3,
             "weight_diff": -0.08
           }
         ],
@@ -23055,15 +23055,15 @@
             "weight_diff": -0.52
           },
           {
-            "sector": "航太與小型衛星發射",
-            "weight_today": 4.39,
-            "weight_prev": 4.17,
-            "weight_diff": 0.22
-          },
-          {
             "sector": "無人航空載具",
             "weight_today": 3.5,
             "weight_prev": 3.28,
+            "weight_diff": 0.22
+          },
+          {
+            "sector": "航太與小型衛星發射",
+            "weight_today": 4.39,
+            "weight_prev": 4.17,
             "weight_diff": 0.22
           },
           {
