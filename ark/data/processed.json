@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-11 15:09:23",
+  "last_updated": "2026-11-12 03:16:07",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -9033,16 +9033,16 @@
             "weight_diff": 0.24
           },
           {
-            "sector": "AI 藥物研發",
-            "weight_today": 2.82,
-            "weight_prev": 2.89,
-            "weight_diff": -0.07
-          },
-          {
             "sector": "基因檢測與篩查",
             "weight_today": 4.26,
             "weight_prev": 4.19,
             "weight_diff": 0.07
+          },
+          {
+            "sector": "AI 藥物研發",
+            "weight_today": 2.82,
+            "weight_prev": 2.89,
+            "weight_diff": -0.07
           }
         ],
         "narrative": "今日板塊權重保持相對穩定，無劇烈板塊輪動。 主要增倉標的包括 TEM, TWST, TXG；"
@@ -18574,9 +18574,9 @@
             "weight_diff": -0.29
           },
           {
-            "sector": "AI 數據決策平台",
-            "weight_today": 4.53,
-            "weight_prev": 4.8,
+            "sector": "數字資產交易",
+            "weight_today": 5.67,
+            "weight_prev": 5.94,
             "weight_diff": -0.27
           }
         ],
