@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-16 19:29:21",
+  "last_updated": "2026-11-17 04:42:47",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -8939,10 +8939,10 @@
             "weight_diff": -0.13
           },
           {
-            "sector": "基因檢測與篩查",
-            "weight_today": 4.67,
-            "weight_prev": 4.6,
-            "weight_diff": 0.07
+            "sector": "計算物理與藥物模擬",
+            "weight_today": 3.7,
+            "weight_prev": 3.77,
+            "weight_diff": -0.07
           }
         ],
         "narrative": "今日組合權重向【前沿生物科技】板塊偏離 +0.37%。 主要增倉標的包括 SCTX, TXG, TWST；"
@@ -18474,9 +18474,9 @@
             "weight_diff": -0.29
           },
           {
-            "sector": "AI 數據決策平台",
-            "weight_today": 4.53,
-            "weight_prev": 4.8,
+            "sector": "數字資產交易",
+            "weight_today": 5.67,
+            "weight_prev": 5.94,
             "weight_diff": -0.27
           }
         ],
