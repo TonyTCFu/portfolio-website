@@ -7,6 +7,7 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timedelta
 import random
+import statistics
 import time
 
 # Configuration
@@ -257,27 +258,59 @@ def format_date_key(date_str):
         except ValueError:
             return date_str
 
+NON_PUBLIC_TICKERS = {"CASH", "X9USDGSFT", "PPOPENAIC", "SPCX", "ARKY"}
+
 def get_sorted_dates(history_fund):
     return sorted(list(history_fund.keys()))
 
-def get_streak(history_fund, sorted_dates, ticker, today_shares, today_date_key):
-    if len(sorted_dates) < 2:
+def compute_basket_scale(prev_holdings, cur_holdings):
+    """Estimate ETF creation/redemption scaling factor (%) as the median share change across holdings."""
+    if not prev_holdings or not cur_holdings:
+        return 0.0
+    pcts = []
+    for tk, cur in cur_holdings.items():
+        if tk in NON_PUBLIC_TICKERS:
+            continue
+        prev = prev_holdings.get(tk)
+        if prev and prev.get("shares", 0) > 0:
+            raw_pct = (cur["shares"] - prev["shares"]) / prev["shares"] * 100.0
+            pcts.append(raw_pct)
+    if len(pcts) < 5:
+        return 0.0
+    return statistics.median(pcts)
+
+def compute_active_diff(cur_shares, prev_shares, basket_scale):
+    """Return (active_shares_diff, active_diff_pct) stripped of passive ETF creation/redemption scaling."""
+    if prev_shares <= 0:
+        return (cur_shares, 100.0) if cur_shares > 0 else (0, 0.0)
+    if cur_shares == prev_shares:
+        return (0, 0.0)
+    raw_pct = (cur_shares - prev_shares) / prev_shares * 100.0
+    dev_pct = raw_pct - basket_scale
+    if abs(dev_pct) <= 0.25:
+        return (0, 0.0)
+    expected_passive = int(round(prev_shares * (1.0 + basket_scale / 100.0)))
+    active_diff = cur_shares - expected_passive
+    return (active_diff, round(dev_pct, 2))
+
+def get_streak(history_fund, sorted_dates, ticker, today_shares, today_date_key, basket_scales_by_date=None):
+    if ticker in NON_PUBLIC_TICKERS or len(sorted_dates) < 2:
         return 0
     
-    past_dates = [d for d in sorted_dates if d < today_date_key]
-    if not past_dates:
+    seq_dates = [d for d in sorted_dates if d <= today_date_key]
+    if len(seq_dates) < 2:
         return 0
         
-    shares_seq = []
-    for d in past_dates:
-        held = history_fund[d].get(ticker)
-        shares_seq.append(held["shares"] if held else 0)
-    shares_seq.append(today_shares)
-    
     transitions = []
-    for i in range(1, len(shares_seq)):
-        diff = shares_seq[i] - shares_seq[i-1]
-        transitions.append(diff)
+    for i in range(1, len(seq_dates)):
+        d_prev, d_cur = seq_dates[i - 1], seq_dates[i]
+        prev_h = history_fund.get(d_prev, {}).get(ticker)
+        cur_h = history_fund.get(d_cur, {}).get(ticker)
+        prev_s = prev_h["shares"] if prev_h else 0
+        cur_s = today_shares if d_cur == today_date_key else (cur_h["shares"] if cur_h else 0)
+        b_scale = (basket_scales_by_date or {}).get(d_cur, 0.0)
+        act_diff, _ = compute_active_diff(cur_s, prev_s, b_scale)
+        transitions.append(act_diff)
     
     last_trans = transitions[-1]
     if last_trans > 0:
@@ -346,19 +379,6 @@ def generate_other_funds_data(history, dates_list):
                 
                 shares = current["shares"]
                 
-                # Apply active trades logic (except for NVIDIA which changes rarely)
-                if fund_id != "NVIDIA":
-                    # Simulate buying or selling streaks for specific tickers
-                    if ticker in ["TEM", "RXRX", "LLY"]:
-                        # continuous buys
-                        shares = int(shares * (1.0 + random.uniform(0.002, 0.008)))
-                    elif ticker in ["CRSP", "EXAI"]:
-                        # continuous sells
-                        shares = int(shares * (1.0 + random.uniform(-0.01, -0.002)))
-                    else:
-                        # random minor trades
-                        shares = int(shares * (1.0 + random.choice([-0.002, 0, 0, 0.002])))
-                
                 day_holdings[ticker] = {
                     "company": current["company"],
                     "shares": shares,
@@ -406,6 +426,13 @@ def process_processed_json(history, last_updated_time):
         today_holdings = fund_hist[today_date]
         yesterday_holdings = fund_hist[yesterday_date] if yesterday_date else {}
         
+        # Precompute daily ETF creation/redemption scaling factors for active trade extraction
+        basket_scales_by_date = {}
+        for i in range(1, len(sorted_dates)):
+            d_p, d_c = sorted_dates[i - 1], sorted_dates[i]
+            basket_scales_by_date[d_c] = compute_basket_scale(fund_hist[d_p], fund_hist[d_c])
+        today_basket_scale = basket_scales_by_date.get(today_date, 0.0)
+        
         today_sorted = sorted(today_holdings.items(), key=lambda x: x[1]["weight"], reverse=True)
         yesterday_sorted = sorted(yesterday_holdings.items(), key=lambda x: x[1]["weight"], reverse=True) if yesterday_holdings else []
         
@@ -423,12 +450,14 @@ def process_processed_json(history, last_updated_time):
             yesterday_data = yesterday_holdings.get(ticker, None)
             shares_prev = yesterday_data["shares"] if yesterday_data else 0
             
-            shares_diff = data["shares"] - shares_prev if shares_prev > 0 else data["shares"]
-            shares_diff_pct = (shares_diff / shares_prev * 100) if shares_prev > 0 else 100.0
+            if ticker in NON_PUBLIC_TICKERS:
+                shares_diff, shares_diff_pct = 0, 0.0
+            else:
+                shares_diff, shares_diff_pct = compute_active_diff(data["shares"], shares_prev, today_basket_scale)
             
             value_diff = data["value"] - (yesterday_data["value"] if yesterday_data else 0.0)
             
-            streak = get_streak(fund_hist, sorted_dates, ticker, data["shares"], today_date)
+            streak = get_streak(fund_hist, sorted_dates, ticker, data["shares"], today_date, basket_scales_by_date)
             
             if shares_prev > 0:
                 if shares_diff > 0:
@@ -437,8 +466,10 @@ def process_processed_json(history, last_updated_time):
                     trades_count["sells"] += 1
                 else:
                     trades_count["unchanged"] += 1
-            else:
+            elif shares_diff > 0:
                 trades_count["buys"] += 1
+            else:
+                trades_count["unchanged"] += 1
                 
             total_value += data["value"]
             
@@ -459,7 +490,7 @@ def process_processed_json(history, last_updated_time):
                 "shares": data["shares"],
                 "shares_prev": shares_prev,
                 "shares_diff": shares_diff,
-                "shares_diff_pct": round(shares_diff_pct, 2) if shares_prev > 0 else None,
+                "shares_diff_pct": round(shares_diff_pct, 2) if shares_prev > 0 else (100.0 if shares_diff > 0 else 0.0),
                 "value": data["value"],
                 "value_diff": value_diff,
                 "weight": data["weight"],
@@ -472,11 +503,11 @@ def process_processed_json(history, last_updated_time):
                 "trend": ticker_trend
             })
             
-        recent_trades = [h for h in holdings_list if h["shares_diff"] != 0]
+        recent_trades = [h for h in holdings_list if h["shares_diff"] != 0 and h["ticker"] not in NON_PUBLIC_TICKERS]
         recent_trades_sorted = sorted(recent_trades, key=lambda x: abs(x["shares_diff_pct"] or 0), reverse=True)
         
-        buying_streaks = sorted([h for h in holdings_list if h["streak"] > 0], key=lambda x: x["streak"], reverse=True)
-        selling_streaks = sorted([h for h in holdings_list if h["streak"] < 0], key=lambda x: abs(x["streak"]), reverse=True)
+        buying_streaks = sorted([h for h in holdings_list if h["streak"] >= 2 and h["ticker"] not in NON_PUBLIC_TICKERS], key=lambda x: (x["streak"], x["weight"]), reverse=True)
+        selling_streaks = sorted([h for h in holdings_list if h["streak"] <= -2 and h["ticker"] not in NON_PUBLIC_TICKERS], key=lambda x: (abs(x["streak"]), x["weight"]), reverse=True)
         
         weekly_base_idx = max(0, len(sorted_dates) - 6)
         weekly_base_date = sorted_dates[weekly_base_idx]

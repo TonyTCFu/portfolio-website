@@ -66,7 +66,7 @@ status: completed
 
 """
     # 1. Daily Analysis & Rotation Narrative
-    for fund_id in ["ARKK", "ARKG", "IDNA", "VHT"]:
+    for fund_id in ["ARKK", "ARKG", "ARKQ"]:
         if fund_id not in data["funds_data"]:
             continue
         fund = data["funds_data"][fund_id]
@@ -83,7 +83,7 @@ status: completed
     md += "---\n\n## 2. 板塊權重與個股偏離分析\n\n"
     
     # 2. Individual Weight shifts (Gainers vs Losers)
-    for fund_id in ["ARKK", "ARKG", "IDNA"]:
+    for fund_id in ["ARKK", "ARKG", "ARKQ"]:
         if fund_id not in data["funds_data"]:
             continue
         fund = data["funds_data"][fund_id]
@@ -116,7 +116,7 @@ status: completed
     md += "---\n\n## 3. 主要交易明細 (Trades Digest)\n\n"
     md += "| 基金 | 股票代碼 | 公司名稱 | 調倉方向 | 股數變動 | 權重比 |\n"
     md += "| :--- | :--- | :--- | :--- | :--- | :--- |\n"
-    for fund_id in ["ARKK", "ARKG", "IDNA", "VHT"]:
+    for fund_id in ["ARKK", "ARKG", "ARKQ"]:
         if fund_id not in data["funds_data"]:
             continue
         fund = data["funds_data"][fund_id]
@@ -263,15 +263,15 @@ def main():
         # Update indices
         update_index_files(active_date)
 
-        # In GitHub Actions, also stage history.json and daily_digest.html so the commit step persists them
+        # In GitHub Actions, also stage history.json, daily_digest.html, and .last_emailed_date so the commit step persists them
         if IS_GITHUB_ACTIONS:
             import subprocess
             subprocess.run(
-                ["git", "add", "ark-tracker-backend/data/history.json", "ark/daily_digest.html"],
+                ["git", "add", "ark-tracker-backend/data/history.json", "ark/daily_digest.html", "ark/data/.last_emailed_date"],
                 cwd=REPO_ROOT,
                 check=False,
             )
-            print("Staged history.json and daily_digest.html for GitHub Actions commit.")
+            print("Staged history.json, daily_digest.html, and .last_emailed_date for GitHub Actions commit.")
     except PermissionError as pe:
         print(f"Error: Permission denied when writing daily note to Obsidian folder: {pe}")
         print("Please check your iCloud directory permissions or grant Full Disk Access to /bin/bash or your python binary.")

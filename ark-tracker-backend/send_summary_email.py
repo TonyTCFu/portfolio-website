@@ -13,7 +13,7 @@ import sys
 import json
 import urllib.request
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import time
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -27,6 +27,10 @@ if os.path.exists(os.path.join(BASE_DIR, "..", "ark")):
     DIGEST_HTML_WEB = os.path.join(BASE_DIR, "..", "ark", "daily_digest.html")
 else:
     DIGEST_HTML_WEB = os.path.join(BASE_DIR, "..", "portfolio-website", "ark", "daily_digest.html")
+
+LAST_EMAILED_WEB = os.path.join(os.path.dirname(DIGEST_HTML_WEB), "data", ".last_emailed_date")
+LAST_EMAILED_LOCAL = os.path.join(BASE_DIR, "data", ".last_emailed_date")
+NON_PUBLIC_TICKERS = {"CASH", "X9USDGSFT", "PPOPENAIC", "SPCX", "ARKY"}
 
 KNOWN_SECTORS = {
     "TSLA": "智能电动与空间算力 (Robotaxi/FSD)",
@@ -140,6 +144,8 @@ def extract_market_intelligence(data):
             
         trades = fund.get("recent_trades", [])
         for t in trades:
+            if t.get("ticker") in NON_PUBLIC_TICKERS:
+                continue
             item = dict(t)
             item["fund"] = fid
             shares = item.get("shares", 0)
@@ -188,6 +194,8 @@ def extract_market_intelligence(data):
         streaks = fund.get("streaks", {})
         
         for item in streaks.get("buying", []):
+            if item.get("ticker") in NON_PUBLIC_TICKERS or item.get("streak", 0) < 2:
+                continue
             it = dict(item)
             it["fund"] = fid
             h = holdings_map.get(it["ticker"], {})
@@ -204,6 +212,8 @@ def extract_market_intelligence(data):
             streak_buys.append(it)
             
         for item in streaks.get("selling", []):
+            if item.get("ticker") in NON_PUBLIC_TICKERS or item.get("streak", 0) > -2:
+                continue
             it = dict(item)
             it["fund"] = fid
             h = holdings_map.get(it["ticker"], {})
@@ -408,7 +418,7 @@ def build_apple_style_html_report(data, intel):
       5. 资金流向与板块轮动深度解读
     </h2>
 '''
-    for fund_id in ["ARKK", "ARKG", "IDNA"]:
+    for fund_id in ["ARKK", "ARKG", "ARKQ"]:
         if fund_id not in data["funds_data"]:
             continue
         fund = data["funds_data"][fund_id]
@@ -525,7 +535,7 @@ def build_plain_text_report(data, intel):
     # 5. Sector Shifts & Daily Rotation
     report += "【5. 资金流向与板块轮动深度解读】\n"
     report += "─────────────────────────────────────────────────────\n"
-    for fund_id in ["ARKK", "ARKG", "IDNA"]:
+    for fund_id in ["ARKK", "ARKG", "ARKQ"]:
         if fund_id not in data["funds_data"]:
             continue
         fund = data["funds_data"][fund_id]
@@ -713,6 +723,7 @@ def main():
     parser.add_argument("--weekly", action="store_true", help="Send weekly report")
     parser.add_argument("--to", type=str, default=None, help="Override recipient email")
     parser.add_argument("--export-only", action="store_true", help="Export HTML/text locally without sending email")
+    parser.add_argument("--force-send", action="store_true", help="Bypass morning window and duplicate date guard")
     args = parser.parse_args()
 
     data = load_processed_data()
@@ -753,6 +764,24 @@ def main():
         print("Export-only mode finished successfully.")
         return
 
+    # Guard 1: Morning Dispatch Window (05:00 - 11:59 Taipei Time / UTC+8)
+    now_cst = datetime.now(timezone(timedelta(hours=8)))
+    if not args.force_send and not (5 <= now_cst.hour < 12):
+        print(f"Skipping email dispatch: Current Taipei time ({now_cst.strftime('%Y-%m-%d %H:%M')}) is outside morning window (05:00-11:59). Web digest exported.")
+        return
+
+    # Guard 2: Idempotency Date Lock (never send two daily emails for the same active_date)
+    if not args.force_send and not is_weekly:
+        for state_file in (LAST_EMAILED_WEB, LAST_EMAILED_LOCAL):
+            if os.path.exists(state_file):
+                try:
+                    last_sent = open(state_file, "r", encoding="utf-8").read().strip()
+                    if last_sent == active_date:
+                        print(f"Skipping duplicate email: Daily digest for {active_date} was already sent ({state_file}).")
+                        return
+                except Exception:
+                    pass
+
     # Dispatch priority: Resend API (HTTPS 443) -> SMTP -> No FormSubmit
     smtp_cfg = config.get("smtp")
     resend_api_key = config.get("resend_api_key")
@@ -770,6 +799,13 @@ def main():
 
     if sent:
         print("Summary email dispatched successfully.")
+        for state_file in (LAST_EMAILED_WEB, LAST_EMAILED_LOCAL):
+            try:
+                os.makedirs(os.path.dirname(state_file), exist_ok=True)
+                with open(state_file, "w", encoding="utf-8") as f:
+                    f.write(active_date)
+            except Exception as e:
+                print(f"Warning: Could not write last emailed date to {state_file}: {e}")
     else:
         print("Warning: Summary email sending failed.")
 
