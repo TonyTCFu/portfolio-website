@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18 21:47:12",
+  "last_updated": "2026-11-19 03:46:17",
   "available_funds": [
     "ARKK",
     "ARKG",
@@ -3552,15 +3552,15 @@
             "weight_diff": 0.2
           },
           {
-            "sector": "電子商務基礎設施",
-            "weight_today": 3.53,
-            "weight_prev": 3.62,
-            "weight_diff": -0.09
-          },
-          {
             "sector": "數字資產交易",
             "weight_today": 3.63,
             "weight_prev": 3.72,
+            "weight_diff": -0.09
+          },
+          {
+            "sector": "電子商務基礎設施",
+            "weight_today": 3.53,
+            "weight_prev": 3.62,
             "weight_diff": -0.09
           }
         ],
@@ -25147,16 +25147,16 @@
             "weight_diff": -0.14
           },
           {
-            "sector": "基因技術與癌症診斷",
-            "weight_today": 18.01,
-            "weight_prev": 18.14,
-            "weight_diff": -0.13
-          },
-          {
             "sector": "精密製藥",
             "weight_today": 23.94,
             "weight_prev": 23.81,
             "weight_diff": 0.13
+          },
+          {
+            "sector": "基因技術與癌症診斷",
+            "weight_today": 18.01,
+            "weight_prev": 18.14,
+            "weight_diff": -0.13
           }
         ],
         "narrative": "今日組合權重向【免疫與抗體研發】板塊偏離 +0.36%。 "
@@ -25973,6 +25973,12 @@
             "weight_diff": 0.31
           },
           {
+            "sector": "AI 藥物研發",
+            "weight_today": 0.23,
+            "weight_prev": 0.25,
+            "weight_diff": -0.02
+          },
+          {
             "sector": "基因編輯與細胞治療",
             "weight_today": 2.81,
             "weight_prev": 2.79,
@@ -25982,12 +25988,6 @@
             "sector": "基因技術與癌症診斷",
             "weight_today": 1.97,
             "weight_prev": 1.99,
-            "weight_diff": -0.02
-          },
-          {
-            "sector": "AI 藥物研發",
-            "weight_today": 0.23,
-            "weight_prev": 0.25,
             "weight_diff": -0.02
           }
         ],
