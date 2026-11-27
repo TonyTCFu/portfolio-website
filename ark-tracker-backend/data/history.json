@@ -16489,6 +16489,242 @@
         "value": 10075847.64,
         "weight": 0.17
       }
+    },
+    "2026-11-27": {
+      "TSLA": {
+        "company": "TESLA INC",
+        "shares": 1859330,
+        "value": 706805706.2,
+        "weight": 12.85
+      },
+      "SPCX": {
+        "company": "SPACE EXPLORATION TECHN-CL A",
+        "shares": 3808095,
+        "value": 485303626.8,
+        "weight": 8.83
+      },
+      "TEM": {
+        "company": "TEMPUS AI INC-CL A",
+        "shares": 5039612,
+        "value": 275868360.88,
+        "weight": 5.02
+      },
+      "CRCL": {
+        "company": "CIRCLE INTERNET GROUP INC",
+        "shares": 4229792,
+        "value": 204172059.84,
+        "weight": 3.71
+      },
+      "SHOP": {
+        "company": "SHOPIFY INC - CLASS A",
+        "shares": 1408322,
+        "value": 187870154.8,
+        "weight": 3.42
+      },
+      "TWST": {
+        "company": "TWIST BIOSCIENCE CORP",
+        "shares": 1730891,
+        "value": 187057390.37,
+        "weight": 3.4
+      },
+      "COIN": {
+        "company": "COINBASE GLOBAL INC -CLASS A",
+        "shares": 1785785,
+        "value": 185221620.2,
+        "weight": 3.37
+      },
+      "XYZ": {
+        "company": "BLOCK INC",
+        "shares": 2112229,
+        "value": 160740626.9,
+        "weight": 2.92
+      },
+      "PLTR": {
+        "company": "PALANTIR TECHNOLOGIES INC-A",
+        "shares": 921094,
+        "value": 150681767.46,
+        "weight": 2.74
+      },
+      "HOOD": {
+        "company": "ROBINHOOD MARKETS INC - A",
+        "shares": 2183279,
+        "value": 143616092.62,
+        "weight": 2.61
+      },
+      "NTLA": {
+        "company": "INTELLIA THERAPEUTICS INC",
+        "shares": 13875961,
+        "value": 143061157.91,
+        "weight": 2.6
+      },
+      "AMZN": {
+        "company": "AMAZON.COM INC",
+        "shares": 577139,
+        "value": 141070085.77,
+        "weight": 2.57
+      },
+      "NVDA": {
+        "company": "NVIDIA CORP",
+        "shares": 942597,
+        "value": 140729732.1,
+        "weight": 2.56
+      },
+      "CRSP": {
+        "company": "CRISPR THERAPEUTICS AG",
+        "shares": 3266124,
+        "value": 139006237.44,
+        "weight": 2.53
+      },
+      "TXG": {
+        "company": "10X GENOMICS INC-CLASS A",
+        "shares": 2464884,
+        "value": 137244741.12,
+        "weight": 2.5
+      },
+      "META": {
+        "company": "META PLATFORMS INC-CLASS A",
+        "shares": 210235,
+        "value": 128220224.15,
+        "weight": 2.33
+      },
+      "CRWV": {
+        "company": "COREWEAVE INC-CL A",
+        "shares": 2978079,
+        "value": 126776823.03,
+        "weight": 2.31
+      },
+      "CBRS": {
+        "company": "CEREBRAS SYSTEMS INC - A",
+        "shares": 1382443,
+        "value": 123977488.24,
+        "weight": 2.25
+      },
+      "AMD": {
+        "company": "ADVANCED MICRO DEVICES",
+        "shares": 296938,
+        "value": 120565736.14,
+        "weight": 2.19
+      },
+      "BEAM": {
+        "company": "BEAM THERAPEUTICS INC",
+        "shares": 3820014,
+        "value": 91030933.62,
+        "weight": 1.66
+      },
+      "RKLB": {
+        "company": "ROCKET LAB CORP",
+        "shares": 1788123,
+        "value": 84077543.46,
+        "weight": 1.53
+      },
+      "BMNR": {
+        "company": "BITMINE IMMERSION TECHNOLOGI",
+        "shares": 5437371,
+        "value": 73078266.24,
+        "weight": 1.33
+      },
+      "BLSH": {
+        "company": "BULLISH",
+        "shares": 3677487,
+        "value": 72262619.55,
+        "weight": 1.31
+      },
+      "NET": {
+        "company": "CLOUDFLARE INC - CLASS A",
+        "shares": 252696,
+        "value": 71588776.8,
+        "weight": 1.3
+      },
+      "GOOG": {
+        "company": "ALPHABET INC-CL C",
+        "shares": 262004,
+        "value": 70997843.92,
+        "weight": 1.29
+      },
+      "ARKY": {
+        "company": "ARK ACTIVE AUTOCALL INC ETF",
+        "shares": 3845446,
+        "value": 67372213.92,
+        "weight": 1.23
+      },
+      "NTRA": {
+        "company": "NATERA INC",
+        "shares": 220476,
+        "value": 66436033.08,
+        "weight": 1.21
+      },
+      "BWXT": {
+        "company": "BWX TECHNOLOGIES INC",
+        "shares": 526765,
+        "value": 59814165.75,
+        "weight": 1.09
+      },
+      "KTOS": {
+        "company": "KRATOS DEFENSE & SECURITY",
+        "shares": 2006947,
+        "value": 58101115.65,
+        "weight": 1.06
+      },
+      "TSM": {
+        "company": "TAIWAN SEMICONDUCTOR-SP ADR",
+        "shares": 161682,
+        "value": 55350215.88,
+        "weight": 1.01
+      },
+      "ACHR": {
+        "company": "ARCHER AVIATION INC-A",
+        "shares": 18151677,
+        "value": 55181098.08,
+        "weight": 1.0
+      },
+      "WGS": {
+        "company": "GENEDX HOLDINGS CORP",
+        "shares": 1136579,
+        "value": 54385305.15,
+        "weight": 0.99
+      },
+      "VCYT": {
+        "company": "VERACYTE INC",
+        "shares": 1979927,
+        "value": 51359306.38,
+        "weight": 0.93
+      },
+      "RXRX": {
+        "company": "RECURSION PHARMACEUTICALS-A",
+        "shares": 18669850,
+        "value": 49195054.75,
+        "weight": 0.89
+      },
+      "XE": {
+        "company": "X-ENERGY INC",
+        "shares": 5115161,
+        "value": 42046623.42,
+        "weight": 0.76
+      },
+      "SOFI": {
+        "company": "SOFI TECHNOLOGIES INC",
+        "shares": 2708690,
+        "value": 35402578.3,
+        "weight": 0.64
+      },
+      "ILMN": {
+        "company": "ILLUMINA INC",
+        "shares": 134001,
+        "value": 26852460.39,
+        "weight": 0.49
+      },
+      "PACB": {
+        "company": "PACIFIC BIOSCIENCES OF CALIF",
+        "shares": 8007624,
+        "value": 12652045.92,
+        "weight": 0.23
+      },
+      "CERS": {
+        "company": "CERUS CORP",
+        "shares": 4885195,
+        "value": 9819241.95,
+        "weight": 0.18
+      }
     }
   },
   "ARKG": {
@@ -29194,6 +29430,206 @@
         "shares": 6358707,
         "value": 5663064.45,
         "weight": 0.36
+      }
+    },
+    "2026-11-27": {
+      "TWST": {
+        "company": "TWIST BIOSCIENCE CORP",
+        "shares": 1233413,
+        "value": 133294942.91,
+        "weight": 8.33
+      },
+      "TEM": {
+        "company": "TEMPUS AI INC-CL A",
+        "shares": 2364628,
+        "value": 129439736.72,
+        "weight": 8.09
+      },
+      "TXG": {
+        "company": "10X GENOMICS INC-CLASS A",
+        "shares": 2154998,
+        "value": 119990288.64,
+        "weight": 7.5
+      },
+      "CRSP": {
+        "company": "CRISPR THERAPEUTICS AG",
+        "shares": 2146181,
+        "value": 91341463.36,
+        "weight": 5.71
+      },
+      "ABSI": {
+        "company": "ABSCI CORP",
+        "shares": 9339216,
+        "value": 84052944.0,
+        "weight": 5.25
+      },
+      "GH": {
+        "company": "GUARDANT HEALTH INC",
+        "shares": 527807,
+        "value": 80944481.52,
+        "weight": 5.06
+      },
+      "LLY": {
+        "company": "ELI LILLY & CO",
+        "shares": 54373,
+        "value": 75699178.06,
+        "weight": 4.73
+      },
+      "NTRA": {
+        "company": "NATERA INC",
+        "shares": 246276,
+        "value": 74210347.08,
+        "weight": 4.64
+      },
+      "ILMN": {
+        "company": "ILLUMINA INC",
+        "shares": 364390,
+        "value": 73020112.1,
+        "weight": 4.56
+      },
+      "BEAM": {
+        "company": "BEAM THERAPEUTICS INC",
+        "shares": 2603033,
+        "value": 62030276.39,
+        "weight": 3.88
+      },
+      "CDNA": {
+        "company": "CAREDX INC",
+        "shares": 716647,
+        "value": 54364841.42,
+        "weight": 3.4
+      },
+      "SDGR": {
+        "company": "SCHRODINGER INC",
+        "shares": 2110244,
+        "value": 51447748.72,
+        "weight": 3.21
+      },
+      "CMPS": {
+        "company": "COMPASS PATHWAYS PLC",
+        "shares": 5127233,
+        "value": 45734918.36,
+        "weight": 2.86
+      },
+      "ADPT": {
+        "company": "ADAPTIVE BIOTECHNOLOGIES",
+        "shares": 1525525,
+        "value": 43294399.5,
+        "weight": 2.71
+      },
+      "VCYT": {
+        "company": "VERACYTE INC",
+        "shares": 1610111,
+        "value": 41766279.34,
+        "weight": 2.61
+      },
+      "NRIX": {
+        "company": "NURIX THERAPEUTICS INC",
+        "shares": 2424089,
+        "value": 35779553.64,
+        "weight": 2.24
+      },
+      "PRME": {
+        "company": "PRIME MEDICINE INC",
+        "shares": 8779264,
+        "value": 35468226.56,
+        "weight": 2.22
+      },
+      "RXRX": {
+        "company": "RECURSION PHARMACEUTICALS-A",
+        "shares": 13492475,
+        "value": 35552671.63,
+        "weight": 2.22
+      },
+      "ALMR": {
+        "company": "ALAMAR BIOSCIENCES INC",
+        "shares": 1049184,
+        "value": 29880760.32,
+        "weight": 1.87
+      },
+      "NTLA": {
+        "company": "INTELLIA THERAPEUTICS INC",
+        "shares": 2846374,
+        "value": 29346115.94,
+        "weight": 1.83
+      },
+      "WGS": {
+        "company": "GENEDX HOLDINGS CORP",
+        "shares": 534413,
+        "value": 25571662.05,
+        "weight": 1.6
+      },
+      "BFLY": {
+        "company": "BUTTERFLY NETWORK INC",
+        "shares": 4611212,
+        "value": 25315553.88,
+        "weight": 1.58
+      },
+      "IONS": {
+        "company": "IONIS PHARMACEUTICALS INC",
+        "shares": 819518,
+        "value": 24552759.28,
+        "weight": 1.53
+      },
+      "ARCT UQ": {
+        "company": "ARCTURUS THERAPEUTICS HOLDIN",
+        "shares": 2796652,
+        "value": 24079173.72,
+        "weight": 1.5
+      },
+      "IAM": {
+        "company": "IAMBIC THERAPEUTICS INC",
+        "shares": 1518534,
+        "value": 23552462.34,
+        "weight": 1.47
+      },
+      "KYMR": {
+        "company": "KYMERA THERAPEUTICS INC",
+        "shares": 110576,
+        "value": 19214791.52,
+        "weight": 1.2
+      },
+      "PACB": {
+        "company": "PACIFIC BIOSCIENCES OF CALIF",
+        "shares": 11326039,
+        "value": 17895141.62,
+        "weight": 1.12
+      },
+      "SCTX": {
+        "company": "SCRIBE THERAPEUTICS INC",
+        "shares": 1397094,
+        "value": 17449704.06,
+        "weight": 1.09
+      },
+      "MASS": {
+        "company": "908 DEVICES INC",
+        "shares": 1841585,
+        "value": 16896542.38,
+        "weight": 1.06
+      },
+      "GENB": {
+        "company": "GENERATE BIOMEDICINES INC",
+        "shares": 1477231,
+        "value": 16707482.61,
+        "weight": 1.04
+      },
+      "FRNM": {
+        "company": "FREENOME INC",
+        "shares": 1608193,
+        "value": 15599472.1,
+        "weight": 0.97
+      },
+      "CERS": {
+        "company": "CERUS CORP",
+        "shares": 7502626,
+        "value": 15080278.26,
+        "weight": 0.94
+      },
+      "QSI": {
+        "company": "QUANTUM-SI INC",
+        "shares": 6534624,
+        "value": 5626964.73,
+        "weight": 0.35
       }
     }
   },
@@ -53523,6 +53959,224 @@
         "value": 11696.3,
         "weight": 0.0
       }
+    },
+    "2026-11-27": {
+      "TSLA": {
+        "company": "TESLA INC",
+        "shares": 551341,
+        "value": 209586767.74,
+        "weight": 14.21
+      },
+      "SPCX": {
+        "company": "SPACE EXPLORATION TECHN-CL A",
+        "shares": 1174648,
+        "value": 149697141.12,
+        "weight": 10.15
+      },
+      "NVDA": {
+        "company": "NVIDIA CORP",
+        "shares": 481602,
+        "value": 71903178.6,
+        "weight": 4.88
+      },
+      "KTOS": {
+        "company": "KRATOS DEFENSE & SECURITY",
+        "shares": 2461349,
+        "value": 71256053.55,
+        "weight": 4.83
+      },
+      "GOOG": {
+        "company": "ALPHABET INC-CL C",
+        "shares": 227569,
+        "value": 61666647.62,
+        "weight": 4.18
+      },
+      "RKLB": {
+        "company": "ROCKET LAB CORP",
+        "shares": 1289236,
+        "value": 60619876.72,
+        "weight": 4.11
+      },
+      "AMZN": {
+        "company": "AMAZON.COM INC",
+        "shares": 239428,
+        "value": 58523386.04,
+        "weight": 3.97
+      },
+      "PLTR": {
+        "company": "PALANTIR TECHNOLOGIES INC-A",
+        "shares": 356398,
+        "value": 58303148.82,
+        "weight": 3.95
+      },
+      "LHX": {
+        "company": "L3HARRIS TECHNOLOGIES INC",
+        "shares": 211477,
+        "value": 55383711.53,
+        "weight": 3.76
+      },
+      "TER": {
+        "company": "TERADYNE INC",
+        "shares": 228084,
+        "value": 48388020.6,
+        "weight": 3.28
+      },
+      "AVAV": {
+        "company": "AEROVIRONMENT INC",
+        "shares": 466922,
+        "value": 42662663.14,
+        "weight": 2.89
+      },
+      "TSM": {
+        "company": "TAIWAN SEMICONDUCTOR-SP ADR",
+        "shares": 119783,
+        "value": 41006512.22,
+        "weight": 2.78
+      },
+      "DE": {
+        "company": "DEERE & CO",
+        "shares": 62783,
+        "value": 40245158.66,
+        "weight": 2.73
+      },
+      "ACHR": {
+        "company": "ARCHER AVIATION INC-A",
+        "shares": 12715384,
+        "value": 38654767.36,
+        "weight": 2.62
+      },
+      "AMD": {
+        "company": "ADVANCED MICRO DEVICES",
+        "shares": 89660,
+        "value": 36404649.8,
+        "weight": 2.47
+      },
+      "TRMB": {
+        "company": "TRIMBLE INC",
+        "shares": 653570,
+        "value": 36109742.5,
+        "weight": 2.45
+      },
+      "SYM UQ": {
+        "company": "SYMBOTIC INC",
+        "shares": 851495,
+        "value": 32373839.9,
+        "weight": 2.19
+      },
+      "ISRG": {
+        "company": "INTUITIVE SURGICAL INC",
+        "shares": 70689,
+        "value": 30196927.02,
+        "weight": 2.05
+      },
+      "LUNR": {
+        "company": "INTUITIVE MACHINES INC",
+        "shares": 3154110,
+        "value": 28828565.4,
+        "weight": 1.95
+      },
+      "KMTUY": {
+        "company": "KOMATSU LTD -SPONS ADR",
+        "shares": 765859,
+        "value": 27348824.89,
+        "weight": 1.85
+      },
+      "AVGO": {
+        "company": "BROADCOM INC",
+        "shares": 85440,
+        "value": 25705478.4,
+        "weight": 1.74
+      },
+      "DASH": {
+        "company": "DOORDASH INC - A",
+        "shares": 145304,
+        "value": 24178585.6,
+        "weight": 1.64
+      },
+      "BWXT": {
+        "company": "BWX TECHNOLOGIES INC",
+        "shares": 197618,
+        "value": 22439523.9,
+        "weight": 1.52
+      },
+      "JOBY": {
+        "company": "JOBY AVIATION INC",
+        "shares": 5470819,
+        "value": 21336194.1,
+        "weight": 1.45
+      },
+      "CCJ": {
+        "company": "CAMECO CORP",
+        "shares": 334510,
+        "value": 20589090.5,
+        "weight": 1.4
+      },
+      "AUR": {
+        "company": "AURORA INNOVATION INC",
+        "shares": 5474614,
+        "value": 20475056.36,
+        "weight": 1.39
+      },
+      "CAT": {
+        "company": "CATERPILLAR INC",
+        "shares": 31417,
+        "value": 17081108.73,
+        "weight": 1.16
+      },
+      "ESLT": {
+        "company": "ELBIT SYSTEMS LTD",
+        "shares": 21927,
+        "value": 14516331.81,
+        "weight": 0.98
+      },
+      "XE": {
+        "company": "X-ENERGY INC",
+        "shares": 1704445,
+        "value": 14010537.9,
+        "weight": 0.95
+      },
+      "SNPS": {
+        "company": "SYNOPSYS INC",
+        "shares": 30487,
+        "value": 12349978.83,
+        "weight": 0.84
+      },
+      "BIDU": {
+        "company": "BAIDU INC - SPON ADR",
+        "shares": 192007,
+        "value": 12190524.43,
+        "weight": 0.83
+      },
+      "OKLO": {
+        "company": "OKLO INC",
+        "shares": 622602,
+        "value": 12122060.94,
+        "weight": 0.82
+      },
+      "WRD": {
+        "company": "WERIDE INC-ADR",
+        "shares": 3885521,
+        "value": 11442859.35,
+        "weight": 0.78
+      },
+      "KDK": {
+        "company": "KODIAK AI INC",
+        "shares": 8429836,
+        "value": 10368698.28,
+        "weight": 0.7
+      },
+      "PONY": {
+        "company": "PONY AI INC",
+        "shares": 3046797,
+        "value": 9963026.19,
+        "weight": 0.68
+      },
+      "BYDDY": {
+        "company": "BYD CO LTD-UNSPONSORED ADR",
+        "shares": 396,
+        "value": 3017.52,
+        "weight": 0.0
+      }
     }
   },
   "ARKX": {
@@ -57975,6 +58629,38 @@
         "value": 304434985.32,
         "weight": 40.09
       }
+    },
+    "2026-11-27": {
+      "TEM": {
+        "company": "Tempus AI Inc",
+        "shares": 7765995,
+        "value": 425110566.3,
+        "weight": 56.24
+      },
+      "RXRX": {
+        "company": "Recursion Pharmaceuticals",
+        "shares": 7706310,
+        "value": 20306126.85,
+        "weight": 2.69
+      },
+      "NNOX": {
+        "company": "Nano-X Imaging Ltd",
+        "shares": 59612,
+        "value": 565432.74,
+        "weight": 0.07
+      },
+      "SOUN": {
+        "company": "SoundHound AI Inc",
+        "shares": 1730883,
+        "value": 7936151.1,
+        "weight": 1.05
+      },
+      "ARM": {
+        "company": "Arm Holdings plc",
+        "shares": 1960777,
+        "value": 301939700.86,
+        "weight": 39.95
+      }
     }
   },
   "IDNA": {
@@ -58039,55 +58725,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67763076.04,
-        "weight": 15.89
+        "weight": 15.84
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62237489.17,
-        "weight": 14.6
+        "weight": 14.55
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13995386.16,
-        "weight": 3.28
+        "weight": 3.27
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29633090.1,
-        "weight": 6.95
+        "weight": 6.93
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 55292824.27,
-        "weight": 12.97
+        "weight": 12.93
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16101998.71,
-        "weight": 3.78
+        "weight": 3.77
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14175783.25,
-        "weight": 3.32
+        "value": 14038920.83,
+        "weight": 3.28
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91030571.84,
-        "weight": 21.35
+        "value": 92186831.92,
+        "weight": 21.56
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76170513.06,
-        "weight": 17.86
+        "value": 76415187.2,
+        "weight": 17.87
       }
     },
     "2026-06-17": {
@@ -58095,55 +58781,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 69696711.29,
-        "weight": 16.29
+        "weight": 16.22
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 61897967.34,
-        "weight": 14.47
+        "weight": 14.41
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13601710.03,
-        "weight": 3.18
+        "weight": 3.17
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29447560.16,
-        "weight": 6.88
+        "weight": 6.85
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 54817013.24,
-        "weight": 12.81
+        "weight": 12.76
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16080051.33,
-        "weight": 3.76
+        "weight": 3.74
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14215192.77,
-        "weight": 3.32
+        "value": 14220468.24,
+        "weight": 3.31
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92217802.48,
-        "weight": 21.56
+        "value": 93303611.32,
+        "weight": 21.72
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75788854.36,
-        "weight": 17.72
+        "value": 76591449.24,
+        "weight": 17.83
       }
     },
     "2026-06-18": {
@@ -58151,54 +58837,54 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 68214639.06,
-        "weight": 16.03
+        "weight": 16.08
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 60582961.94,
-        "weight": 14.23
+        "weight": 14.28
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13404023.61,
-        "weight": 3.15
+        "weight": 3.16
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29908176.33,
-        "weight": 7.03
+        "weight": 7.05
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 54136520.56,
-        "weight": 12.72
+        "weight": 12.76
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15697727.47,
-        "weight": 3.69
+        "weight": 3.7
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14399019.68,
-        "weight": 3.38
+        "value": 14212369.67,
+        "weight": 3.35
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93334957.06,
-        "weight": 21.93
+        "value": 92264859.75,
+        "weight": 21.75
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75963671.68,
+        "value": 75696445.55,
         "weight": 17.85
       }
     },
@@ -58207,55 +58893,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 66733700.63,
-        "weight": 15.72
+        "weight": 15.69
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 61418485.3,
-        "weight": 14.47
+        "weight": 14.44
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13589848.88,
-        "weight": 3.2
+        "weight": 3.19
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29736494.87,
-        "weight": 7.01
+        "weight": 6.99
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 55325324.61,
-        "weight": 13.04
+        "weight": 13.0
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15844920.9,
-        "weight": 3.73
+        "weight": 3.72
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14390819.43,
-        "weight": 3.39
+        "value": 14016634.82,
+        "weight": 3.29
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92295856.53,
-        "weight": 21.75
+        "value": 92573160.82,
+        "weight": 21.76
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75076003.83,
-        "weight": 17.69
+        "value": 76179461.77,
+        "weight": 17.91
       }
     },
     "2026-06-22": {
@@ -58263,55 +58949,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67014359.48,
-        "weight": 15.79
+        "weight": 15.72
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62069524.69,
-        "weight": 14.63
+        "weight": 14.56
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13393297.71,
-        "weight": 3.16
+        "weight": 3.14
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 28948641.63,
-        "weight": 6.82
+        "weight": 6.79
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 54601828.81,
-        "weight": 12.87
+        "weight": 12.81
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15930170.92,
-        "weight": 3.75
+        "weight": 3.74
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14192626.94,
+        "value": 14224098.4,
         "weight": 3.34
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92604261.16,
-        "weight": 21.82
+        "value": 92857783.62,
+        "weight": 21.78
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75555061.05,
-        "weight": 17.81
+        "value": 77307943.88,
+        "weight": 18.13
       }
     },
     "2026-06-23": {
@@ -58319,55 +59005,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 65964894.77,
-        "weight": 15.44
+        "weight": 15.5
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 63039441.09,
-        "weight": 14.75
+        "weight": 14.81
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13660291.22,
-        "weight": 3.2
+        "weight": 3.21
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29602616.91,
-        "weight": 6.93
+        "weight": 6.95
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 55169324.02,
-        "weight": 12.91
+        "weight": 12.96
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15917527.99,
-        "weight": 3.72
+        "weight": 3.74
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14402695.42,
-        "weight": 3.37
+        "value": 14182669.82,
+        "weight": 3.33
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92888979.59,
-        "weight": 21.74
+        "value": 91837959.73,
+        "weight": 21.58
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76674293.61,
-        "weight": 17.94
+        "value": 76286517.14,
+        "weight": 17.92
       }
     },
     "2026-06-24": {
@@ -58375,55 +59061,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67035497.65,
-        "weight": 15.72
+        "weight": 15.67
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62394256.53,
-        "weight": 14.63
+        "weight": 14.58
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13752172.92,
-        "weight": 3.23
+        "weight": 3.21
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 29954223.33,
-        "weight": 7.03
+        "weight": 7.0
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 55744587.15,
-        "weight": 13.07
+        "weight": 13.03
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15605089.36,
-        "weight": 3.66
+        "weight": 3.65
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14360746.67,
-        "weight": 3.37
+        "value": 14092567.86,
+        "weight": 3.29
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91868813.08,
-        "weight": 21.55
+        "value": 91922701.1,
+        "weight": 21.48
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75661238.94,
-        "weight": 17.75
+        "value": 77399247.62,
+        "weight": 18.09
       }
     },
     "2026-06-25": {
@@ -58437,7 +59123,7 @@
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62115437.99,
-        "weight": 14.59
+        "weight": 14.58
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -58449,7 +59135,7 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 30301601.71,
-        "weight": 7.12
+        "weight": 7.11
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
@@ -58466,20 +59152,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14269513.4,
-        "weight": 3.35
+        "value": 14006839.89,
+        "weight": 3.29
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91953582.92,
-        "weight": 21.59
+        "value": 91192449.23,
+        "weight": 21.41
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76764848.99,
-        "weight": 18.03
+        "value": 77917599.48,
+        "weight": 18.29
       }
     },
     "2026-06-26": {
@@ -58487,13 +59173,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 68683944.23,
-        "weight": 16.17
+        "weight": 16.18
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 60804461.5,
-        "weight": 14.31
+        "weight": 14.32
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -58505,13 +59191,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 30681995.05,
-        "weight": 7.22
+        "weight": 7.23
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 53069263.92,
-        "weight": 12.49
+        "weight": 12.5
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -58522,20 +59208,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14182709.03,
-        "weight": 3.34
+        "value": 13959953.14,
+        "weight": 3.29
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91223085.73,
-        "weight": 21.48
+        "value": 91352184.47,
+        "weight": 21.52
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77278952.21,
-        "weight": 18.19
+        "value": 77102782.05,
+        "weight": 18.16
       }
     },
     "2026-06-29": {
@@ -58543,55 +59229,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 68650000.0,
-        "weight": 16.19
+        "weight": 16.1
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 61754000.0,
-        "weight": 14.56
+        "weight": 14.48
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13376000.0,
-        "weight": 3.15
+        "weight": 3.14
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 30024000.0,
-        "weight": 7.08
+        "weight": 7.04
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 52215000.0,
-        "weight": 12.31
+        "weight": 12.25
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16017000.0,
-        "weight": 3.78
+        "weight": 3.76
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14135233.57,
-        "weight": 3.33
+        "value": 14107899.03,
+        "weight": 3.31
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91382874.62,
-        "weight": 21.55
+        "value": 92501480.15,
+        "weight": 21.7
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76470813.38,
-        "weight": 18.03
+        "value": 77692878.88,
+        "weight": 18.22
       }
     },
     "2026-07-02": {
@@ -58599,55 +59285,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 69525000.0,
-        "weight": 16.1
+        "weight": 16.13
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 67760000.0,
-        "weight": 15.69
+        "weight": 15.72
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13946000.0,
-        "weight": 3.23
+        "weight": 3.24
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 31032000.0,
-        "weight": 7.18
+        "weight": 7.2
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 50220000.0,
-        "weight": 11.63
+        "weight": 11.65
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15570500.0,
-        "weight": 3.6
+        "weight": 3.61
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14285037.05,
-        "weight": 3.31
+        "value": 14292302.56,
+        "weight": 3.32
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92532556.41,
-        "weight": 21.42
+        "value": 92036761.17,
+        "weight": 21.35
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77056073.51,
-        "weight": 17.84
+        "value": 76603051.2,
+        "weight": 17.77
       }
     },
     "2026-07-06": {
@@ -58655,55 +59341,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 75100000.0,
-        "weight": 17.14
+        "weight": 17.09
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 66297000.0,
-        "weight": 15.13
+        "weight": 15.08
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 14440000.0,
-        "weight": 3.3
+        "weight": 3.29
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 31608000.0,
-        "weight": 7.21
+        "weight": 7.19
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 52185000.0,
-        "weight": 11.91
+        "weight": 11.87
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16036000.0,
-        "weight": 3.66
+        "weight": 3.65
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14471755.95,
-        "weight": 3.3
+        "value": 14208652.59,
+        "weight": 3.23
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92067681.31,
-        "weight": 21.01
+        "value": 93135181.86,
+        "weight": 21.19
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75975178.55,
-        "weight": 17.34
+        "value": 76532808.67,
+        "weight": 17.41
       }
     },
     "2026-07-07": {
@@ -58711,55 +59397,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 77362500.0,
-        "weight": 17.43
+        "weight": 17.49
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 66770000.0,
-        "weight": 15.04
+        "weight": 15.09
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 15048000.0,
-        "weight": 3.39
+        "weight": 3.4
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 32112000.0,
-        "weight": 7.23
+        "weight": 7.26
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 52980000.0,
-        "weight": 11.94
+        "weight": 11.97
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16150000.0,
-        "weight": 3.64
+        "weight": 3.65
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14387055.67,
-        "weight": 3.24
+        "value": 14080939.92,
+        "weight": 3.18
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93166471.02,
-        "weight": 20.99
+        "value": 92160555.18,
+        "weight": 20.83
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75905511.75,
-        "weight": 17.1
+        "value": 75761916.48,
+        "weight": 17.12
       }
     },
     "2026-07-09": {
@@ -58767,55 +59453,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 74000000.0,
-        "weight": 17.06
+        "weight": 16.97
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62997000.0,
-        "weight": 14.53
+        "weight": 14.45
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 14136000.0,
-        "weight": 3.26
+        "weight": 3.24
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 30312000.0,
-        "weight": 6.99
+        "weight": 6.95
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 55320000.0,
-        "weight": 12.76
+        "weight": 12.69
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15285500.0,
-        "weight": 3.52
+        "weight": 3.51
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14257739.45,
-        "weight": 3.29
+        "value": 14055184.89,
+        "weight": 3.22
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92191516.91,
-        "weight": 21.26
+        "value": 93337620.71,
+        "weight": 21.4
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75140938.14,
-        "weight": 17.33
+        "value": 76634458.59,
+        "weight": 17.57
       }
     },
     "2026-07-13": {
@@ -58823,55 +59509,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 66687500.0,
-        "weight": 15.95
+        "weight": 15.93
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 64053000.0,
-        "weight": 15.32
+        "weight": 15.3
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13528000.0,
-        "weight": 3.24
+        "weight": 3.23
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 25587000.0,
-        "weight": 6.12
+        "weight": 6.11
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 49020000.0,
-        "weight": 11.72
+        "weight": 11.71
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15665500.0,
-        "weight": 3.75
+        "weight": 3.74
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14231661.05,
-        "weight": 3.4
+        "value": 14163866.17,
+        "weight": 3.38
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93368977.88,
-        "weight": 22.33
+        "value": 94054783.82,
+        "weight": 22.46
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76006328.51,
-        "weight": 18.18
+        "value": 75923736.7,
+        "weight": 18.13
       }
     },
     "2026-07-15": {
@@ -58879,13 +59565,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 63075000.0,
-        "weight": 15.4
+        "weight": 15.41
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 64537000.0,
-        "weight": 15.75
+        "weight": 15.76
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -58897,13 +59583,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 23940000.0,
-        "weight": 5.84
+        "weight": 5.85
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 46335000.0,
-        "weight": 11.31
+        "weight": 11.32
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -58914,20 +59600,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14341706.92,
-        "weight": 3.5
+        "value": 14281788.83,
+        "weight": 3.49
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94086381.93,
-        "weight": 22.97
+        "value": 93276060.99,
+        "weight": 22.78
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75301432.0,
-        "weight": 18.38
+        "value": 75982238.15,
+        "weight": 18.56
       }
     },
     "2026-07-16": {
@@ -58935,13 +59621,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 64212500.0,
-        "weight": 15.74
+        "weight": 15.72
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62975000.0,
-        "weight": 15.43
+        "weight": 15.41
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -58959,31 +59645,31 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 46260000.0,
-        "weight": 11.34
+        "weight": 11.32
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 15456500.0,
-        "weight": 3.79
+        "weight": 3.78
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14461110.21,
-        "weight": 3.54
+        "value": 14081908.29,
+        "weight": 3.45
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93307397.48,
-        "weight": 22.86
+        "value": 94374081.95,
+        "weight": 23.1
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75359453.96,
-        "weight": 18.47
+        "value": 75135357.96,
+        "weight": 18.39
       }
     },
     "2026-07-17": {
@@ -58991,55 +59677,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 60712500.0,
-        "weight": 15.45
+        "weight": 15.4
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 58949000.0,
-        "weight": 15.0
+        "weight": 14.95
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 11476000.0,
-        "weight": 2.92
+        "weight": 2.91
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21348000.0,
-        "weight": 5.43
+        "weight": 5.41
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 42585000.0,
-        "weight": 10.83
+        "weight": 10.8
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 14820000.0,
-        "weight": 3.77
+        "weight": 3.76
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14258719.98,
-        "weight": 3.63
+        "value": 14121053.04,
+        "weight": 3.58
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94405787.32,
-        "weight": 24.02
+        "value": 94833353.59,
+        "weight": 24.05
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 74519515.17,
-        "weight": 18.96
+        "value": 75459868.41,
+        "weight": 19.14
       }
     },
     "2026-08-13": {
@@ -59047,55 +59733,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67487500.0,
-        "weight": 16.72
+        "weight": 16.69
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 60071000.0,
-        "weight": 14.88
+        "weight": 14.86
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 12502000.0,
-        "weight": 3.1
+        "weight": 3.09
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21762000.0,
-        "weight": 5.39
+        "weight": 5.38
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 40065000.0,
-        "weight": 9.93
+        "weight": 9.91
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 17698500.0,
-        "weight": 4.39
+        "weight": 4.38
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14298356.23,
-        "weight": 3.54
+        "value": 14198285.31,
+        "weight": 3.51
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94865213.26,
-        "weight": 23.51
+        "value": 94461552.41,
+        "weight": 23.36
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 74841365.79,
-        "weight": 18.54
+        "value": 76121483.01,
+        "weight": 18.82
       }
     },
     "2026-08-14": {
@@ -59103,55 +59789,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67487500.0,
-        "weight": 16.76
+        "weight": 16.67
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 59719000.0,
-        "weight": 14.83
+        "weight": 14.75
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 12578000.0,
-        "weight": 3.12
+        "weight": 3.11
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21294000.0,
-        "weight": 5.29
+        "weight": 5.26
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 39765000.0,
-        "weight": 9.87
+        "weight": 9.82
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 17537000.0,
-        "weight": 4.35
+        "weight": 4.33
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14376558.22,
-        "weight": 3.57
+        "value": 14385047.47,
+        "weight": 3.55
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94493287.17,
-        "weight": 23.46
+        "value": 94793368.6,
+        "weight": 23.42
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 75497557.5,
-        "weight": 18.75
+        "value": 77216858.24,
+        "weight": 19.08
       }
     },
     "2026-08-17": {
@@ -59159,13 +59845,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 66937500.0,
-        "weight": 16.71
+        "weight": 16.73
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 57310000.0,
-        "weight": 14.31
+        "weight": 14.32
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59177,37 +59863,37 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21438000.0,
-        "weight": 5.35
+        "weight": 5.36
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 40125000.0,
-        "weight": 10.02
+        "weight": 10.03
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 16710500.0,
-        "weight": 4.17
+        "weight": 4.18
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14565665.36,
-        "weight": 3.64
+        "value": 14536022.48,
+        "weight": 3.63
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94825214.84,
-        "weight": 23.68
+        "value": 93529394.58,
+        "weight": 23.37
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76583954.55,
-        "weight": 19.12
+        "value": 77614475.26,
+        "weight": 19.39
       }
     },
     "2026-08-21": {
@@ -59215,13 +59901,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 72649999.99,
-        "weight": 16.99
+        "weight": 16.98
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 73315000.02,
-        "weight": 17.15
+        "weight": 17.13
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59233,13 +59919,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22392000.0,
-        "weight": 5.24
+        "weight": 5.23
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 42585000.0,
-        "weight": 9.96
+        "weight": 9.95
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59250,20 +59936,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14718536.01,
-        "weight": 3.44
+        "value": 14357873.68,
+        "weight": 3.36
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93560816.18,
-        "weight": 21.89
+        "value": 93981885.04,
+        "weight": 21.96
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76978312.52,
-        "weight": 18.01
+        "value": 77314829.36,
+        "weight": 18.07
       }
     },
     "2026-09-04": {
@@ -59271,13 +59957,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 70612500.0,
-        "weight": 16.55
+        "weight": 16.53
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 71126000.0,
-        "weight": 16.67
+        "weight": 16.65
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59289,13 +59975,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22824000.0,
-        "weight": 5.35
+        "weight": 5.34
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 44190000.0,
-        "weight": 10.36
+        "weight": 10.35
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59306,20 +59992,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14538150.38,
-        "weight": 3.41
+        "value": 14510556.28,
+        "weight": 3.4
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94013458.65,
-        "weight": 22.03
+        "value": 92698192.93,
+        "weight": 21.71
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76681122.66,
-        "weight": 17.97
+        "value": 78350450.3,
+        "weight": 18.35
       }
     },
     "2026-09-11": {
@@ -59327,55 +60013,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 65325000.0,
-        "weight": 16.21
+        "weight": 16.3
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 64614000.0,
-        "weight": 16.03
+        "weight": 16.12
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 12008000.0,
-        "weight": 2.98
+        "weight": 3.0
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21474000.0,
-        "weight": 5.33
+        "weight": 5.36
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36555000.0,
-        "weight": 9.07
+        "weight": 9.12
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 17860000.0,
-        "weight": 4.43
+        "weight": 4.46
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14692750.05,
-        "weight": 3.65
+        "value": 14311822.82,
+        "weight": 3.57
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92729335.28,
-        "weight": 23.01
+        "value": 91465396.57,
+        "weight": 22.82
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77708255.18,
-        "weight": 19.28
+        "value": 77181277.44,
+        "weight": 19.26
       }
     },
     "2026-09-18": {
@@ -59383,55 +60069,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 71656250.0,
-        "weight": 16.14
+        "weight": 16.06
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 88396000.0,
-        "weight": 19.92
+        "weight": 19.81
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13452000.0,
-        "weight": 3.03
+        "weight": 3.01
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22068000.0,
-        "weight": 4.97
+        "weight": 4.95
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37005000.0,
-        "weight": 8.34
+        "weight": 8.29
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 28728000.0,
-        "weight": 6.47
+        "weight": 6.44
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14491521.3,
-        "weight": 3.27
+        "value": 14151015.55,
+        "weight": 3.17
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91496124.76,
-        "weight": 20.61
+        "value": 92799370.13,
+        "weight": 20.8
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76548665.39,
-        "weight": 17.25
+        "value": 77957455.01,
+        "weight": 17.47
       }
     },
     "2026-09-25": {
@@ -59457,7 +60143,7 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21888000.0,
-        "weight": 4.91
+        "weight": 4.9
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
@@ -59474,20 +60160,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14328694.95,
+        "value": 14327958.58,
         "weight": 3.21
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92830546.47,
-        "weight": 20.8
+        "value": 91926146.37,
+        "weight": 20.59
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77318481.06,
-        "weight": 17.33
+        "value": 78396377.77,
+        "weight": 17.56
       }
     },
     "2026-10-06": {
@@ -59495,13 +60181,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 71675000.0,
-        "weight": 15.64
+        "weight": 15.61
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 91905000.0,
-        "weight": 20.05
+        "weight": 20.02
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59513,36 +60199,36 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22950000.0,
-        "weight": 5.01
+        "weight": 5.0
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 38505000.0,
-        "weight": 8.4
+        "weight": 8.39
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 30970000.0,
-        "weight": 6.76
+        "weight": 6.75
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14507859.66,
-        "weight": 3.16
+        "value": 14454854.13,
+        "weight": 3.15
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91957029.35,
-        "weight": 20.06
+        "value": 92551965.89,
+        "weight": 20.16
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77753806.21,
+        "value": 77854622.61,
         "weight": 16.96
       }
     },
@@ -59551,55 +60237,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67500000.0,
-        "weight": 15.47
+        "weight": 15.41
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 79178000.0,
-        "weight": 18.15
+        "weight": 18.08
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 17594000.0,
-        "weight": 4.03
+        "weight": 4.02
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22266000.0,
-        "weight": 5.1
+        "weight": 5.08
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37845000.0,
-        "weight": 8.67
+        "weight": 8.64
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 27455000.0,
-        "weight": 6.29
+        "weight": 6.27
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14636348.51,
+        "value": 14659041.28,
         "weight": 3.35
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92583059.11,
-        "weight": 21.22
+        "value": 93185864.46,
+        "weight": 21.28
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77216491.52,
-        "weight": 17.7
+        "value": 78285155.41,
+        "weight": 17.87
       }
     },
     "2026-10-08": {
@@ -59607,13 +60293,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 65437500.0,
-        "weight": 15.26
+        "weight": 15.23
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 77385000.0,
-        "weight": 18.04
+        "weight": 18.01
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59631,7 +60317,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37155000.0,
-        "weight": 8.66
+        "weight": 8.65
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59642,20 +60328,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14843099.42,
-        "weight": 3.46
+        "value": 14564289.65,
+        "weight": 3.39
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93217170.65,
-        "weight": 21.73
+        "value": 92898863.07,
+        "weight": 21.63
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77643495.48,
-        "weight": 18.1
+        "value": 78890767.36,
+        "weight": 18.37
       }
     },
     "2026-10-09": {
@@ -59663,55 +60349,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 63050000.0,
-        "weight": 14.84
+        "weight": 14.79
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 76208000.0,
-        "weight": 17.94
+        "weight": 17.88
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 15010000.0,
-        "weight": 3.53
+        "weight": 3.52
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22680000.0,
-        "weight": 5.34
+        "weight": 5.32
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36900000.0,
-        "weight": 8.69
+        "weight": 8.66
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25070500.0,
-        "weight": 5.9
+        "weight": 5.88
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14747158.09,
-        "weight": 3.47
+        "value": 14571426.72,
+        "weight": 3.42
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92930072.84,
-        "weight": 21.87
+        "value": 92865217.09,
+        "weight": 21.79
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78244143.57,
-        "weight": 18.42
+        "value": 79884110.78,
+        "weight": 18.74
       }
     },
     "2026-10-12": {
@@ -59719,13 +60405,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 66737500.0,
-        "weight": 15.3
+        "weight": 15.29
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 78023000.0,
-        "weight": 17.89
+        "weight": 17.87
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59743,7 +60429,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 38550000.0,
-        "weight": 8.84
+        "weight": 8.83
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59754,20 +60440,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14754384.78,
-        "weight": 3.38
+        "value": 14536663.74,
+        "weight": 3.33
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92896415.56,
-        "weight": 21.3
+        "value": 93865223.17,
+        "weight": 21.5
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79229345.1,
-        "weight": 18.16
+        "value": 78797897.14,
+        "weight": 18.05
       }
     },
     "2026-10-13": {
@@ -59799,7 +60485,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37695000.0,
-        "weight": 8.84
+        "weight": 8.85
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59810,20 +60496,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14719185.31,
-        "weight": 3.45
+        "value": 14549944.58,
+        "weight": 3.41
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93896757.59,
-        "weight": 22.03
+        "value": 94465023.51,
+        "weight": 22.17
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78152034.55,
-        "weight": 18.34
+        "value": 77641233.5,
+        "weight": 18.22
       }
     },
     "2026-10-14": {
@@ -59831,13 +60517,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62625000.0,
-        "weight": 14.87
+        "weight": 14.86
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 75042000.0,
-        "weight": 17.82
+        "weight": 17.81
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59866,20 +60552,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14732632.91,
-        "weight": 3.5
+        "value": 14635644.13,
+        "weight": 3.47
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94496759.44,
-        "weight": 22.44
+        "value": 93858626.08,
+        "weight": 22.28
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77004851.44,
-        "weight": 18.28
+        "value": 77933929.91,
+        "weight": 18.5
       }
     },
     "2026-10-15": {
@@ -59887,13 +60573,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62775000.0,
-        "weight": 15.02
+        "weight": 15.0
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 75152000.0,
-        "weight": 17.98
+        "weight": 17.96
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -59911,7 +60597,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 35475000.0,
-        "weight": 8.49
+        "weight": 8.48
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -59922,20 +60608,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14819408.5,
-        "weight": 3.55
+        "value": 14689767.77,
+        "weight": 3.51
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93890158.28,
-        "weight": 22.46
+        "value": 92834894.15,
+        "weight": 22.18
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77295148.78,
-        "weight": 18.49
+        "value": 78971474.83,
+        "weight": 18.87
       }
     },
     "2026-10-16": {
@@ -59943,55 +60629,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 64400000.0,
-        "weight": 15.11
+        "weight": 15.14
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 78243000.0,
-        "weight": 18.36
+        "weight": 18.39
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 15808000.0,
-        "weight": 3.71
+        "weight": 3.72
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20412000.0,
-        "weight": 4.79
+        "weight": 4.8
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37095000.0,
-        "weight": 8.7
+        "weight": 8.72
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 24206000.0,
-        "weight": 5.68
+        "weight": 5.69
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14874211.71,
-        "weight": 3.49
+        "value": 14576331.25,
+        "weight": 3.43
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92866082.42,
-        "weight": 21.79
+        "value": 91822380.01,
+        "weight": 21.59
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78324189.52,
-        "weight": 18.38
+        "value": 78835712.54,
+        "weight": 18.53
       }
     },
     "2026-10-19": {
@@ -59999,13 +60685,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 61562500.0,
-        "weight": 15.09
+        "weight": 15.1
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 71192000.0,
-        "weight": 17.45
+        "weight": 17.46
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -60029,25 +60715,25 @@
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 21470000.0,
-        "weight": 5.26
+        "weight": 5.27
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14759350.89,
-        "weight": 3.62
+        "value": 14385658.28,
+        "weight": 3.53
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91853228.13,
-        "weight": 22.52
+        "value": 90724020.67,
+        "weight": 22.25
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78189539.99,
-        "weight": 19.17
+        "value": 79454237.88,
+        "weight": 19.49
       }
     },
     "2026-10-20": {
@@ -60055,55 +60741,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62550000.0,
-        "weight": 15.25
+        "weight": 15.2
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 70774000.0,
-        "weight": 17.25
+        "weight": 17.2
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13718000.0,
-        "weight": 3.34
+        "weight": 3.33
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20844000.0,
-        "weight": 5.08
+        "weight": 5.06
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36285000.0,
-        "weight": 8.84
+        "weight": 8.82
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 21964000.0,
-        "weight": 5.35
+        "weight": 5.34
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14566283.83,
-        "weight": 3.55
+        "value": 14211966.44,
+        "weight": 3.45
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 90754499.79,
-        "weight": 22.12
+        "value": 90836419.82,
+        "weight": 22.07
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78802995.63,
-        "weight": 19.21
+        "value": 80372999.74,
+        "weight": 19.53
       }
     },
     "2026-10-21": {
@@ -60111,55 +60797,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62350000.0,
-        "weight": 15.0
+        "weight": 14.93
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 73425000.0,
-        "weight": 17.67
+        "weight": 17.58
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13908000.0,
-        "weight": 3.35
+        "weight": 3.33
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 21312000.0,
-        "weight": 5.13
+        "weight": 5.1
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37395000.0,
-        "weight": 9.0
+        "weight": 8.95
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 22230000.0,
-        "weight": 5.35
+        "weight": 5.32
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14390411.13,
-        "weight": 3.46
+        "value": 14192262.35,
+        "weight": 3.4
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 90866936.7,
-        "weight": 21.86
+        "value": 91693343.6,
+        "weight": 21.95
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79714226.91,
-        "weight": 19.18
+        "value": 81169380.15,
+        "weight": 19.43
       }
     },
     "2026-10-22": {
@@ -60167,7 +60853,7 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 63125000.0,
-        "weight": 15.06
+        "weight": 15.07
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -60185,13 +60871,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20970000.0,
-        "weight": 5.0
+        "weight": 5.01
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37260000.0,
-        "weight": 8.89
+        "weight": 8.9
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -60202,20 +60888,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14370459.64,
-        "weight": 3.43
+        "value": 14049441.21,
+        "weight": 3.35
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91724148.36,
-        "weight": 21.89
+        "value": 90528373.28,
+        "weight": 21.61
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80504079.83,
-        "weight": 19.21
+        "value": 81861460.76,
+        "weight": 19.54
       }
     },
     "2026-10-23": {
@@ -60223,55 +60909,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62487500.0,
-        "weight": 15.22
+        "weight": 15.14
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 70191000.0,
-        "weight": 17.09
+        "weight": 17.01
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13604000.0,
-        "weight": 3.31
+        "weight": 3.3
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20088000.0,
-        "weight": 4.89
+        "weight": 4.87
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36840000.0,
-        "weight": 8.97
+        "weight": 8.93
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 21470000.0,
-        "weight": 5.23
+        "weight": 5.2
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14225845.24,
-        "weight": 3.46
+        "value": 14203855.05,
+        "weight": 3.44
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 90558786.67,
-        "weight": 22.05
+        "value": 91486949.57,
+        "weight": 22.16
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 81190487.85,
-        "weight": 19.77
+        "value": 82387579.22,
+        "weight": 19.96
       }
     },
     "2026-10-26": {
@@ -60279,55 +60965,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 61737500.0,
-        "weight": 14.82
+        "weight": 14.74
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 74376500.0,
-        "weight": 17.85
+        "weight": 17.75
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 14060000.0,
-        "weight": 3.37
+        "weight": 3.36
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20178000.0,
-        "weight": 4.84
+        "weight": 4.82
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36075000.0,
-        "weight": 8.66
+        "weight": 8.61
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 22610000.0,
-        "weight": 5.43
+        "weight": 5.4
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14382197.9,
-        "weight": 3.45
+        "value": 14208071.87,
+        "weight": 3.39
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91517685.0,
-        "weight": 21.97
+        "value": 92743676.39,
+        "weight": 22.14
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 81712294.0,
-        "weight": 19.61
+        "value": 82980446.49,
+        "weight": 19.81
       }
     },
     "2026-10-27": {
@@ -60335,13 +61021,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 61262500.0,
-        "weight": 14.65
+        "weight": 14.63
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 73876000.0,
-        "weight": 17.66
+        "weight": 17.64
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -60353,13 +61039,13 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20268000.0,
-        "weight": 4.85
+        "weight": 4.84
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 35685000.0,
-        "weight": 8.53
+        "weight": 8.52
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -60370,20 +61056,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14386467.66,
-        "weight": 3.44
+        "value": 14320139.01,
+        "weight": 3.42
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92774834.02,
-        "weight": 22.18
+        "value": 93888900.4,
+        "weight": 22.41
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 82300301.87,
-        "weight": 19.68
+        "value": 81871413.97,
+        "weight": 19.54
       }
     },
     "2026-10-28": {
@@ -60391,13 +61077,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 64337500.0,
-        "weight": 14.84
+        "weight": 14.85
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 79365000.0,
-        "weight": 18.31
+        "weight": 18.32
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -60415,31 +61101,31 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37350000.0,
-        "weight": 8.61
+        "weight": 8.62
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25384000.0,
-        "weight": 5.85
+        "weight": 5.86
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14499941.91,
-        "weight": 3.34
+        "value": 14423757.23,
+        "weight": 3.33
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93920442.78,
-        "weight": 21.66
+        "value": 94126194.39,
+        "weight": 21.73
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 81200359.47,
-        "weight": 18.73
+        "value": 80674539.4,
+        "weight": 18.62
       }
     },
     "2026-10-29": {
@@ -60447,13 +61133,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 67637500.0,
-        "weight": 14.91
+        "weight": 14.87
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 84271000.0,
-        "weight": 18.57
+        "weight": 18.53
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -60465,37 +61151,37 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 23976000.0,
-        "weight": 5.28
+        "weight": 5.27
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 43170000.0,
-        "weight": 9.52
+        "weight": 9.49
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 29326500.0,
-        "weight": 6.46
+        "weight": 6.45
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14604861.16,
-        "weight": 3.22
+        "value": 14317898.64,
+        "weight": 3.15
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94157816.48,
-        "weight": 20.75
+        "value": 94736183.12,
+        "weight": 20.83
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80013295.01,
-        "weight": 17.64
+        "value": 80744992.92,
+        "weight": 17.76
       }
     },
     "2026-10-30": {
@@ -60515,7 +61201,7 @@
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 16112000.0,
-        "weight": 3.55
+        "weight": 3.54
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
@@ -60538,20 +61224,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14497673.42,
-        "weight": 3.19
+        "value": 14344703.0,
+        "weight": 3.16
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94768010.15,
-        "weight": 20.85
+        "value": 94131640.97,
+        "weight": 20.71
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80083171.07,
-        "weight": 17.62
+        "value": 80907077.72,
+        "weight": 17.8
       }
     },
     "2026-11-02": {
@@ -60559,55 +61245,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 64275000.0,
-        "weight": 14.71
+        "weight": 14.64
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 79442000.0,
-        "weight": 18.18
+        "weight": 18.09
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 15314000.0,
-        "weight": 3.5
+        "weight": 3.49
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 22446000.0,
-        "weight": 5.14
+        "weight": 5.11
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 40845000.0,
-        "weight": 9.35
+        "weight": 9.3
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25783000.0,
-        "weight": 5.9
+        "weight": 5.87
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14524814.33,
-        "weight": 3.32
+        "value": 14507750.74,
+        "weight": 3.3
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94163264.89,
-        "weight": 21.55
+        "value": 95486915.06,
+        "weight": 21.74
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80243927.35,
-        "weight": 18.36
+        "value": 81034145.29,
+        "weight": 18.45
       }
     },
     "2026-11-03": {
@@ -60615,55 +61301,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62487500.0,
-        "weight": 14.25
+        "weight": 14.3
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 86328000.0,
-        "weight": 19.68
+        "weight": 19.75
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 14554000.0,
-        "weight": 3.32
+        "weight": 3.33
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20988000.0,
-        "weight": 4.78
+        "weight": 4.8
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 38805000.0,
-        "weight": 8.85
+        "weight": 8.88
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 24880500.0,
-        "weight": 5.67
+        "weight": 5.69
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14689909.28,
-        "weight": 3.35
+        "value": 14608411.68,
+        "weight": 3.34
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 95518994.3,
-        "weight": 21.78
+        "value": 94304706.63,
+        "weight": 21.57
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80369953.42,
-        "weight": 18.32
+        "value": 80159856.29,
+        "weight": 18.34
       }
     },
     "2026-11-04": {
@@ -60671,19 +61357,19 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62487500.0,
-        "weight": 14.29
+        "weight": 14.27
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 85580000.0,
-        "weight": 19.57
+        "weight": 19.55
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13984000.0,
-        "weight": 3.2
+        "weight": 3.19
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
@@ -60695,7 +61381,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 39495000.0,
-        "weight": 9.03
+        "weight": 9.02
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -60706,20 +61392,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14791834.12,
-        "weight": 3.38
+        "value": 14634458.3,
+        "weight": 3.34
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94336388.69,
-        "weight": 21.57
+        "value": 95228343.12,
+        "weight": 21.75
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79502830.48,
-        "weight": 18.18
+        "value": 79244496.62,
+        "weight": 18.1
       }
     },
     "2026-11-05": {
@@ -60727,7 +61413,7 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 64718750.0,
-        "weight": 14.63
+        "weight": 14.64
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -60739,7 +61425,7 @@
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 14744000.0,
-        "weight": 3.33
+        "weight": 3.34
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
@@ -60762,20 +61448,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14818207.78,
-        "weight": 3.35
+        "value": 14479673.23,
+        "weight": 3.28
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 95260335.48,
+        "value": 95227919.82,
         "weight": 21.54
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78594973.51,
-        "weight": 17.77
+        "value": 78780922.1,
+        "weight": 17.82
       }
     },
     "2026-11-06": {
@@ -60783,55 +61469,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 60700000.0,
-        "weight": 14.26
+        "weight": 14.29
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 77473000.0,
-        "weight": 18.2
+        "weight": 18.24
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13300000.0,
-        "weight": 3.12
+        "weight": 3.13
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 19980000.0,
-        "weight": 4.69
+        "weight": 4.7
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 38805000.0,
-        "weight": 9.12
+        "weight": 9.14
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 27331500.0,
-        "weight": 6.42
+        "weight": 6.43
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14661479.23,
-        "weight": 3.44
+        "value": 14323516.26,
+        "weight": 3.37
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 95259912.04,
-        "weight": 22.38
+        "value": 94252476.71,
+        "weight": 22.19
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78135198.64,
-        "weight": 18.36
+        "value": 78602782.92,
+        "weight": 18.5
       }
     },
     "2026-11-09": {
@@ -60839,19 +61525,19 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 62587500.0,
-        "weight": 14.4
+        "weight": 14.38
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 83655000.0,
-        "weight": 19.24
+        "weight": 19.23
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13376000.0,
-        "weight": 3.08
+        "weight": 3.07
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
@@ -60869,25 +61555,25 @@
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 28329000.0,
-        "weight": 6.52
+        "weight": 6.51
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14503361.56,
-        "weight": 3.34
+        "value": 14449281.69,
+        "weight": 3.32
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94284141.23,
-        "weight": 21.69
+        "value": 93323103.59,
+        "weight": 21.45
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77958519.58,
-        "weight": 17.93
+        "value": 79324118.73,
+        "weight": 18.23
       }
     },
     "2026-11-10": {
@@ -60901,7 +61587,7 @@
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 92884000.0,
-        "weight": 20.61
+        "weight": 20.62
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -60919,7 +61605,7 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 40530000.0,
-        "weight": 8.99
+        "weight": 9.0
       },
       "SDGR": {
         "company": "Schrodinger Inc",
@@ -60930,20 +61616,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14630706.11,
-        "weight": 3.25
+        "value": 14264902.5,
+        "weight": 3.17
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93354455.88,
-        "weight": 20.72
+        "value": 92625452.96,
+        "weight": 20.56
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78673942.99,
-        "weight": 17.46
+        "value": 79725464.71,
+        "weight": 17.69
       }
     },
     "2026-11-11": {
@@ -60951,54 +61637,54 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 56437500.0,
-        "weight": 13.02
+        "weight": 13.06
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 88594000.0,
-        "weight": 20.45
+        "weight": 20.5
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13490000.0,
-        "weight": 3.11
+        "weight": 3.12
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 20106000.0,
-        "weight": 4.64
+        "weight": 4.65
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 37725000.0,
-        "weight": 8.71
+        "weight": 8.73
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 30789500.0,
-        "weight": 7.11
+        "weight": 7.12
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14444011.86,
-        "weight": 3.33
+        "value": 14053960.8,
+        "weight": 3.25
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92656570.88,
-        "weight": 21.38
+        "value": 92131071.56,
+        "weight": 21.32
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79071999.37,
+        "value": 78899024.08,
         "weight": 18.25
       }
     },
@@ -61007,19 +61693,19 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 57187500.0,
-        "weight": 13.24
+        "weight": 13.22
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 87373000.0,
-        "weight": 20.22
+        "weight": 20.2
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 13642000.0,
-        "weight": 3.16
+        "weight": 3.15
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
@@ -61031,31 +61717,31 @@
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 38715000.0,
-        "weight": 8.96
+        "weight": 8.95
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 29944000.0,
-        "weight": 6.93
+        "weight": 6.92
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14230421.59,
-        "weight": 3.29
+        "value": 13940276.24,
+        "weight": 3.22
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92162023.38,
-        "weight": 21.33
+        "value": 93200005.07,
+        "weight": 21.54
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78252332.61,
-        "weight": 18.11
+        "value": 78092636.02,
+        "weight": 18.05
       }
     },
     "2026-11-13": {
@@ -61063,13 +61749,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 53275000.0,
-        "weight": 12.73
+        "weight": 12.7
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 83479000.0,
-        "weight": 19.94
+        "weight": 19.89
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61081,37 +61767,37 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 18990000.0,
-        "weight": 4.54
+        "weight": 4.53
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36045000.0,
-        "weight": 8.61
+        "weight": 8.59
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 29307500.0,
-        "weight": 7.0
+        "weight": 6.98
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14115309.61,
-        "weight": 3.37
+        "value": 14032272.69,
+        "weight": 3.34
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93231316.0,
-        "weight": 22.27
+        "value": 94346973.35,
+        "weight": 22.48
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77452554.06,
-        "weight": 18.5
+        "value": 77497730.82,
+        "weight": 18.47
       }
     },
     "2026-11-16": {
@@ -61119,55 +61805,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 52800000.0,
-        "weight": 12.91
+        "weight": 12.89
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 78760000.0,
-        "weight": 19.26
+        "weight": 19.23
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 12103000.0,
-        "weight": 2.96
+        "weight": 2.95
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 17460000.0,
-        "weight": 4.27
+        "weight": 4.26
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 34245000.0,
-        "weight": 8.38
+        "weight": 8.36
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 28053500.0,
-        "weight": 6.86
+        "weight": 6.85
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14208461.15,
-        "weight": 3.48
+        "value": 14184880.62,
+        "weight": 3.46
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 94378669.62,
-        "weight": 23.08
+        "value": 93838967.69,
+        "weight": 22.91
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 76862524.97,
-        "weight": 18.8
+        "value": 78131727.24,
+        "weight": 19.08
       }
     },
     "2026-11-17": {
@@ -61175,13 +61861,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 50462500.0,
-        "weight": 12.82
+        "weight": 12.79
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 71236000.0,
-        "weight": 18.1
+        "weight": 18.05
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61193,37 +61879,37 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 17748000.0,
-        "weight": 4.51
+        "weight": 4.5
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 31410000.0,
-        "weight": 7.98
+        "weight": 7.96
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25992000.0,
-        "weight": 6.6
+        "weight": 6.59
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14362985.22,
-        "weight": 3.65
+        "value": 14219306.32,
+        "weight": 3.6
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93870493.29,
-        "weight": 23.85
+        "value": 93417975.17,
+        "weight": 23.68
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 77491324.87,
-        "weight": 19.69
+        "value": 79036762.38,
+        "weight": 20.03
       }
     },
     "2026-11-18": {
@@ -61231,7 +61917,7 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 50187500.0,
-        "weight": 12.89
+        "weight": 12.88
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61266,20 +61952,20 @@
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14397843.17,
-        "weight": 3.7
+        "value": 14302828.0,
+        "weight": 3.67
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 93449359.34,
-        "weight": 23.99
+        "value": 92911267.96,
+        "weight": 23.84
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78388941.95,
-        "weight": 20.13
+        "value": 79210701.65,
+        "weight": 20.33
       }
     },
     "2026-11-19": {
@@ -61287,55 +61973,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 50237500.0,
-        "weight": 12.82
+        "weight": 12.79
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 69982000.0,
-        "weight": 17.86
+        "weight": 17.82
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 10735000.0,
-        "weight": 2.74
+        "weight": 2.73
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 17586000.0,
-        "weight": 4.49
+        "weight": 4.48
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 31515000.0,
-        "weight": 8.04
+        "weight": 8.03
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25840000.0,
-        "weight": 6.59
+        "weight": 6.58
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14482413.55,
-        "weight": 3.7
+        "value": 14214618.58,
+        "weight": 3.62
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92942481.9,
-        "weight": 23.72
+        "value": 92314131.41,
+        "weight": 23.51
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 78561455.53,
-        "weight": 20.05
+        "value": 80252354.72,
+        "weight": 20.44
       }
     },
     "2026-11-20": {
@@ -61343,55 +62029,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 48662500.0,
-        "weight": 12.66
+        "weight": 12.63
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 65571000.0,
-        "weight": 17.05
+        "weight": 17.02
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 10336000.0,
-        "weight": 2.69
+        "weight": 2.68
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 17136000.0,
-        "weight": 4.46
+        "weight": 4.45
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 31410000.0,
-        "weight": 8.17
+        "weight": 8.15
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 25023000.0,
-        "weight": 6.51
+        "weight": 6.5
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14393096.57,
+        "value": 14417375.72,
         "weight": 3.74
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 92345144.74,
-        "weight": 24.02
+        "value": 91366706.06,
+        "weight": 23.72
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79594570.75,
-        "weight": 20.7
+        "value": 81255081.09,
+        "weight": 21.1
       }
     },
     "2026-11-23": {
@@ -61399,55 +62085,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 48875000.0,
-        "weight": 13.02
+        "weight": 13.08
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 59444000.0,
-        "weight": 15.84
+        "weight": 15.91
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 9310000.0,
-        "weight": 2.48
+        "weight": 2.49
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 18000000.0,
-        "weight": 4.8
+        "weight": 4.82
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 31350000.0,
-        "weight": 8.35
+        "weight": 8.39
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 21783500.0,
-        "weight": 5.8
+        "weight": 5.83
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14598399.53,
-        "weight": 3.89
+        "value": 14509865.59,
+        "weight": 3.88
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91397401.1,
-        "weight": 24.35
+        "value": 90026625.08,
+        "weight": 24.1
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80589078.33,
-        "weight": 21.47
+        "value": 80300055.44,
+        "weight": 21.49
       }
     },
     "2026-11-24": {
@@ -61455,55 +62141,55 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 54100000.0,
-        "weight": 13.98
+        "weight": 13.89
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 62744000.0,
-        "weight": 16.21
+        "weight": 16.11
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 3800000,
         "value": 10127000.0,
-        "weight": 2.62
+        "weight": 2.6
       },
       "NTLA": {
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 18270000.0,
-        "weight": 4.72
+        "weight": 4.69
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 34290000.0,
-        "weight": 8.86
+        "weight": 8.8
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 23180000.0,
-        "weight": 5.99
+        "weight": 5.95
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14692050.69,
-        "weight": 3.8
+        "value": 14481908.74,
+        "weight": 3.72
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 90056869.91,
-        "weight": 23.26
+        "value": 91072971.0,
+        "weight": 23.38
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 79641880.49,
-        "weight": 20.57
+        "value": 81199969.85,
+        "weight": 20.85
       }
     },
     "2026-11-25": {
@@ -61511,13 +62197,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1250000,
         "value": 55125000.0,
-        "weight": 14.1
+        "weight": 14.05
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 1100000,
         "value": 60313000.0,
-        "weight": 15.43
+        "weight": 15.38
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61529,37 +62215,93 @@
         "company": "Intellia Therapeutics Inc",
         "shares": 1800000,
         "value": 18936000.0,
-        "weight": 4.84
+        "weight": 4.83
       },
       "BEAM": {
         "company": "Beam Therapeutics Inc",
         "shares": 1500000,
         "value": 36390000.0,
-        "weight": 9.31
+        "weight": 9.28
       },
       "SDGR": {
         "company": "Schrodinger Inc",
         "shares": 950000,
         "value": 23740500.0,
-        "weight": 6.07
+        "weight": 6.05
       },
       "EXAI": {
         "company": "Exscientia plc",
         "shares": 2500000,
-        "value": 14663742.81,
-        "weight": 3.75
+        "value": 14373662.09,
+        "weight": 3.66
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 200000,
-        "value": 91103567.35,
-        "weight": 23.3
+        "value": 90924052.58,
+        "weight": 23.18
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 80000,
-        "value": 80534418.8,
-        "weight": 20.6
+        "value": 82235970.4,
+        "weight": 20.97
+      }
+    },
+    "2026-11-27": {
+      "CRSP": {
+        "company": "CRISPR Therapeutics AG",
+        "shares": 1250000,
+        "value": 53200000.0,
+        "weight": 13.75
+      },
+      "TEM": {
+        "company": "Tempus AI Inc",
+        "shares": 1100000,
+        "value": 60214000.0,
+        "weight": 15.56
+      },
+      "RXRX": {
+        "company": "Recursion Pharmaceuticals",
+        "shares": 3800000,
+        "value": 10013000.0,
+        "weight": 2.59
+      },
+      "NTLA": {
+        "company": "Intellia Therapeutics Inc",
+        "shares": 1800000,
+        "value": 18558000.0,
+        "weight": 4.8
+      },
+      "BEAM": {
+        "company": "Beam Therapeutics Inc",
+        "shares": 1500000,
+        "value": 35745000.0,
+        "weight": 9.24
+      },
+      "SDGR": {
+        "company": "Schrodinger Inc",
+        "shares": 950000,
+        "value": 23161000.0,
+        "weight": 5.98
+      },
+      "EXAI": {
+        "company": "Exscientia plc",
+        "shares": 2500000,
+        "value": 14248460.7,
+        "weight": 3.68
+      },
+      "VRTX": {
+        "company": "Vertex Pharmaceuticals Inc",
+        "shares": 200000,
+        "value": 89845573.61,
+        "weight": 23.22
+      },
+      "REGN": {
+        "company": "Regeneron Pharmaceuticals",
+        "shares": 80000,
+        "value": 82026069.22,
+        "weight": 21.19
       }
     }
   },
@@ -61569,19 +62311,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 893825387.02,
-        "weight": 36.87
+        "weight": 36.84
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296086593.9,
-        "weight": 12.21
+        "value": 291998114.24,
+        "weight": 12.03
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322137675.21,
-        "weight": 13.29
+        "value": 328104276.89,
+        "weight": 13.52
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61599,13 +62341,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 98576803.55,
-        "weight": 4.07
+        "weight": 4.06
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 761071516.62,
-        "weight": 31.39
+        "weight": 31.37
       }
     },
     "2026-06-16": {
@@ -61613,19 +62355,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 919322947.34,
-        "weight": 37.67
+        "weight": 37.52
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 293873461.57,
-        "weight": 12.04
+        "value": 293580842.92,
+        "weight": 11.98
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 321610930.19,
-        "weight": 13.18
+        "value": 331773172.44,
+        "weight": 13.54
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61643,13 +62385,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 97578829.49,
-        "weight": 4.0
+        "weight": 3.98
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 754718687.92,
-        "weight": 30.93
+        "weight": 30.8
       }
     },
     "2026-06-17": {
@@ -61657,19 +62399,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 938993293.69,
-        "weight": 38.05
+        "weight": 37.94
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 297622885.01,
-        "weight": 12.06
+        "value": 296899535.42,
+        "weight": 12.0
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 318809546.91,
-        "weight": 12.92
+        "value": 326912221.89,
+        "weight": 13.21
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61687,13 +62429,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 100363264.26,
-        "weight": 4.07
+        "weight": 4.06
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 758878249.59,
-        "weight": 30.75
+        "weight": 30.66
       }
     },
     "2026-06-18": {
@@ -61701,25 +62443,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 944635612.66,
-        "weight": 38.32
+        "weight": 38.24
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 294092685.76,
-        "weight": 11.93
+        "value": 294008972.26,
+        "weight": 11.9
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 317995809.32,
-        "weight": 12.9
+        "value": 323267902.44,
+        "weight": 13.09
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 44060335.96,
-        "weight": 1.79
+        "weight": 1.78
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61731,13 +62473,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 98229080.25,
-        "weight": 3.99
+        "weight": 3.98
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 758121309.87,
-        "weight": 30.76
+        "weight": 30.69
       }
     },
     "2026-06-19": {
@@ -61750,14 +62492,14 @@
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 295686767.72,
-        "weight": 11.97
+        "value": 294853990.35,
+        "weight": 11.94
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 321551670.95,
-        "weight": 13.02
+        "value": 322354371.56,
+        "weight": 13.05
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61781,7 +62523,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 740017835.0,
-        "weight": 29.95
+        "weight": 29.96
       }
     },
     "2026-06-22": {
@@ -61789,19 +62531,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 990288393.27,
-        "weight": 39.94
+        "weight": 39.84
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 299029265.99,
-        "weight": 12.06
+        "value": 298590411.38,
+        "weight": 12.01
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 316840479.98,
-        "weight": 12.78
+        "value": 323470000.73,
+        "weight": 13.02
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -61819,13 +62561,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96500677.65,
-        "weight": 3.89
+        "weight": 3.88
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 723611288.03,
-        "weight": 29.19
+        "weight": 29.11
       }
     },
     "2026-06-23": {
@@ -61833,25 +62575,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 973352947.54,
-        "weight": 39.5
+        "weight": 39.26
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296117968.14,
-        "weight": 12.02
+        "value": 299618559.13,
+        "weight": 12.08
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313308437.3,
-        "weight": 12.72
+        "value": 325284689.78,
+        "weight": 13.12
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45846866.25,
-        "weight": 1.86
+        "weight": 1.85
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61863,13 +62605,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 94989448.48,
-        "weight": 3.86
+        "weight": 3.83
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 732486541.63,
-        "weight": 29.73
+        "weight": 29.54
       }
     },
     "2026-06-24": {
@@ -61877,25 +62619,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 996300509.22,
-        "weight": 40.0
+        "weight": 39.74
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296969047.74,
-        "weight": 11.92
+        "value": 296965905.79,
+        "weight": 11.84
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 312423051.12,
-        "weight": 12.54
+        "value": 329138280.77,
+        "weight": 13.13
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45377641.11,
-        "weight": 1.82
+        "weight": 1.81
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61907,13 +62649,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96531116.61,
-        "weight": 3.88
+        "weight": 3.85
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 734887113.6,
-        "weight": 29.51
+        "weight": 29.31
       }
     },
     "2026-06-25": {
@@ -61921,43 +62663,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1024998549.94,
-        "weight": 40.4
+        "weight": 40.11
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300732271.0,
-        "weight": 11.85
+        "value": 300183409.93,
+        "weight": 11.75
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313504309.2,
-        "weight": 12.36
+        "value": 332323082.08,
+        "weight": 13.0
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45174863.99,
-        "weight": 1.78
+        "weight": 1.77
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 7770796.27,
-        "weight": 0.31
+        "weight": 0.3
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96150769.08,
-        "weight": 3.79
+        "weight": 3.76
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 748953513.02,
-        "weight": 29.52
+        "weight": 29.31
       }
     },
     "2026-06-26": {
@@ -61965,25 +62707,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1029279108.32,
-        "weight": 40.76
+        "weight": 40.53
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 301767793.9,
-        "weight": 11.95
+        "value": 302727232.7,
+        "weight": 11.92
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 315263090.03,
-        "weight": 12.49
+        "value": 329057998.13,
+        "weight": 12.96
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 44221426.55,
-        "weight": 1.75
+        "weight": 1.74
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -61995,13 +62737,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 98904879.7,
-        "weight": 3.92
+        "weight": 3.89
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 727930777.82,
-        "weight": 28.83
+        "weight": 28.66
       }
     },
     "2026-06-29": {
@@ -62009,19 +62751,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1026902000.0,
-        "weight": 40.95
+        "weight": 40.82
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 299096112.46,
-        "weight": 11.93
+        "value": 298669993.11,
+        "weight": 11.87
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 318997956.88,
-        "weight": 12.72
+        "value": 327725023.91,
+        "weight": 13.03
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62039,13 +62781,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 98856000.0,
-        "weight": 3.94
+        "weight": 3.93
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 711000000.0,
-        "weight": 28.35
+        "weight": 28.26
       }
     },
     "2026-07-02": {
@@ -62053,19 +62795,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1012979000.0,
-        "weight": 44.08
+        "weight": 44.07
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 302336696.51,
-        "weight": 13.16
+        "value": 300613594.92,
+        "weight": 13.08
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322084638.59,
-        "weight": 14.02
+        "value": 324782830.53,
+        "weight": 14.13
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62089,7 +62831,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 502920000.0,
-        "weight": 21.89
+        "weight": 21.88
       }
     },
     "2026-07-06": {
@@ -62097,19 +62839,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1031823500.0,
-        "weight": 44.14
+        "weight": 43.98
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 304898766.72,
-        "weight": 13.04
+        "value": 303940658.58,
+        "weight": 12.96
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 318920147.64,
-        "weight": 13.64
+        "value": 328264571.41,
+        "weight": 13.99
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62127,13 +62869,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 108144000.0,
-        "weight": 4.63
+        "weight": 4.61
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 517200000.0,
-        "weight": 22.13
+        "weight": 22.05
       }
     },
     "2026-07-07": {
@@ -62141,25 +62883,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1020051000.0,
-        "weight": 43.64
+        "weight": 43.36
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300812423.59,
-        "weight": 12.87
+        "value": 305734089.27,
+        "weight": 12.99
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 317628240.63,
-        "weight": 13.59
+        "value": 328108057.34,
+        "weight": 13.95
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 48560000.0,
-        "weight": 2.08
+        "weight": 2.06
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62171,13 +62913,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 111402000.0,
-        "weight": 4.77
+        "weight": 4.74
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 530160000.0,
-        "weight": 22.68
+        "weight": 22.53
       }
     },
     "2026-07-09": {
@@ -62185,25 +62927,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1033455500.0,
-        "weight": 44.16
+        "weight": 43.85
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 302769967.32,
-        "weight": 12.94
+        "value": 302528013.59,
+        "weight": 12.84
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 314776692.41,
-        "weight": 13.45
+        "value": 331153845.38,
+        "weight": 14.05
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45816000.0,
-        "weight": 1.96
+        "weight": 1.94
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62215,13 +62957,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 106560000.0,
-        "weight": 4.55
+        "weight": 4.52
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 528880000.0,
-        "weight": 22.6
+        "weight": 22.44
       }
     },
     "2026-07-13": {
@@ -62229,19 +62971,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1010293000.0,
-        "weight": 44.08
+        "weight": 43.95
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 306120896.79,
-        "weight": 13.36
+        "value": 299557287.04,
+        "weight": 13.03
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 318151165.37,
-        "weight": 13.88
+        "value": 331113673.42,
+        "weight": 14.41
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62259,13 +63001,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96030000.0,
-        "weight": 4.19
+        "weight": 4.18
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 507160000.0,
-        "weight": 22.13
+        "weight": 22.06
       }
     },
     "2026-07-15": {
@@ -62273,19 +63015,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 979659000.0,
-        "weight": 42.86
+        "weight": 42.71
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 307927192.18,
-        "weight": 13.47
+        "value": 301879603.91,
+        "weight": 13.16
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 317999473.3,
-        "weight": 13.91
+        "value": 332459863.47,
+        "weight": 14.49
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62303,13 +63045,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 90828000.0,
-        "weight": 3.97
+        "weight": 3.96
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 534880000.0,
-        "weight": 23.4
+        "weight": 23.32
       }
     },
     "2026-07-16": {
@@ -62317,25 +63059,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 983135500.0,
-        "weight": 42.94
+        "weight": 42.76
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 304698118.57,
-        "weight": 13.31
+        "value": 299488005.88,
+        "weight": 13.02
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 320951424.56,
-        "weight": 14.02
+        "value": 336240375.12,
+        "weight": 14.62
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45800000.0,
-        "weight": 2.0
+        "weight": 1.99
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62347,13 +63089,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 92466000.0,
-        "weight": 4.04
+        "weight": 4.02
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 535040000.0,
-        "weight": 23.37
+        "weight": 23.27
       }
     },
     "2026-07-17": {
@@ -62361,25 +63103,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 993794500.0,
-        "weight": 43.38
+        "weight": 43.17
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 301706082.3,
-        "weight": 13.17
+        "value": 297876145.74,
+        "weight": 12.94
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 320912490.24,
-        "weight": 14.01
+        "value": 335435792.82,
+        "weight": 14.57
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 42872000.0,
-        "weight": 1.87
+        "weight": 1.86
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62391,13 +63133,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 87426000.0,
-        "weight": 3.82
+        "weight": 3.8
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 537760000.0,
-        "weight": 23.47
+        "weight": 23.36
       }
     },
     "2026-08-13": {
@@ -62405,25 +63147,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1037238000.0,
-        "weight": 41.56
+        "weight": 41.42
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 304045057.69,
-        "weight": 12.18
+        "value": 297326253.83,
+        "weight": 11.87
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322217205.92,
-        "weight": 12.91
+        "value": 337462065.18,
+        "weight": 13.48
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 43688000.0,
-        "weight": 1.75
+        "weight": 1.74
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62435,13 +63177,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 97182000.0,
-        "weight": 3.89
+        "weight": 3.88
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 684160000.0,
-        "weight": 27.41
+        "weight": 27.32
       }
     },
     "2026-08-14": {
@@ -62449,25 +63191,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1026179500.0,
-        "weight": 40.76
+        "weight": 40.69
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 301636304.17,
-        "weight": 11.98
+        "value": 293212796.74,
+        "weight": 11.63
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 325881244.9,
-        "weight": 12.94
+        "value": 338862124.51,
+        "weight": 13.44
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 43432000.0,
-        "weight": 1.73
+        "weight": 1.72
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62479,13 +63221,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 97182000.0,
-        "weight": 3.86
+        "weight": 3.85
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 716040000.0,
-        "weight": 28.44
+        "weight": 28.39
       }
     },
     "2026-08-17": {
@@ -62493,25 +63235,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1003136000.0,
-        "weight": 40.62
+        "weight": 40.46
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300012881.77,
-        "weight": 12.15
+        "value": 293104492.82,
+        "weight": 11.82
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 325101450.74,
-        "weight": 13.17
+        "value": 341920182.68,
+        "weight": 13.79
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 41680000.0,
-        "weight": 1.69
+        "weight": 1.68
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62523,13 +63265,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96390000.0,
-        "weight": 3.9
+        "weight": 3.89
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 696160000.0,
-        "weight": 28.19
+        "weight": 28.08
       }
     },
     "2026-08-21": {
@@ -62537,19 +63279,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1057740000.0,
-        "weight": 41.56
+        "weight": 41.42
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 299459045.35,
-        "weight": 11.76
+        "value": 291924893.04,
+        "weight": 11.43
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 327065296.28,
-        "weight": 12.85
+        "value": 342651445.96,
+        "weight": 13.42
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62567,13 +63309,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 104615999.98,
-        "weight": 4.11
+        "weight": 4.1
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 695840000.0,
-        "weight": 27.34
+        "weight": 27.25
       }
     },
     "2026-09-04": {
@@ -62581,25 +63323,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 985660000.0,
-        "weight": 39.42
+        "weight": 39.26
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 295316081.46,
-        "weight": 11.81
+        "value": 296020013.38,
+        "weight": 11.79
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 328422221.59,
-        "weight": 13.13
+        "value": 338110955.84,
+        "weight": 13.47
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 51728000.0,
-        "weight": 2.07
+        "weight": 2.06
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62611,13 +63353,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 101682000.0,
-        "weight": 4.07
+        "weight": 4.05
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 730120000.0,
-        "weight": 29.2
+        "weight": 29.08
       }
     },
     "2026-09-11": {
@@ -62625,19 +63367,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 954550000.0,
-        "weight": 39.9
+        "weight": 39.73
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 295207000.65,
-        "weight": 12.34
+        "value": 298613987.43,
+        "weight": 12.43
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 331386064.96,
-        "weight": 13.85
+        "value": 337789166.58,
+        "weight": 14.06
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62655,13 +63397,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 94068000.0,
-        "weight": 3.93
+        "weight": 3.92
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 663440000.0,
-        "weight": 27.73
+        "weight": 27.62
       }
     },
     "2026-09-18": {
@@ -62669,25 +63411,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 979574000.0,
-        "weight": 39.41
+        "weight": 39.31
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 294018939.33,
-        "weight": 11.83
+        "value": 296820954.43,
+        "weight": 11.91
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 332094798.96,
-        "weight": 13.36
+        "value": 335504873.36,
+        "weight": 13.46
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 64288000.0,
-        "weight": 2.59
+        "weight": 2.58
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62699,13 +63441,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 103185000.0,
-        "weight": 4.15
+        "weight": 4.14
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 704960000.0,
-        "weight": 28.36
+        "weight": 28.29
       }
     },
     "2026-09-25": {
@@ -62713,19 +63455,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1004606500.0,
-        "weight": 39.01
+        "weight": 38.9
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 298143434.93,
-        "weight": 11.58
+        "value": 294305967.9,
+        "weight": 11.39
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 327694195.46,
-        "weight": 12.72
+        "value": 338960246.64,
+        "weight": 13.12
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62743,13 +63485,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 100260000.0,
-        "weight": 3.89
+        "weight": 3.88
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 770360000.0,
-        "weight": 29.91
+        "weight": 29.83
       }
     },
     "2026-10-06": {
@@ -62757,19 +63499,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 971652000.0,
-        "weight": 38.28
+        "weight": 38.18
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300756016.17,
-        "weight": 11.85
+        "value": 291680111.91,
+        "weight": 11.46
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 327382320.11,
-        "weight": 12.9
+        "value": 343660250.11,
+        "weight": 13.5
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -62787,13 +63529,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 103212000.0,
-        "weight": 4.07
+        "weight": 4.06
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 757600000.0,
-        "weight": 29.85
+        "weight": 29.77
       }
     },
     "2026-10-07": {
@@ -62801,25 +63543,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 983866500.0,
-        "weight": 38.72
+        "weight": 38.58
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 298950121.33,
-        "weight": 11.76
+        "value": 291824941.79,
+        "weight": 11.44
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 325168403.0,
-        "weight": 12.8
+        "value": 341445267.56,
+        "weight": 13.39
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 57584000.0,
-        "weight": 2.27
+        "weight": 2.26
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62831,13 +63573,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 97200000.0,
-        "weight": 3.82
+        "weight": 3.81
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 768280000.0,
-        "weight": 30.23
+        "weight": 30.12
       }
     },
     "2026-10-08": {
@@ -62845,43 +63587,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1010412000.0,
-        "weight": 39.29
+        "weight": 39.11
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296417094.2,
-        "weight": 11.53
+        "value": 294303735.6,
+        "weight": 11.39
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 328517320.7,
-        "weight": 12.77
+        "value": 342277473.52,
+        "weight": 13.25
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 56280000.0,
-        "weight": 2.19
+        "weight": 2.18
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 9394000.0,
-        "weight": 0.37
+        "weight": 0.36
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 94230000.0,
-        "weight": 3.66
+        "weight": 3.65
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 776480000.0,
-        "weight": 30.19
+        "weight": 30.06
       }
     },
     "2026-10-09": {
@@ -62889,25 +63631,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 994160000.0,
-        "weight": 38.67
+        "weight": 38.53
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 293772402.33,
-        "weight": 11.43
+        "value": 297697808.96,
+        "weight": 11.54
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 333072523.17,
-        "weight": 12.95
+        "value": 338623400.76,
+        "weight": 13.12
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 55424000.0,
-        "weight": 2.16
+        "weight": 2.15
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -62919,13 +63661,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 90792000.0,
-        "weight": 3.53
+        "weight": 3.52
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 795120000.0,
-        "weight": 30.93
+        "weight": 30.81
       }
     },
     "2026-10-12": {
@@ -62933,43 +63675,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1002379500.0,
-        "weight": 38.17
+        "weight": 38.05
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 293918271.1,
-        "weight": 11.19
+        "value": 299412480.26,
+        "weight": 11.37
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 330925781.36,
-        "weight": 12.6
+        "value": 333826905.96,
+        "weight": 12.67
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 56744000.0,
-        "weight": 2.16
+        "weight": 2.15
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 9592000.0,
-        "weight": 0.37
+        "weight": 0.36
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 96102000.0,
-        "weight": 3.66
+        "weight": 3.65
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 836200000.0,
-        "weight": 31.84
+        "weight": 31.74
       }
     },
     "2026-10-13": {
@@ -62977,19 +63719,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1005227000.0,
-        "weight": 38.29
+        "weight": 38.27
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296414845.88,
+        "value": 296570149.6,
         "weight": 11.29
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 331732348.13,
-        "weight": 12.64
+        "value": 332972618.57,
+        "weight": 12.68
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63013,7 +63755,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 836000000.0,
-        "weight": 31.84
+        "weight": 31.83
       }
     },
     "2026-10-14": {
@@ -63021,19 +63763,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 991533500.0,
-        "weight": 38.03
+        "weight": 38.06
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 299833265.74,
-        "weight": 11.5
+        "value": 294907808.56,
+        "weight": 11.32
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 328190852.61,
-        "weight": 12.59
+        "value": 330801453.39,
+        "weight": 12.7
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63057,7 +63799,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 834680000.0,
-        "weight": 32.01
+        "weight": 32.04
       }
     },
     "2026-10-15": {
@@ -63065,19 +63807,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1027429000.0,
-        "weight": 39.37
+        "weight": 39.31
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 301560236.78,
-        "weight": 11.56
+        "value": 295520998.14,
+        "weight": 11.31
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 323542131.6,
-        "weight": 12.4
+        "value": 333251648.89,
+        "weight": 12.75
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63089,7 +63831,7 @@
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 8228000.0,
-        "weight": 0.32
+        "weight": 0.31
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
@@ -63101,7 +63843,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 803880000.0,
-        "weight": 30.8
+        "weight": 30.76
       }
     },
     "2026-10-16": {
@@ -63109,19 +63851,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1063868500.0,
-        "weight": 40.21
+        "weight": 40.1
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 298697517.41,
-        "weight": 11.29
+        "value": 294775956.46,
+        "weight": 11.11
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322714163.7,
-        "weight": 12.2
+        "value": 333337788.04,
+        "weight": 12.57
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63133,7 +63875,7 @@
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 9152000.0,
-        "weight": 0.35
+        "weight": 0.34
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
@@ -63145,7 +63887,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 802000000.0,
-        "weight": 30.31
+        "weight": 30.23
       }
     },
     "2026-10-19": {
@@ -63153,43 +63895,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1068475500.0,
-        "weight": 41.44
+        "weight": 41.28
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 297023252.0,
-        "weight": 11.52
+        "value": 297268706.96,
+        "weight": 11.48
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 320609889.3,
-        "weight": 12.44
+        "value": 330599024.07,
+        "weight": 12.77
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 51776000.0,
-        "weight": 2.01
+        "weight": 2.0
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 7623000.0,
-        "weight": 0.3
+        "weight": 0.29
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 88650000.0,
-        "weight": 3.44
+        "weight": 3.42
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 744120000.0,
-        "weight": 28.86
+        "weight": 28.75
       }
     },
     "2026-10-20": {
@@ -63197,43 +63939,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1054289000.0,
-        "weight": 40.53
+        "weight": 40.43
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 297640840.14,
-        "weight": 11.44
+        "value": 301708914.37,
+        "weight": 11.57
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322984597.46,
-        "weight": 12.42
+        "value": 325874577.29,
+        "weight": 12.5
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 51472000.0,
-        "weight": 1.98
+        "weight": 1.97
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 7942000.0,
-        "weight": 0.31
+        "weight": 0.3
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 90072000.0,
-        "weight": 3.46
+        "weight": 3.45
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 776600000.0,
-        "weight": 29.86
+        "weight": 29.78
       }
     },
     "2026-10-21": {
@@ -63241,43 +63983,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1091111000.0,
-        "weight": 41.44
+        "weight": 41.29
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296890454.1,
-        "weight": 11.28
+        "value": 300540679.16,
+        "weight": 11.37
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 323068082.77,
-        "weight": 12.27
+        "value": 329054467.18,
+        "weight": 12.45
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 53400000.0,
-        "weight": 2.03
+        "weight": 2.02
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 8052000.0,
-        "weight": 0.31
+        "weight": 0.3
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 89784000.0,
-        "weight": 3.41
+        "weight": 3.4
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 770400000.0,
-        "weight": 29.26
+        "weight": 29.16
       }
     },
     "2026-10-22": {
@@ -63285,25 +64027,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1080137500.0,
-        "weight": 40.61
+        "weight": 40.52
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 299401085.69,
-        "weight": 11.26
+        "value": 298153443.12,
+        "weight": 11.18
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 320413696.57,
-        "weight": 12.05
+        "value": 327383772.8,
+        "weight": 12.28
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 54208000.0,
-        "weight": 2.04
+        "weight": 2.03
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -63315,13 +64057,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 90900000.0,
-        "weight": 3.42
+        "weight": 3.41
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 806880000.0,
-        "weight": 30.33
+        "weight": 30.27
       }
     },
     "2026-10-23": {
@@ -63329,43 +64071,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1110686500.0,
-        "weight": 41.69
+        "weight": 41.57
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 303873143.76,
-        "weight": 11.41
+        "value": 295209043.26,
+        "weight": 11.05
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 315834803.87,
-        "weight": 11.86
+        "value": 332042066.98,
+        "weight": 12.43
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 51048000.0,
-        "weight": 1.92
+        "weight": 1.91
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 7876000.0,
-        "weight": 0.3
+        "weight": 0.29
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 89982000.0,
-        "weight": 3.38
+        "weight": 3.37
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 784760000.0,
-        "weight": 29.46
+        "weight": 29.37
       }
     },
     "2026-10-26": {
@@ -63373,25 +64115,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1082441000.0,
-        "weight": 40.97
+        "weight": 40.89
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 302696528.52,
-        "weight": 11.46
+        "value": 298539754.98,
+        "weight": 11.28
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 318916725.48,
-        "weight": 12.07
+        "value": 327871283.02,
+        "weight": 12.39
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 54092000.0,
-        "weight": 2.05
+        "weight": 2.04
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -63409,7 +64151,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 787000000.0,
-        "weight": 29.79
+        "weight": 29.73
       }
     },
     "2026-10-27": {
@@ -63417,43 +64159,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1087269000.0,
-        "weight": 41.02
+        "weight": 40.93
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300292168.26,
-        "weight": 11.33
+        "value": 298885999.18,
+        "weight": 11.25
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 317297503.02,
-        "weight": 11.97
+        "value": 324449542.46,
+        "weight": 12.21
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 53728000.0,
-        "weight": 2.03
+        "weight": 2.02
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 8360000.0,
-        "weight": 0.32
+        "weight": 0.31
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 88218000.0,
-        "weight": 3.33
+        "weight": 3.32
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 795360000.0,
-        "weight": 30.01
+        "weight": 29.94
       }
     },
     "2026-10-28": {
@@ -63461,19 +64203,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1089623500.0,
-        "weight": 40.92
+        "weight": 40.96
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 297326647.53,
-        "weight": 11.17
+        "value": 294564802.79,
+        "weight": 11.07
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 321812281.2,
-        "weight": 12.08
+        "value": 321734349.22,
+        "weight": 12.09
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63497,7 +64239,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 794920000.0,
-        "weight": 29.85
+        "weight": 29.88
       }
     },
     "2026-10-29": {
@@ -63510,14 +64252,14 @@
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 300681251.24,
-        "weight": 11.27
+        "value": 296356090.9,
+        "weight": 11.1
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 317769993.68,
-        "weight": 11.91
+        "value": 322010491.93,
+        "weight": 12.07
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63549,19 +64291,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1167645000.0,
-        "weight": 42.64
+        "weight": 42.62
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 301029979.13,
-        "weight": 10.99
+        "value": 294465758.51,
+        "weight": 10.75
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 314453672.52,
-        "weight": 11.48
+        "value": 322783059.74,
+        "weight": 11.78
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63579,13 +64321,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 97668000.0,
-        "weight": 3.57
+        "weight": 3.56
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 785680000.0,
-        "weight": 28.69
+        "weight": 28.68
       }
     },
     "2026-11-02": {
@@ -63593,19 +64335,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1204909000.0,
-        "weight": 44.48
+        "weight": 44.42
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296677785.78,
-        "weight": 10.95
+        "value": 290777535.84,
+        "weight": 10.72
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 311822130.86,
-        "weight": 11.51
+        "value": 321256913.42,
+        "weight": 11.84
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63623,13 +64365,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 92556000.0,
-        "weight": 3.42
+        "weight": 3.41
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 736440000.0,
-        "weight": 27.18
+        "weight": 27.15
       }
     },
     "2026-11-03": {
@@ -63637,19 +64379,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1199341500.0,
-        "weight": 44.68
+        "weight": 44.66
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 298481923.22,
-        "weight": 11.12
+        "value": 287271939.38,
+        "weight": 10.7
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 312089765.97,
-        "weight": 11.63
+        "value": 324382122.47,
+        "weight": 12.08
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63673,7 +64415,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 713360000.0,
-        "weight": 26.57
+        "weight": 26.56
       }
     },
     "2026-11-04": {
@@ -63681,19 +64423,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1197973000.0,
-        "weight": 44.88
+        "weight": 44.82
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 296578031.02,
-        "weight": 11.11
+        "value": 286261027.56,
+        "weight": 10.71
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 312838531.97,
-        "weight": 11.72
+        "value": 326479664.04,
+        "weight": 12.22
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63717,7 +64459,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 701600000.0,
-        "weight": 26.28
+        "weight": 26.25
       }
     },
     "2026-11-05": {
@@ -63725,25 +64467,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1205291500.0,
-        "weight": 45.34
+        "weight": 45.23
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 292863351.87,
-        "weight": 11.02
+        "value": 284848655.51,
+        "weight": 10.69
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 311359404.24,
-        "weight": 11.71
+        "value": 325650706.54,
+        "weight": 12.22
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 60488000.0,
-        "weight": 2.28
+        "weight": 2.27
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -63755,13 +64497,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 93195000.0,
-        "weight": 3.51
+        "weight": 3.5
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 686800000.0,
-        "weight": 25.83
+        "weight": 25.77
       }
     },
     "2026-11-06": {
@@ -63769,19 +64511,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1160020500.0,
-        "weight": 45.76
+        "weight": 45.67
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 289332608.93,
-        "weight": 11.41
+        "value": 285491678.5,
+        "weight": 11.24
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 314388329.65,
-        "weight": 12.4
+        "value": 323298286.21,
+        "weight": 12.73
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63799,13 +64541,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 87408000.0,
-        "weight": 3.45
+        "weight": 3.44
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 619960000.0,
-        "weight": 24.45
+        "weight": 24.41
       }
     },
     "2026-11-09": {
@@ -63813,25 +64555,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1150900000.0,
-        "weight": 45.03
+        "weight": 44.91
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 288314445.6,
-        "weight": 11.28
+        "value": 285896112.61,
+        "weight": 11.15
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 316421248.68,
-        "weight": 12.38
+        "value": 325939927.06,
+        "weight": 12.72
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 60840000.0,
-        "weight": 2.38
+        "weight": 2.37
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -63843,13 +64585,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 90126000.0,
-        "weight": 3.53
+        "weight": 3.52
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 641520000.0,
-        "weight": 25.1
+        "weight": 25.03
       }
     },
     "2026-11-10": {
@@ -63857,19 +64599,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1200157500.0,
-        "weight": 45.37
+        "weight": 45.32
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 286891942.27,
-        "weight": 10.84
+        "value": 282242382.11,
+        "weight": 10.66
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 315617830.29,
-        "weight": 11.93
+        "value": 322994155.78,
+        "weight": 12.2
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63893,7 +64635,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 676800000.0,
-        "weight": 25.58
+        "weight": 25.56
       }
     },
     "2026-11-11": {
@@ -63906,14 +64648,14 @@
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 287539577.82,
-        "weight": 10.86
+        "value": 278181145.98,
+        "weight": 10.51
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313337884.98,
-        "weight": 11.84
+        "value": 322883971.12,
+        "weight": 12.2
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -63945,25 +64687,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1221696500.0,
-        "weight": 45.77
+        "weight": 45.87
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 287946913.02,
-        "weight": 10.79
+        "value": 274927689.91,
+        "weight": 10.32
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 315898140.31,
-        "weight": 11.84
+        "value": 323084834.68,
+        "weight": 12.13
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 63544000.0,
-        "weight": 2.38
+        "weight": 2.39
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -63981,7 +64723,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 689600000.0,
-        "weight": 25.84
+        "weight": 25.89
       }
     },
     "2026-11-13": {
@@ -63989,19 +64731,19 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1211717500.0,
-        "weight": 45.9
+        "weight": 45.93
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 284266973.46,
-        "weight": 10.77
+        "value": 272132051.12,
+        "weight": 10.31
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313043124.42,
-        "weight": 11.86
+        "value": 323335317.59,
+        "weight": 12.26
       },
       "TEM": {
         "company": "Tempus AI Inc",
@@ -64025,7 +64767,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 686320000.0,
-        "weight": 26.0
+        "weight": 26.01
       }
     },
     "2026-11-16": {
@@ -64033,25 +64775,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1226975000.0,
-        "weight": 46.61
+        "weight": 46.56
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 280176605.11,
-        "weight": 10.64
+        "value": 270352011.64,
+        "weight": 10.26
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 312936334.4,
-        "weight": 11.89
+        "value": 325752007.02,
+        "weight": 12.36
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 57280000.0,
-        "weight": 2.18
+        "weight": 2.17
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64069,7 +64811,7 @@
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 671960000.0,
-        "weight": 25.53
+        "weight": 25.5
       }
     },
     "2026-11-17": {
@@ -64077,25 +64819,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1216919500.0,
-        "weight": 47.18
+        "weight": 46.94
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 276899811.24,
-        "weight": 10.74
+        "value": 272910524.19,
+        "weight": 10.53
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313131009.61,
-        "weight": 12.14
+        "value": 330241833.44,
+        "weight": 12.74
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 51808000.0,
-        "weight": 2.01
+        "weight": 2.0
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64107,13 +64849,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 72666000.0,
-        "weight": 2.82
+        "weight": 2.8
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 641560000.0,
-        "weight": 24.87
+        "weight": 24.75
       }
     },
     "2026-11-18": {
@@ -64121,43 +64863,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1203217500.0,
-        "weight": 47.26
+        "weight": 46.91
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 274084118.67,
-        "weight": 10.77
+        "value": 272609900.54,
+        "weight": 10.63
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 313373775.47,
-        "weight": 12.31
+        "value": 334100839.77,
+        "weight": 13.02
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 50744000.0,
-        "weight": 1.99
+        "weight": 1.98
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 5984000.0,
-        "weight": 0.24
+        "weight": 0.23
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 72270000.0,
-        "weight": 2.84
+        "weight": 2.82
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 626240000.0,
-        "weight": 24.6
+        "weight": 24.41
       }
     },
     "2026-11-19": {
@@ -64165,43 +64907,43 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1175337500.0,
-        "weight": 46.65
+        "weight": 46.28
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 272291310.55,
-        "weight": 10.81
+        "value": 275568891.17,
+        "weight": 10.85
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 315716009.83,
-        "weight": 12.53
+        "value": 332456356.76,
+        "weight": 13.09
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 50896000.0,
-        "weight": 2.02
+        "weight": 2.0
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
         "shares": 2200000,
         "value": 6215000.0,
-        "weight": 0.25
+        "weight": 0.24
       },
       "CRSP": {
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 72342000.0,
-        "weight": 2.87
+        "weight": 2.85
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 626680000.0,
-        "weight": 24.87
+        "weight": 24.68
       }
     },
     "2026-11-20": {
@@ -64209,25 +64951,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1148452000.0,
-        "weight": 46.27
+        "weight": 45.87
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 274868175.92,
-        "weight": 11.08
+        "value": 279538999.17,
+        "weight": 11.17
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 320067510.52,
-        "weight": 12.9
+        "value": 337026045.84,
+        "weight": 13.46
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 47688000.0,
-        "weight": 1.92
+        "weight": 1.9
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64239,13 +64981,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 70074000.0,
-        "weight": 2.82
+        "weight": 2.8
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 614720000.0,
-        "weight": 24.77
+        "weight": 24.55
       }
     },
     "2026-11-23": {
@@ -64253,25 +64995,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1145043500.0,
-        "weight": 47.0
+        "weight": 46.66
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 274565395.82,
+        "value": 276665629.65,
         "weight": 11.27
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 323807625.87,
-        "weight": 13.29
+        "value": 339571102.78,
+        "weight": 13.84
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 43232000.0,
-        "weight": 1.77
+        "weight": 1.76
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64283,13 +65025,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 70380000.0,
-        "weight": 2.89
+        "weight": 2.87
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 573960000.0,
-        "weight": 23.56
+        "weight": 23.39
       }
     },
     "2026-11-24": {
@@ -64297,25 +65039,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1159910000.0,
-        "weight": 45.91
+        "weight": 45.56
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 277545611.99,
-        "weight": 10.99
+        "value": 278221038.4,
+        "weight": 10.93
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 322213807.25,
-        "weight": 12.75
+        "value": 340756649.04,
+        "weight": 13.39
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 45632000.0,
-        "weight": 1.81
+        "weight": 1.79
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64327,13 +65069,13 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 77904000.0,
-        "weight": 3.08
+        "weight": 3.06
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 637440000.0,
-        "weight": 25.23
+        "weight": 25.04
       }
     },
     "2026-11-25": {
@@ -64341,25 +65083,25 @@
         "company": "Eli Lilly & Co",
         "shares": 850000,
         "value": 1196451500.0,
-        "weight": 46.4
+        "weight": 46.22
       },
       "VRTX": {
         "company": "Vertex Pharmaceuticals Inc",
         "shares": 650000,
-        "value": 281544198.51,
-        "weight": 10.92
+        "value": 279981971.44,
+        "weight": 10.82
       },
       "REGN": {
         "company": "Regeneron Pharmaceuticals",
         "shares": 320000,
-        "value": 326642710.13,
-        "weight": 12.67
+        "value": 338489739.7,
+        "weight": 13.08
       },
       "TEM": {
         "company": "Tempus AI Inc",
         "shares": 800000,
         "value": 43864000.0,
-        "weight": 1.7
+        "weight": 1.69
       },
       "RXRX": {
         "company": "Recursion Pharmaceuticals",
@@ -64371,13 +65113,57 @@
         "company": "CRISPR Therapeutics AG",
         "shares": 1800000,
         "value": 79380000.0,
-        "weight": 3.08
+        "weight": 3.07
       },
       "PLTR": {
         "company": "Palantir Technologies Inc",
         "shares": 4000000,
         "value": 644720000.0,
-        "weight": 25.0
+        "weight": 24.9
+      }
+    },
+    "2026-11-27": {
+      "LLY": {
+        "company": "Eli Lilly & Co",
+        "shares": 850000,
+        "value": 1183387000.0,
+        "weight": 45.74
+      },
+      "VRTX": {
+        "company": "Vertex Pharmaceuticals Inc",
+        "shares": 650000,
+        "value": 282789221.9,
+        "weight": 10.93
+      },
+      "REGN": {
+        "company": "Regeneron Pharmaceuticals",
+        "shares": 320000,
+        "value": 340743039.26,
+        "weight": 13.17
+      },
+      "TEM": {
+        "company": "Tempus AI Inc",
+        "shares": 800000,
+        "value": 43792000.0,
+        "weight": 1.69
+      },
+      "RXRX": {
+        "company": "Recursion Pharmaceuticals",
+        "shares": 2200000,
+        "value": 5797000.0,
+        "weight": 0.22
+      },
+      "CRSP": {
+        "company": "CRISPR Therapeutics AG",
+        "shares": 1800000,
+        "value": 76608000.0,
+        "weight": 2.96
+      },
+      "PLTR": {
+        "company": "Palantir Technologies Inc",
+        "shares": 4000000,
+        "value": 654360000.0,
+        "weight": 25.29
       }
     }
   }
